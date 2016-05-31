@@ -2443,7 +2443,6 @@ public class Common extends javax.swing.JFrame {
         int row = _tblViewTdvh.getSelectedRow();
         String maTdvh = (_tblViewTdvh.getModel().getValueAt(row, 0).toString());
         String tenTdvh = (_tblViewTdvh.getModel().getValueAt(row, 1).toString());
-        System.out.println("");
         java.util.List<Tlu20TrinhDoVanHoa> lstTrinhDoVanHoa
                 = tlu20TrinhDoVanHoaFindCommon(tenTdvh, maTdvh);
 
@@ -2529,8 +2528,10 @@ public class Common extends javax.swing.JFrame {
         int row = _tblViewDktd.getSelectedRow();
         String maDktd = (_tblViewDktd.getModel().getValueAt(row, 0).toString());
         String tenDktd = (_tblViewDktd.getModel().getValueAt(row, 1).toString());
+        System.out.println("maDktd " + maDktd + " tenDktd " +tenDktd );
         java.util.List<Tlu20DieuKienTuyenDung> lstDktd = tlu20DieuKienTuyenDungFindCommon(maDktd, tenDktd);
-        _tfCreatedbyDktd.setText(lstDktd.get(0).getCreatedBy());
+         if(!lstDktd.isEmpty()) {
+              _tfCreatedbyDktd.setText(lstDktd.get(0).getCreatedBy());
         _tfTenDktd.setText(lstDktd.get(0).getTendmdktd());
         _tfMaDktd.setText(lstDktd.get(0).getMadmdktd());
         Calendar calendar = lstDktd.get(0).getCreatedAt().toGregorianCalendar();
@@ -2539,6 +2540,7 @@ public class Common extends javax.swing.JFrame {
 
         ClientUtil.getValueIsActiveFromWS(_cbbDktd,
                 ClientUtil.getStringFromIsActive(lstDktd.get(0).isIsActive()));
+         }
 
     }//GEN-LAST:event__tblViewDktdMouseClicked
 
