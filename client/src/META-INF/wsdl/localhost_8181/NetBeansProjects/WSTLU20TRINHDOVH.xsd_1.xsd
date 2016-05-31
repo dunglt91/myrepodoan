@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.service/">
+
+<xs:element name="ParseException" type="tns:ParseException"/>
+
+<xs:element name="Tlu20trinhDoVanHoaInsert" type="tns:Tlu20trinhDoVanHoaInsert"/>
+
+<xs:element name="Tlu20trinhDoVanHoaInsertResponse" type="tns:Tlu20trinhDoVanHoaInsertResponse"/>
+
+<xs:element name="init" type="tns:init"/>
+
+<xs:element name="initConv" type="tns:initConv"/>
+
+<xs:element name="initConvResponse" type="tns:initConvResponse"/>
+
+<xs:element name="initResponse" type="tns:initResponse"/>
+
+<xs:element name="tlu20TrinhDoVanHoaDelete" type="tns:tlu20TrinhDoVanHoaDelete"/>
+
+<xs:element name="tlu20TrinhDoVanHoaDeleteResponse" type="tns:tlu20TrinhDoVanHoaDeleteResponse"/>
+
+<xs:element name="tlu20TrinhDoVanHoaDisplayAll" type="tns:tlu20TrinhDoVanHoaDisplayAll"/>
+
+<xs:element name="tlu20TrinhDoVanHoaDisplayAllResponse" type="tns:tlu20TrinhDoVanHoaDisplayAllResponse"/>
+
+<xs:element name="tlu20TrinhDoVanHoaFindCommon" type="tns:tlu20TrinhDoVanHoaFindCommon"/>
+
+<xs:element name="tlu20TrinhDoVanHoaFindCommonResponse" type="tns:tlu20TrinhDoVanHoaFindCommonResponse"/>
+
+<xs:element name="tlu20TrinhDoVanHoaUpdatebyID" type="tns:tlu20TrinhDoVanHoaUpdatebyID"/>
+
+<xs:element name="tlu20TrinhDoVanHoaUpdatebyIDResponse" type="tns:tlu20TrinhDoVanHoaUpdatebyIDResponse"/>
+
+<xs:complexType name="tlu20TrinhDoVanHoaDisplayAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaDisplayAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu20TrinhDoVanHoa" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoa">
+<xs:sequence>
+<xs:element name="createdAt" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="idTdvh" type="xs:int" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="maTdvh" type="xs:string" minOccurs="0"/>
+<xs:element name="tenTdvh" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaFindCommon">
+<xs:sequence>
+<xs:element name="tenTDVH" type="xs:string" minOccurs="0"/>
+<xs:element name="maTDVH" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaFindCommonResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu20TrinhDoVanHoa" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="initConv">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="initConvResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:convert" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="convert">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaDelete">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaDeleteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20trinhDoVanHoaInsert">
+<xs:sequence>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="createdAt" type="xs:string" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="tenchucvu" type="xs:string" minOccurs="0"/>
+<xs:element name="machucvu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20trinhDoVanHoaInsertResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ParseException">
+<xs:sequence>
+<xs:element name="errorOffset" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="init">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="initResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:daobophan" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="daobophan">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaUpdatebyID">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="createdAt" type="xs:string" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="tenchucvu" type="xs:string" minOccurs="0"/>
+<xs:element name="machucvu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu20TrinhDoVanHoaUpdatebyIDResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

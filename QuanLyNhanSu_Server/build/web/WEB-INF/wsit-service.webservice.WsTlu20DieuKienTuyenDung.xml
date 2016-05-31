@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WsTlu20DieuKienTuyenDung" targetNamespace="http://webservice.service/" xmlns:tns="http://webservice.service/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" 
+ >
+    <message name="Tlu20dktdFindbyId"/>
+    <message name="Tlu20dktdFindbyIdResponse"/>
+    <message name="Tlu20dktdInsert"/>
+    <message name="Tlu20dktdInsertResponse"/>
+    <message name="ParseException"/>
+    <message name="Tlu20dktdUpdatebyID"/>
+    <message name="Tlu20dktdUpdatebyIDResponse"/>
+    <message name="Tlu20dktdDeletebyId"/>
+    <message name="Tlu20dktdDeletebyIdResponse"/>
+    <message name="Tlu20dktdDisplayAll"/>
+    <message name="Tlu20dktdDisplayAllResponse"/>
+    <message name="Tlu20dieuKienTuyenDungDeletebyId"/>
+    <message name="Tlu20dieuKienTuyenDungDeletebyIdResponse"/>
+    <message name="tlu20DktdDisplayAll"/>
+    <message name="tlu20DktdDisplayAllResponse"/>
+    <message name="tlu20DktdInsert"/>
+    <message name="tlu20DktdInsertResponse"/>
+    <message name="tlu20DktdFindCommon"/>
+    <message name="tlu20DktdFindCommonResponse"/>
+    <portType name="WsTlu20DieuKienTuyenDung">
+        <operation name="Tlu20dktdFindbyId">
+            <input message="tns:Tlu20dktdFindbyId"/>
+            <output message="tns:Tlu20dktdFindbyIdResponse"/>
+        </operation>
+        <operation name="Tlu20dktdInsert">
+            <input message="tns:Tlu20dktdInsert"/>
+            <output message="tns:Tlu20dktdInsertResponse"/>
+            <fault name="ParseException" message="tns:ParseException"/>
+        </operation>
+        <operation name="Tlu20dktdUpdatebyID">
+            <input message="tns:Tlu20dktdUpdatebyID"/>
+            <output message="tns:Tlu20dktdUpdatebyIDResponse"/>
+            <fault name="ParseException" message="tns:ParseException"/>
+        </operation>
+        <operation name="Tlu20dktdDeletebyId">
+            <input message="tns:Tlu20dktdDeletebyId"/>
+            <output message="tns:Tlu20dktdDeletebyIdResponse"/>
+        </operation>
+        <operation name="Tlu20dktdDisplayAll">
+            <input message="tns:Tlu20dktdDisplayAll"/>
+            <output message="tns:Tlu20dktdDisplayAllResponse"/>
+        </operation>
+        <operation name="Tlu20dieuKienTuyenDungDeletebyId">
+            <input message="tns:Tlu20dieuKienTuyenDungDeletebyId"/>
+            <output message="tns:Tlu20dieuKienTuyenDungDeletebyIdResponse"/>
+        </operation>
+        <operation name="tlu20DktdDisplayAll">
+            <input message="tns:tlu20DktdDisplayAll"/>
+            <output message="tns:tlu20DktdDisplayAllResponse"/>
+        </operation>
+        <operation name="tlu20DktdInsert">
+            <input message="tns:tlu20DktdInsert"/>
+            <output message="tns:tlu20DktdInsertResponse"/>
+        </operation>
+        <operation name="tlu20DktdFindCommon">
+            <input message="tns:tlu20DktdFindCommon"/>
+            <output message="tns:tlu20DktdFindCommonResponse"/>
+        </operation>
+    </portType>
+    <binding name="WsTlu20DieuKienTuyenDungPortBinding" type="tns:WsTlu20DieuKienTuyenDung">
+        <wsp:PolicyReference URI="#WsTlu20DieuKienTuyenDungPortBindingPolicy"/>
+        <operation name="Tlu20dktdFindbyId">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="Tlu20dktdInsert">
+            <input/>
+            <output/>
+            <fault name="ParseException"/>
+        </operation>
+        <operation name="Tlu20dktdUpdatebyID">
+            <input/>
+            <output/>
+            <fault name="ParseException"/>
+        </operation>
+        <operation name="Tlu20dktdDeletebyId">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="Tlu20dktdDisplayAll">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="Tlu20dieuKienTuyenDungDeletebyId">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="tlu20DktdDisplayAll">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="tlu20DktdInsert">
+            <input/>
+            <output/>
+            <fault/>
+        </operation>
+        <operation name="tlu20DktdFindCommon">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="WsTlu20DieuKienTuyenDung">
+        <port name="WsTlu20DieuKienTuyenDungPort" binding="tns:WsTlu20DieuKienTuyenDungPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="WsTlu20DieuKienTuyenDungPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2016 12:16:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojos.Tlu30khaiBaoCaLamViec" table="TLU30KhaiBaoCaLamViec" catalog="QL_NHANSU" optimistic-lock="version">
+        <id name="idKbclv" type="java.lang.Integer">
+            <column name="id_KBCLV" />
+            <generator class="identity" />
+        </id>
+        <property name="createdBy" type="string">
+            <column name="Created_by" length="150" not-null="true" />
+        </property>
+        <property name="createdAt" type="date">
+            <column name="Created_at" length="10" not-null="true" />
+        </property>
+        <property name="isActive" type="boolean">
+            <column name="Is_Active" not-null="true" />
+        </property>
+        <property name="maKbclv" type="string">
+            <column name="MaKBCLV" length="10" not-null="true" />
+        </property>
+        <property name="tenKbclv" type="string">
+            <column name="TenKBCLV" length="150" not-null="true" />
+        </property>
+        <property name="gioVaoCa" type="time">
+            <column name="GioVaoCa" length="8" not-null="true" />
+        </property>
+        <property name="batDauHopLeGvc" type="time">
+            <column name="BatDauHopLeGVC" length="8" not-null="true" />
+        </property>
+        <property name="ketThucHopLeGvc" type="time">
+            <column name="KetThucHopLeGVC" length="8" not-null="true" />
+        </property>
+        <property name="ketThucCa" type="time">
+            <column name="KetThucCa" length="8" not-null="true" />
+        </property>
+        <property name="batDauHopLeKtc" type="time">
+            <column name="BatDauHopLeKTC" length="8" not-null="true" />
+        </property>
+        <property name="ketThucHopLeKtc" type="time">
+            <column name="KetThucHopLeKTC" length="8" not-null="true" />
+        </property>
+        <property name="dienGiai" type="string">
+            <column name="DienGiai" length="65535" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

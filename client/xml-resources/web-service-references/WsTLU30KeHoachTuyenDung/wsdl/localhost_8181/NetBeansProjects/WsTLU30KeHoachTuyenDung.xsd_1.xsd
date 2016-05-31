@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.service/">
+
+<xs:element name="ParseException" type="tns:ParseException"/>
+
+<xs:element name="Tlu20khtdFindById" type="tns:Tlu20khtdFindById"/>
+
+<xs:element name="Tlu20khtdFindByIdResponse" type="tns:Tlu20khtdFindByIdResponse"/>
+
+<xs:element name="Tlu30dktdDeletebyId" type="tns:Tlu30dktdDeletebyId"/>
+
+<xs:element name="Tlu30dktdDeletebyIdResponse" type="tns:Tlu30dktdDeletebyIdResponse"/>
+
+<xs:element name="Tlu30keHoachTuyenDungFindCommon" type="tns:Tlu30keHoachTuyenDungFindCommon"/>
+
+<xs:element name="Tlu30keHoachTuyenDungFindCommonResponse" type="tns:Tlu30keHoachTuyenDungFindCommonResponse"/>
+
+<xs:element name="Tlu30khtdDisplayAll" type="tns:Tlu30khtdDisplayAll"/>
+
+<xs:element name="Tlu30khtdDisplayAllResponse" type="tns:Tlu30khtdDisplayAllResponse"/>
+
+<xs:element name="Tlu30khtdFindByKeHoachSo" type="tns:Tlu30khtdFindByKeHoachSo"/>
+
+<xs:element name="Tlu30khtdFindByKeHoachSoResponse" type="tns:Tlu30khtdFindByKeHoachSoResponse"/>
+
+<xs:element name="Tlu30khtdInsert" type="tns:Tlu30khtdInsert"/>
+
+<xs:element name="Tlu30khtdInsertResponse" type="tns:Tlu30khtdInsertResponse"/>
+
+<xs:element name="Tlu30khtdUpdateById" type="tns:Tlu30khtdUpdateById"/>
+
+<xs:element name="Tlu30khtdUpdateByIdResponse" type="tns:Tlu30khtdUpdateByIdResponse"/>
+
+<xs:complexType name="Tlu30keHoachTuyenDungFindCommon">
+<xs:sequence>
+<xs:element name="keHoachSo" type="xs:string" minOccurs="0"/>
+<xs:element name="chucVu" type="xs:string" minOccurs="0"/>
+<xs:element name="boPhan" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30keHoachTuyenDungFindCommonResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30KeHoachTuyenDung" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu30KeHoachTuyenDung">
+<xs:sequence>
+<xs:element name="boPhan" type="xs:string" minOccurs="0"/>
+<xs:element name="chucVu" type="xs:string" minOccurs="0"/>
+<xs:element name="createdAt" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="ghiChu" type="xs:string" minOccurs="0"/>
+<xs:element name="gioiTinh" type="xs:string" minOccurs="0"/>
+<xs:element name="idKhtd" type="xs:int" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="keHoachSo" type="xs:string" minOccurs="0"/>
+<xs:element name="kinhNghiem" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayKeHoach" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="noiLamViec" type="xs:string" minOccurs="0"/>
+<xs:element name="soLuong" type="xs:int"/>
+<xs:element name="trinhDoVanHoa" type="xs:string" minOccurs="0"/>
+<xs:element name="tuoiMax" type="xs:int"/>
+<xs:element name="tuoiMin" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdInsert">
+<xs:sequence>
+<xs:element name="createdby" type="xs:string" minOccurs="0"/>
+<xs:element name="createdat" type="xs:string" minOccurs="0"/>
+<xs:element name="isactive" type="xs:boolean"/>
+<xs:element name="kehoachso" type="xs:string" minOccurs="0"/>
+<xs:element name="ngaykehoach" type="xs:string" minOccurs="0"/>
+<xs:element name="bophan" type="xs:string" minOccurs="0"/>
+<xs:element name="chucvu" type="xs:string" minOccurs="0"/>
+<xs:element name="trinhdovanhoa" type="xs:string" minOccurs="0"/>
+<xs:element name="soluong" type="xs:int"/>
+<xs:element name="gioitinh" type="xs:string" minOccurs="0"/>
+<xs:element name="tuoimin" type="xs:int"/>
+<xs:element name="tuoimax" type="xs:int"/>
+<xs:element name="noilamviec" type="xs:string" minOccurs="0"/>
+<xs:element name="kinhnghiem" type="xs:string" minOccurs="0"/>
+<xs:element name="ghichu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdInsertResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ParseException">
+<xs:sequence>
+<xs:element name="errorOffset" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdFindByKeHoachSo">
+<xs:sequence>
+<xs:element name="kehoachso" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdFindByKeHoachSoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30KeHoachTuyenDung" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdUpdateById">
+<xs:sequence>
+<xs:element name="idkhtd" type="xs:int"/>
+<xs:element name="createdby" type="xs:string" minOccurs="0"/>
+<xs:element name="createdat" type="xs:string" minOccurs="0"/>
+<xs:element name="isactive" type="xs:boolean"/>
+<xs:element name="kehoachso" type="xs:string" minOccurs="0"/>
+<xs:element name="ngaykehoach" type="xs:string" minOccurs="0"/>
+<xs:element name="bophan" type="xs:string" minOccurs="0"/>
+<xs:element name="chucvu" type="xs:string" minOccurs="0"/>
+<xs:element name="trinhdovanhoa" type="xs:string" minOccurs="0"/>
+<xs:element name="soluong" type="xs:int"/>
+<xs:element name="gioitinh" type="xs:string" minOccurs="0"/>
+<xs:element name="tuoimin" type="xs:int"/>
+<xs:element name="tuoimax" type="xs:int"/>
+<xs:element name="noilamviec" type="xs:string" minOccurs="0"/>
+<xs:element name="kinhnghiem" type="xs:string" minOccurs="0"/>
+<xs:element name="ghichu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdUpdateByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdDisplayAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Tlu30khtdDisplayAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30KeHoachTuyenDung" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30dktdDeletebyId">
+<xs:sequence>
+<xs:element name="iddktd" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30dktdDeletebyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20khtdFindById">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20khtdFindByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30KeHoachTuyenDung" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

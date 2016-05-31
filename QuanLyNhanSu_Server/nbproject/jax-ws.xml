@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="WsDangNhap">
+      <implementation-class>service.webservice.WsDangNhap</implementation-class>
+    </service>
+    <service name="WsTlu30LichPhongVan">
+      <implementation-class>service.webservice.WsTlu30LichPhongVan</implementation-class>
+    </service>
+    <service name="WsTlu30HoSoUngVien">
+      <implementation-class>service.webservice.WsTlu30HoSoUngVien</implementation-class>
+    </service>
+    <service name="WSBOPHAN">
+      <implementation-class>service.webservice.WSBOPHAN</implementation-class>
+    </service>
+    <service name="WSTLU20CHUCVU">
+      <implementation-class>service.webservice.WSTLU20CHUCVU</implementation-class>
+    </service>
+    <service name="WSTLU20TRINHDOVH">
+      <implementation-class>service.webservice.WSTLU20TRINHDOVH</implementation-class>
+    </service>
+    <service name="WSTLU30CHITIETDKTD">
+      <implementation-class>service.webservice.WSTLU30CHITIETDKTD</implementation-class>
+    </service>
+    <service name="WSTLU30CHITIETKQVPV">
+      <implementation-class>service.webservice.WSTLU30CHITIETKQVPV</implementation-class>
+    </service>
+    <service name="WsTlu20DieuKienTuyenDung">
+      <implementation-class>service.webservice.WsTlu20DieuKienTuyenDung</implementation-class>
+    </service>
+    <service name="WsTlu30KeHoachTuyenDung">
+      <implementation-class>service.webservice.WsTlu30KeHoachTuyenDung</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>

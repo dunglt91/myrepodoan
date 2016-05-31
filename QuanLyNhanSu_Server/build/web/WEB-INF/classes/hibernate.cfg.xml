@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/QL_NHANSU?useUnicode=true&amp;characterEncoding=UTF-8</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">dungle1991</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">true</property>
+    <mapping resource="model/pojos/Tlu20trinhDoVanHoa.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30lichPhongVan.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chitietdanhmucketquaphongvan.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chitietdktd.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30keHoachDaoTao.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20loaiHopDongLd.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20chucDanhChuyenMon.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20dangNhap.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chiTietDaoTao.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30keHoachTuyenDung.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chitietdktdvpv.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20danhmucvongpv.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30truongDaoTao.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chitietvpv.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20bophan.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30hopDongLaoDong.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20dieuKienTuyenDung.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30ketQuaPhongVan.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20thangBacLuong.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu20chucVu.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30hoSoUngVien.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30khaiBaoCaLamViec.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chitietketquavpv.hbm.xml"/>
+    <mapping resource="model/pojos/Tlu30chiTietKhtd.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

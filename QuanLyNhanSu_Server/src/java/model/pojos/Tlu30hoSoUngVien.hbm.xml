@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2016 12:16:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojos.Tlu30hoSoUngVien" table="TLU30HoSoUngVien" catalog="QL_NHANSU" optimistic-lock="version">
+        <id name="idHsuv" type="java.lang.Integer">
+            <column name="id_HSUV" />
+            <generator class="identity" />
+        </id>
+        <property name="createdBy" type="string">
+            <column name="Created_by" length="150" not-null="true" />
+        </property>
+        <property name="createdAt" type="date">
+            <column name="Created_at" length="10" not-null="true" />
+        </property>
+        <property name="isActive" type="boolean">
+            <column name="Is_Active" not-null="true" />
+        </property>
+        <property name="maHoSo" type="string">
+            <column name="MaHoSo" length="10" not-null="true" />
+        </property>
+        <property name="ngayNhanHoSo" type="date">
+            <column name="NgayNhanHoSo" length="10" not-null="true" />
+        </property>
+        <property name="keHoachSo" type="string">
+            <column name="KeHoachSo" length="15" not-null="true" />
+        </property>
+        <property name="boPhanDuTuyen" type="string">
+            <column name="BoPhanDuTuyen" length="150" not-null="true" />
+        </property>
+        <property name="trinhDoVanHoa" type="string">
+            <column name="TrinhDoVanHoa" length="150" not-null="true" />
+        </property>
+        <property name="hoTen" type="string">
+            <column name="HoTen" length="150" not-null="true" />
+        </property>
+        <property name="gioiTinh" type="string">
+            <column name="GioiTinh" length="5" not-null="true" />
+        </property>
+        <property name="cmdn" type="int">
+            <column name="CMDN" not-null="true" />
+        </property>
+        <property name="dienThoai" type="int">
+            <column name="DienThoai" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="150" not-null="true" />
+        </property>
+        <property name="kinhNghiem" type="string">
+            <column name="KinhNghiem" length="65535" />
+        </property>
+        <property name="ghiChu" type="string">
+            <column name="GhiChu" length="65535" />
+        </property>
+        <property name="kemSoYeuLyLich" type="string">
+            <column name="kemSoYeuLyLich" length="45" />
+        </property>
+        <property name="kemDonXinViec" type="string">
+            <column name="kemDonXinViec" length="45" />
+        </property>
+        <property name="kemGiayKhamSucKhoe" type="string">
+            <column name="kemGiayKhamSucKhoe" length="45" />
+        </property>
+        <property name="kemCmdn" type="string">
+            <column name="kemCMDN" length="45" />
+        </property>
+        <property name="kemHoKhau" type="string">
+            <column name="kemHoKhau" length="7" />
+        </property>
+        <property name="kemBangCap" type="string">
+            <column name="kemBangCap" length="65535" />
+        </property>
+        <property name="giayToKhac" type="string">
+            <column name="GiayToKhac" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

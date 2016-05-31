@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WsTLU30KeHoachTuyenDung" targetNamespace="http://webservice.service/" xmlns:tns="http://webservice.service/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" 
+ >
+    <message name="Tlu30khtdDisplayAll"/>
+    <message name="Tlu30khtdDisplayAllResponse"/>
+    <message name="Tlu20khtdFindById"/>
+    <message name="Tlu20khtdFindByIdResponse"/>
+    <message name="Tlu30khtdFindByKeHoachSo"/>
+    <message name="Tlu30khtdFindByKeHoachSoResponse"/>
+    <message name="Tlu30khtdInsert"/>
+    <message name="Tlu30khtdInsertResponse"/>
+    <message name="ParseException"/>
+    <message name="Tlu30khtdUpdateById"/>
+    <message name="Tlu30khtdUpdateByIdResponse"/>
+    <message name="Tlu30dktdDeletebyId"/>
+    <message name="Tlu30dktdDeletebyIdResponse"/>
+    <portType name="WsTLU30KeHoachTuyenDung">
+        <operation name="Tlu30khtdDisplayAll">
+            <input message="tns:Tlu30khtdDisplayAll"/>
+            <output message="tns:Tlu30khtdDisplayAllResponse"/>
+        </operation>
+        <operation name="Tlu20khtdFindById">
+            <input message="tns:Tlu20khtdFindById"/>
+            <output message="tns:Tlu20khtdFindByIdResponse"/>
+        </operation>
+        <operation name="Tlu30khtdFindByKeHoachSo">
+            <input message="tns:Tlu30khtdFindByKeHoachSo"/>
+            <output message="tns:Tlu30khtdFindByKeHoachSoResponse"/>
+        </operation>
+        <operation name="Tlu30khtdInsert">
+            <input message="tns:Tlu30khtdInsert"/>
+            <output message="tns:Tlu30khtdInsertResponse"/>
+            <fault name="ParseException" message="tns:ParseException"/>
+        </operation>
+        <operation name="Tlu30khtdUpdateById">
+            <input message="tns:Tlu30khtdUpdateById"/>
+            <output message="tns:Tlu30khtdUpdateByIdResponse"/>
+            <fault name="ParseException" message="tns:ParseException"/>
+        </operation>
+        <operation name="Tlu30dktdDeletebyId">
+            <input message="tns:Tlu30dktdDeletebyId"/>
+            <output message="tns:Tlu30dktdDeletebyIdResponse"/>
+        </operation>
+    </portType>
+    <binding name="WsTLU30KeHoachTuyenDungPortBinding" type="tns:WsTLU30KeHoachTuyenDung">
+        <operation name="Tlu30khtdDisplayAll">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="Tlu20khtdFindById">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="Tlu30khtdFindByKeHoachSo">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="Tlu30khtdInsert">
+            <input></input>
+            <output></output>
+            <fault name="ParseException"/>
+        </operation>
+        <operation name="Tlu30khtdUpdateById">
+            <input></input>
+            <output></output>
+            <fault name="ParseException"/>
+        </operation>
+        <operation name="Tlu30dktdDeletebyId">
+            <input></input>
+            <output></output>
+        </operation>
+    </binding>
+    <service name="WsTLU30KeHoachTuyenDung">
+        <port name="WsTLU30KeHoachTuyenDungPort" binding="tns:WsTLU30KeHoachTuyenDungPortBinding"/>
+    </service>
+</definitions>

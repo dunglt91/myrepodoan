@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="QL_NHANSU"/>
+  <table-filter match-name="TLU30ChiTietDaoTao"/>
+  <table-filter match-name="TLU30TruongDaoTao"/>
+  <table-filter match-name="TLU30KeHoachDaoTao"/>
+  <table-filter match-name="TLU20TrinhDoVanHoa"/>
+  <table-filter match-name="TLU30KetQuaPhongVan"/>
+  <table-filter match-name="TLU20DieuKienTuyenDung"/>
+  <table-filter match-name="TLU30HoSoUngVien"/>
+  <table-filter match-name="TLU30KeHoachTuyenDung"/>
+  <table-filter match-name="TLU20DangNhap"/>
+  <table-filter match-name="TLU20DANHMUCVONGPV"/>
+  <table-filter match-name="TLU30CHITIETVPV"/>
+  <table-filter match-name="TLU30CHITIETDKTD"/>
+  <table-filter match-name="TLU20ChucDanhChuyenMon"/>
+  <table-filter match-name="TLU20LoaiHopDongLD"/>
+  <table-filter match-name="TLU30CHITIETKETQUAVPV"/>
+  <table-filter match-name="TLU30KhaiBaoCaLamViec"/>
+  <table-filter match-name="TLU20ChucVu"/>
+  <table-filter match-name="TLU30HopDongLaoDong"/>
+  <table-filter match-name="TLU30CHITIETDKTDVPV"/>
+  <table-filter match-name="TLU20ThangBacLuong"/>
+  <table-filter match-name="TLU30LichPhongVan"/>
+  <table-filter match-name="TLU20BOPHAN"/>
+  <table-filter match-name="TLU30CHITIETDANHMUCKETQUAPHONGVAN"/>
+</hibernate-reverse-engineering>

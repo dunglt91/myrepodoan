@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2016 12:16:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojos.Tlu20thangBacLuong" table="TLU20ThangBacLuong" catalog="QL_NHANSU" optimistic-lock="version">
+        <id name="idTbl" type="java.lang.Integer">
+            <column name="id_TBL" />
+            <generator class="identity" />
+        </id>
+        <property name="createdBy" type="string">
+            <column name="Created_by" length="150" not-null="true" />
+        </property>
+        <property name="createdAt" type="date">
+            <column name="Created_at" length="10" not-null="true" />
+        </property>
+        <property name="isActive" type="boolean">
+            <column name="Is_Active" not-null="true" />
+        </property>
+        <property name="maTlb" type="string">
+            <column name="MaTLB" length="10" not-null="true" />
+        </property>
+        <property name="tenTbl" type="string">
+            <column name="TenTBL" length="150" not-null="true" />
+        </property>
+        <property name="ngayHieuLuc" type="date">
+            <column name="NgayHieuLuc" length="10" not-null="true" />
+        </property>
+        <property name="loaiHeSoLuong" type="string">
+            <column name="LoaiHeSoLuong" length="45" not-null="true" />
+        </property>
+        <property name="bacLuong" type="int">
+            <column name="BacLuong" not-null="true" />
+        </property>
+        <property name="heSoLuongCoBan" type="float">
+            <column name="HeSoLuongCoBan" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="ghiChu" type="string">
+            <column name="GhiChu" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

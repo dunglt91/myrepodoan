@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2016 12:16:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojos.Tlu30chiTietDaoTao" table="TLU30ChiTietDaoTao" catalog="QL_NHANSU" optimistic-lock="version">
+        <id name="idCtdt" type="java.lang.Integer">
+            <column name="id_CTDT" />
+            <generator class="identity" />
+        </id>
+        <property name="createdBy" type="string">
+            <column name="Created_by" length="150" not-null="true" />
+        </property>
+        <property name="createdAt" type="date">
+            <column name="Created_at" length="10" not-null="true" />
+        </property>
+        <property name="isActive" type="boolean">
+            <column name="Is_Active" not-null="true" />
+        </property>
+        <property name="keHoachSo" type="string">
+            <column name="KeHoachSo" length="15" not-null="true" />
+        </property>
+        <property name="nhanVien" type="string">
+            <column name="NhanVien" length="150" not-null="true" />
+        </property>
+        <property name="truongDaoTao" type="string">
+            <column name="TruongDaoTao" length="45" not-null="true" />
+        </property>
+        <property name="nganhDaoTao" type="string">
+            <column name="NganhDaoTao" length="45" not-null="true" />
+        </property>
+        <property name="bangDaoTao" type="string">
+            <column name="BangDaoTao" length="20" not-null="true" />
+        </property>
+        <property name="ngayBatDauDaoTao" type="date">
+            <column name="NgayBatDauDaoTao" length="10" not-null="true" />
+        </property>
+        <property name="ngayKetThucDaoTao" type="date">
+            <column name="NgayKetThucDaoTao" length="10" not-null="true" />
+        </property>
+        <property name="hocPhi" type="float">
+            <column name="HocPhi" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="kinhPhiCongTyCap" type="float">
+            <column name="KinhPhiCongTyCap" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="kinhPhiCaNhan" type="float">
+            <column name="KinhPhiCaNhan" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="ghiChu" type="string">
+            <column name="GhiChu" length="65535" />
+        </property>
+        <property name="daHoanThanh" type="boolean">
+            <column name="DaHoanThanh" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WsDangNhap" targetNamespace="http://webservice.service/" xmlns:tns="http://webservice.service/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" xmlns:t="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsrm="http://docs.oasis-open.org/ws-rx/wsrmp/200702" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" 
+ >
+    <message name="Tlu20DangNhapInsert"/>
+    <message name="Tlu20DangNhapInsertResponse"/>
+    <message name="TestLogin"/>
+    <message name="TestLoginResponse"/>
+    <message name="TLu20Delete"/>
+    <message name="TLu20DeleteResponse"/>
+    <message name="TLu20DangNhapFindUser"/>
+    <message name="TLu20DangNhapFindUserResponse"/>
+    <message name="Tlu20dangNhapFindCommon"/>
+    <message name="Tlu20dangNhapFindCommonResponse"/>
+    <portType name="WsDangNhap">
+        <operation name="Tlu20DangNhapInsert">
+            <input message="tns:Tlu20DangNhapInsert"/>
+            <output message="tns:Tlu20DangNhapInsertResponse"/>
+        </operation>
+        <operation name="TestLogin">
+            <input message="tns:TestLogin"/>
+            <output message="tns:TestLoginResponse"/>
+        </operation>
+        <operation name="TLu20Delete">
+            <input message="tns:TLu20Delete"/>
+            <output message="tns:TLu20DeleteResponse"/>
+        </operation>
+        <operation name="TLu20DangNhapFindUser">
+            <input message="tns:TLu20DangNhapFindUser"/>
+            <output message="tns:TLu20DangNhapFindUserResponse"/>
+        </operation>
+        <operation name="Tlu20dangNhapFindCommon">
+            <input message="tns:Tlu20dangNhapFindCommon"/>
+            <output message="tns:Tlu20dangNhapFindCommonResponse"/>
+        </operation>
+    </portType>
+    <binding name="WsDangNhapPortBinding" type="tns:WsDangNhap">
+        <operation name="Tlu20DangNhapInsert">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="TestLogin">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="TLu20Delete">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="TLu20DangNhapFindUser">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="Tlu20dangNhapFindCommon">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="WsDangNhap">
+        <port name="WsDangNhapPort" binding="tns:WsDangNhapPortBinding"/>
+    </service>
+</definitions>

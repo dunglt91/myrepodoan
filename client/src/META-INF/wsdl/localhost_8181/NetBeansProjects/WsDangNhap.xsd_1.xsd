@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.service/">
+
+<xs:element name="TLu20DangNhapFindUser" type="tns:TLu20DangNhapFindUser"/>
+
+<xs:element name="TLu20DangNhapFindUserResponse" type="tns:TLu20DangNhapFindUserResponse"/>
+
+<xs:element name="TLu20Delete" type="tns:TLu20Delete"/>
+
+<xs:element name="TLu20DeleteResponse" type="tns:TLu20DeleteResponse"/>
+
+<xs:element name="TestLogin" type="tns:TestLogin"/>
+
+<xs:element name="TestLoginResponse" type="tns:TestLoginResponse"/>
+
+<xs:element name="Tlu20DangNhapInsert" type="tns:Tlu20DangNhapInsert"/>
+
+<xs:element name="Tlu20DangNhapInsertResponse" type="tns:Tlu20DangNhapInsertResponse"/>
+
+<xs:element name="Tlu20dangNhapFindCommon" type="tns:Tlu20dangNhapFindCommon"/>
+
+<xs:element name="Tlu20dangNhapFindCommonResponse" type="tns:Tlu20dangNhapFindCommonResponse"/>
+
+<xs:complexType name="TLu20DangNhapFindUser">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TLu20DangNhapFindUserResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu20DangNhap" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu20DangNhap">
+<xs:sequence>
+<xs:element name="passwords" type="xs:string" minOccurs="0"/>
+<xs:element name="repass" type="xs:string" minOccurs="0"/>
+<xs:element name="role" type="xs:string" minOccurs="0"/>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20dangNhapFindCommon">
+<xs:sequence>
+<xs:element name="uname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20dangNhapFindCommonResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu20DangNhap" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TLu20Delete">
+<xs:sequence>
+<xs:element name="user" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TLu20DeleteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20DangNhapInsert">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="repass" type="xs:string" minOccurs="0"/>
+<xs:element name="role" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu20DangNhapInsertResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TestLogin">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TestLoginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

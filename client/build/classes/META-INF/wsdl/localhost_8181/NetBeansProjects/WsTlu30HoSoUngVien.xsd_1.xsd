@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservice.service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservice.service/">
+
+<xs:element name="DisplayAll" type="tns:DisplayAll"/>
+
+<xs:element name="DisplayAllResponse" type="tns:DisplayAllResponse"/>
+
+<xs:element name="FindById" type="tns:FindById"/>
+
+<xs:element name="FindByIdResponse" type="tns:FindByIdResponse"/>
+
+<xs:element name="FindbyMaHoSo" type="tns:FindbyMaHoSo"/>
+
+<xs:element name="FindbyMaHoSoResponse" type="tns:FindbyMaHoSoResponse"/>
+
+<xs:element name="ParseException" type="tns:ParseException"/>
+
+<xs:element name="Tlu30hsuvDelete" type="tns:Tlu30hsuvDelete"/>
+
+<xs:element name="Tlu30hsuvDeleteResponse" type="tns:Tlu30hsuvDeleteResponse"/>
+
+<xs:element name="Tlu30hsuvInsert" type="tns:Tlu30hsuvInsert"/>
+
+<xs:element name="Tlu30hsuvInsertResponse" type="tns:Tlu30hsuvInsertResponse"/>
+
+<xs:element name="Tlu30hsuvUpdate" type="tns:Tlu30hsuvUpdate"/>
+
+<xs:element name="Tlu30hsuvUpdateResponse" type="tns:Tlu30hsuvUpdateResponse"/>
+
+<xs:element name="tlu30HsuvFindCommon" type="tns:tlu30HsuvFindCommon"/>
+
+<xs:element name="tlu30HsuvFindCommonResponse" type="tns:tlu30HsuvFindCommonResponse"/>
+
+<xs:complexType name="Tlu30hsuvDelete">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30hsuvDeleteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30hsuvInsert">
+<xs:sequence>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="createdAt" type="xs:string" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="maHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayNhanHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="keHoachSo" type="xs:string" minOccurs="0"/>
+<xs:element name="boPhanDuTuyen" type="xs:string" minOccurs="0"/>
+<xs:element name="trinhDoVanHoa" type="xs:string" minOccurs="0"/>
+<xs:element name="hoTen" type="xs:string" minOccurs="0"/>
+<xs:element name="gioiTinh" type="xs:string" minOccurs="0"/>
+<xs:element name="cmdn" type="xs:int"/>
+<xs:element name="dienThoai" type="xs:int"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="kinhNghiem" type="xs:string" minOccurs="0"/>
+<xs:element name="ghiChu" type="xs:string" minOccurs="0"/>
+<xs:element name="kemSoYeuLyLich" type="xs:string" minOccurs="0"/>
+<xs:element name="kemDonXinViec" type="xs:string" minOccurs="0"/>
+<xs:element name="kemGiayKhamSucKhoe" type="xs:string" minOccurs="0"/>
+<xs:element name="kemCmd" type="xs:string" minOccurs="0"/>
+<xs:element name="kemHoKhau" type="xs:string" minOccurs="0"/>
+<xs:element name="kemBangCap" type="xs:string" minOccurs="0"/>
+<xs:element name="giayToKhac" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30hsuvInsertResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ParseException">
+<xs:sequence>
+<xs:element name="errorOffset" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FindById">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FindByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30HoSoUngVien" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu30HoSoUngVien">
+<xs:sequence>
+<xs:element name="boPhanDuTuyen" type="xs:string" minOccurs="0"/>
+<xs:element name="cmdn" type="xs:int"/>
+<xs:element name="createdAt" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="dienThoai" type="xs:int"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="ghiChu" type="xs:string" minOccurs="0"/>
+<xs:element name="giayToKhac" type="xs:string" minOccurs="0"/>
+<xs:element name="gioiTinh" type="xs:string" minOccurs="0"/>
+<xs:element name="hoTen" type="xs:string" minOccurs="0"/>
+<xs:element name="idHsuv" type="xs:int" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="keHoachSo" type="xs:string" minOccurs="0"/>
+<xs:element name="kemBangCap" type="xs:string" minOccurs="0"/>
+<xs:element name="kemCmdn" type="xs:string" minOccurs="0"/>
+<xs:element name="kemDonXinViec" type="xs:string" minOccurs="0"/>
+<xs:element name="kemGiayKhamSucKhoe" type="xs:string" minOccurs="0"/>
+<xs:element name="kemHoKhau" type="xs:string" minOccurs="0"/>
+<xs:element name="kemSoYeuLyLich" type="xs:string" minOccurs="0"/>
+<xs:element name="kinhNghiem" type="xs:string" minOccurs="0"/>
+<xs:element name="maHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayNhanHoSo" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="trinhDoVanHoa" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FindbyMaHoSo">
+<xs:sequence>
+<xs:element name="mhs" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FindbyMaHoSoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30HoSoUngVien" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30hsuvUpdate">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="createdBy" type="xs:string" minOccurs="0"/>
+<xs:element name="createdAt" type="xs:string" minOccurs="0"/>
+<xs:element name="isActive" type="xs:boolean"/>
+<xs:element name="maHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="ngayNhanHoSo" type="xs:string" minOccurs="0"/>
+<xs:element name="keHoachSo" type="xs:string" minOccurs="0"/>
+<xs:element name="boPhanDuTuyen" type="xs:string" minOccurs="0"/>
+<xs:element name="trinhDoVanHoa" type="xs:string" minOccurs="0"/>
+<xs:element name="hoTen" type="xs:string" minOccurs="0"/>
+<xs:element name="gioiTinh" type="xs:string" minOccurs="0"/>
+<xs:element name="cmdn" type="xs:int"/>
+<xs:element name="dienThoai" type="xs:int"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="kinhNghiem" type="xs:string" minOccurs="0"/>
+<xs:element name="ghiChu" type="xs:string" minOccurs="0"/>
+<xs:element name="kemSoYeuLyLich" type="xs:string" minOccurs="0"/>
+<xs:element name="kemDonXinViec" type="xs:string" minOccurs="0"/>
+<xs:element name="kemGiayKhamSucKhoe" type="xs:string" minOccurs="0"/>
+<xs:element name="kemCmd" type="xs:string" minOccurs="0"/>
+<xs:element name="kemHoKhau" type="xs:string" minOccurs="0"/>
+<xs:element name="kemBangCap" type="xs:string" minOccurs="0"/>
+<xs:element name="giayToKhac" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30hsuvUpdateResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DisplayAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="DisplayAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30HoSoUngVien" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu30HsuvFindCommon">
+<xs:sequence>
+<xs:element name="maHs" type="xs:string" minOccurs="0"/>
+<xs:element name="Khs" type="xs:string" minOccurs="0"/>
+<xs:element name="bophan" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tlu30HsuvFindCommonResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30HoSoUngVien" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

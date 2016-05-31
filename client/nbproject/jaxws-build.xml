@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-WsDangNhap" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsDangNhap"/>
+        <property name="wsdl-WsDangNhap" location="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsDangNhap" destdir="${build.generated.dir}/jax-wsCache/WsDangNhap" wsdl="${wsdl-WsDangNhap}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WsDangNhap?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WsDangNhap}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsDangNhap"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsDangNhap">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsDangNhap" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WsDangNhap"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WsTlu30LichPhongVan" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsTlu30LichPhongVan"/>
+        <property name="wsdl-WsTlu30LichPhongVan" location="xml-resources/web-service-references/WsTlu30LichPhongVan/wsdl/localhost_8181/NetBeansProjects/WsTlu30LichPhongVan.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsTlu30LichPhongVan" destdir="${build.generated.dir}/jax-wsCache/WsTlu30LichPhongVan" wsdl="${wsdl-WsTlu30LichPhongVan}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WsTlu30LichPhongVan?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WsTlu30LichPhongVan}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsTlu30LichPhongVan"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsTlu30LichPhongVan">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsTlu30LichPhongVan" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WsTlu30LichPhongVan"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WsTlu30HoSoUngVien" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsTlu30HoSoUngVien"/>
+        <property name="wsdl-WsTlu30HoSoUngVien" location="xml-resources/web-service-references/WsTlu30HoSoUngVien/wsdl/localhost_8181/NetBeansProjects/WsTlu30HoSoUngVien.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsTlu30HoSoUngVien" destdir="${build.generated.dir}/jax-wsCache/WsTlu30HoSoUngVien" wsdl="${wsdl-WsTlu30HoSoUngVien}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WsTlu30HoSoUngVien?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WsTlu30HoSoUngVien}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsTlu30HoSoUngVien"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsTlu30HoSoUngVien">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsTlu30HoSoUngVien" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WsTlu30HoSoUngVien"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WSBOPHAN" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSBOPHAN"/>
+        <property name="wsdl-WSBOPHAN" location="xml-resources/web-service-references/WSBOPHAN/wsdl/localhost_8181/NetBeansProjects/WSBOPHAN.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSBOPHAN" destdir="${build.generated.dir}/jax-wsCache/WSBOPHAN" wsdl="${wsdl-WSBOPHAN}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WSBOPHAN?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSBOPHAN}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSBOPHAN"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSBOPHAN">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSBOPHAN" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSBOPHAN"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WSChucVu" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSChucVu"/>
+        <property name="wsdl-WSChucVu" location="xml-resources/web-service-references/WSChucVu/wsdl/localhost_8181/NetBeansProjects/WSChucVu.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSChucVu" destdir="${build.generated.dir}/jax-wsCache/WSChucVu" wsdl="${wsdl-WSChucVu}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WSChucVu?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSChucVu}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSChucVu"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSChucVu">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSChucVu" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSChucVu"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WSTLU20TRINHDOVH" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSTLU20TRINHDOVH"/>
+        <property name="wsdl-WSTLU20TRINHDOVH" location="xml-resources/web-service-references/WSTLU20TRINHDOVH/wsdl/localhost_8181/NetBeansProjects/WSTLU20TRINHDOVH.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSTLU20TRINHDOVH" destdir="${build.generated.dir}/jax-wsCache/WSTLU20TRINHDOVH" wsdl="${wsdl-WSTLU20TRINHDOVH}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WSTLU20TRINHDOVH?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSTLU20TRINHDOVH}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSTLU20TRINHDOVH"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSTLU20TRINHDOVH">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSTLU20TRINHDOVH" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSTLU20TRINHDOVH"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WSTLU30CHITIETDKTD" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETDKTD"/>
+        <property name="wsdl-WSTLU30CHITIETDKTD" location="xml-resources/web-service-references/WSTLU30CHITIETDKTD/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETDKTD.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETDKTD" destdir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETDKTD" wsdl="${wsdl-WSTLU30CHITIETDKTD}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETDKTD?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSTLU30CHITIETDKTD}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETDKTD"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETDKTD">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSTLU30CHITIETDKTD" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETDKTD"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WSTLU30CHITIETKQVPV" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETKQVPV"/>
+        <property name="wsdl-WSTLU30CHITIETKQVPV" location="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETKQVPV" destdir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETKQVPV" wsdl="${wsdl-WSTLU30CHITIETKQVPV}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WSTLU30CHITIETKQVPV}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETKQVPV"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETKQVPV">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WSTLU30CHITIETKQVPV" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WSTLU30CHITIETKQVPV"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WsTlu20DieuKienTuyenDung" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsTlu20DieuKienTuyenDung"/>
+        <property name="wsdl-WsTlu20DieuKienTuyenDung" location="xml-resources/web-service-references/WsTlu20DieuKienTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTlu20DieuKienTuyenDung.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsTlu20DieuKienTuyenDung" destdir="${build.generated.dir}/jax-wsCache/WsTlu20DieuKienTuyenDung" wsdl="${wsdl-WsTlu20DieuKienTuyenDung}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WsTlu20DieuKienTuyenDung?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WsTlu20DieuKienTuyenDung}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsTlu20DieuKienTuyenDung"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsTlu20DieuKienTuyenDung">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsTlu20DieuKienTuyenDung" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WsTlu20DieuKienTuyenDung"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-WsTLU30KeHoachTuyenDung" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/WsTLU30KeHoachTuyenDung"/>
+        <property name="wsdl-WsTLU30KeHoachTuyenDung" location="xml-resources/web-service-references/WsTLU30KeHoachTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTLU30KeHoachTuyenDung.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/WsTLU30KeHoachTuyenDung" destdir="${build.generated.dir}/jax-wsCache/WsTLU30KeHoachTuyenDung" wsdl="${wsdl-WsTLU30KeHoachTuyenDung}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8181/NetBeansProjects/WsTLU30KeHoachTuyenDung?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-WsTLU30KeHoachTuyenDung}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/WsTLU30KeHoachTuyenDung"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/WsTLU30KeHoachTuyenDung">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-WsTLU30KeHoachTuyenDung" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/WsTLU30KeHoachTuyenDung"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/service/webservice"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-WsDangNhap, wsimport-client-WsTlu30LichPhongVan, wsimport-client-WsTlu30HoSoUngVien, wsimport-client-WSBOPHAN, wsimport-client-WSChucVu, wsimport-client-WSTLU20TRINHDOVH, wsimport-client-WSTLU30CHITIETDKTD, wsimport-client-WSTLU30CHITIETKQVPV, wsimport-client-WsTlu20DieuKienTuyenDung, wsimport-client-WsTLU30KeHoachTuyenDung"/>
+</project>

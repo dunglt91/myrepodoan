@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated May 31, 2016 12:16:37 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojos.Tlu20danhmucvongpv" table="TLU20DANHMUCVONGPV" catalog="QL_NHANSU" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="madmvpv" type="string">
+            <column name="MADMVPV" length="10" not-null="true" />
+        </property>
+        <property name="tendmvpv" type="string">
+            <column name="TENDMVPV" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
