@@ -28,15 +28,35 @@ public interface WsTlu20DieuKienTuyenDung {
 
     /**
      * 
+     * @param madmdktd
+     * @param isactive
+     * @param tendmdktd
+     * @param createdby
+     * @param createdat
      * @return
-     *     returns service.webservice.Convert
+     *     returns java.lang.String
+     * @throws ParseException_Exception
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
-    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
-    @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvResponse")
-    public Convert initConv();
+    @RequestWrapper(localName = "tlu20DktdInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DktdInsert")
+    @ResponseWrapper(localName = "tlu20DktdInsertResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DktdInsertResponse")
+    @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertResponse", fault = {
+        @FaultAction(className = ParseException_Exception.class, value = "http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsert/Fault/ParseException")
+    })
+    public String tlu20DktdInsert(
+        @WebParam(name = "createdby", targetNamespace = "")
+        String createdby,
+        @WebParam(name = "createdat", targetNamespace = "")
+        String createdat,
+        @WebParam(name = "isactive", targetNamespace = "")
+        boolean isactive,
+        @WebParam(name = "madmdktd", targetNamespace = "")
+        String madmdktd,
+        @WebParam(name = "tendmdktd", targetNamespace = "")
+        String tendmdktd)
+        throws ParseException_Exception
+    ;
 
     /**
      * 
@@ -120,46 +140,26 @@ public interface WsTlu20DieuKienTuyenDung {
 
     /**
      * 
-     * @param madmdktd
-     * @param isactive
-     * @param tendmdktd
-     * @param createdby
-     * @param createdat
      * @return
-     *     returns java.lang.String
-     * @throws ParseException_Exception
+     *     returns service.webservice.Convert
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "tlu20DktdInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DktdInsert")
-    @ResponseWrapper(localName = "tlu20DktdInsertResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DktdInsertResponse")
-    @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertResponse", fault = {
-        @FaultAction(className = ParseException_Exception.class, value = "http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsert/Fault/ParseException")
-    })
-    public String tlu20DktdInsert(
-        @WebParam(name = "createdby", targetNamespace = "")
-        String createdby,
-        @WebParam(name = "createdat", targetNamespace = "")
-        String createdat,
-        @WebParam(name = "isactive", targetNamespace = "")
-        boolean isactive,
-        @WebParam(name = "madmdktd", targetNamespace = "")
-        String madmdktd,
-        @WebParam(name = "tendmdktd", targetNamespace = "")
-        String tendmdktd)
-        throws ParseException_Exception
-    ;
+    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
+    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
+    @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvResponse")
+    public Convert initConv();
 
     /**
      * 
      * @return
-     *     returns service.webservice.Daobophan
+     *     returns service.webservice.Daotlu30CHITIETKQVPV
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "init", targetNamespace = "http://webservice.service/", className = "service.webservice.Init")
     @ResponseWrapper(localName = "initResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitResponse")
     @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/initRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/initResponse")
-    public Daobophan init();
+    public Daotlu30CHITIETKQVPV init();
 
 }

@@ -60,11 +60,11 @@
 
 <xs:complexType name="initResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:daobophan" minOccurs="0"/>
+<xs:element name="return" type="tns:daotlu30CHITIETKQVPV" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="daobophan">
+<xs:complexType name="daotlu30CHITIETKQVPV">
 <xs:sequence/>
 </xs:complexType>
 

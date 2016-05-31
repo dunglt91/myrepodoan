@@ -327,7 +327,7 @@ public class TieuChiKHTD extends javax.swing.JFrame {
         int row = _tblChiTietDKTD.getSelectedRow();
         String maDktd = (_tblChiTietDKTD.getModel().getValueAt(row, 0).toString());
         String tenDktd = (_tblChiTietDKTD.getModel().getValueAt(row, 1).toString());
-        java.util.List<Tlu20DieuKienTuyenDung> lstDktd = tlu20DieuKienTuyenDungFindCommon(maDktd, tenDktd);
+        java.util.List<Tlu20DieuKienTuyenDung> lstDktd = tlu20DieuKienTuyenDungFindCommon(tenDktd,maDktd );
         _tfTenChiTietDktd.setText(lstDktd.get(0).getTendmdktd());
         _tfMaChiTietDktd.setText(lstDktd.get(0).getMadmdktd());
 

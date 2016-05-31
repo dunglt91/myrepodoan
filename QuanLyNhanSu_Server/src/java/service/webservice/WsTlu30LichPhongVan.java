@@ -108,7 +108,7 @@ public class WsTlu30LichPhongVan {
             @WebParam(name = "Khs") String Khs,
             @WebParam(name = "tenUngVien") String tenUngVien,
             @WebParam(name = "DatYeuCau") String DatYeuCau) {
-        return new DaoTLU30LichPhongVan().tlu30LpvFindCommon(maHs, Khs, tenUngVien, maHs);
+        return new DaoTLU30LichPhongVan().tlu30LpvFindCommon(maHs, Khs, tenUngVien, DatYeuCau);
     }
     
 }

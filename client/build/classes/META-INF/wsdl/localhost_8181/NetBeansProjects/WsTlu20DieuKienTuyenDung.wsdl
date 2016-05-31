@@ -5,20 +5,20 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WsTlu20DieuKienTuyenDung?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="initConv">
-<part name="parameters" element="tns:initConv"/>
+<message name="tlu20DktdInsert">
+<part name="parameters" element="tns:tlu20DktdInsert"/>
 </message>
-<message name="initConvResponse">
-<part name="parameters" element="tns:initConvResponse"/>
+<message name="tlu20DktdInsertResponse">
+<part name="parameters" element="tns:tlu20DktdInsertResponse"/>
+</message>
+<message name="ParseException">
+<part name="fault" element="tns:ParseException"/>
 </message>
 <message name="tlu20DktdUpdatebyID">
 <part name="parameters" element="tns:tlu20DktdUpdatebyID"/>
 </message>
 <message name="tlu20DktdUpdatebyIDResponse">
 <part name="parameters" element="tns:tlu20DktdUpdatebyIDResponse"/>
-</message>
-<message name="ParseException">
-<part name="fault" element="tns:ParseException"/>
 </message>
 <message name="tlu20DktdDisplayAll">
 <part name="parameters" element="tns:tlu20DktdDisplayAll"/>
@@ -38,11 +38,11 @@
 <message name="Tlu20dieuKienTuyenDungDeletebyIdResponse">
 <part name="parameters" element="tns:Tlu20dieuKienTuyenDungDeletebyIdResponse"/>
 </message>
-<message name="tlu20DktdInsert">
-<part name="parameters" element="tns:tlu20DktdInsert"/>
+<message name="initConv">
+<part name="parameters" element="tns:initConv"/>
 </message>
-<message name="tlu20DktdInsertResponse">
-<part name="parameters" element="tns:tlu20DktdInsertResponse"/>
+<message name="initConvResponse">
+<part name="parameters" element="tns:initConvResponse"/>
 </message>
 <message name="init">
 <part name="parameters" element="tns:init"/>
@@ -51,9 +51,10 @@
 <part name="parameters" element="tns:initResponse"/>
 </message>
 <portType name="WsTlu20DieuKienTuyenDung">
-<operation name="initConv">
-<input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/initConvRequest" message="tns:initConv"/>
-<output wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/initConvResponse" message="tns:initConvResponse"/>
+<operation name="tlu20DktdInsert">
+<input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertRequest" message="tns:tlu20DktdInsert"/>
+<output wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertResponse" message="tns:tlu20DktdInsertResponse"/>
+<fault message="tns:ParseException" name="ParseException" wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsert/Fault/ParseException"/>
 </operation>
 <operation name="tlu20DktdUpdatebyID">
 <input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdUpdatebyIDRequest" message="tns:tlu20DktdUpdatebyID"/>
@@ -72,10 +73,9 @@
 <input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/Tlu20dieuKienTuyenDungDeletebyIdRequest" message="tns:Tlu20dieuKienTuyenDungDeletebyId"/>
 <output wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/Tlu20dieuKienTuyenDungDeletebyIdResponse" message="tns:Tlu20dieuKienTuyenDungDeletebyIdResponse"/>
 </operation>
-<operation name="tlu20DktdInsert">
-<input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertRequest" message="tns:tlu20DktdInsert"/>
-<output wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsertResponse" message="tns:tlu20DktdInsertResponse"/>
-<fault message="tns:ParseException" name="ParseException" wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/tlu20DktdInsert/Fault/ParseException"/>
+<operation name="initConv">
+<input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/initConvRequest" message="tns:initConv"/>
+<output wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/initConvResponse" message="tns:initConvResponse"/>
 </operation>
 <operation name="init">
 <input wsam:Action="http://webservice.service/WsTlu20DieuKienTuyenDung/initRequest" message="tns:init"/>
@@ -85,7 +85,7 @@
 <binding name="WsTlu20DieuKienTuyenDungPortBinding" type="tns:WsTlu20DieuKienTuyenDung">
 <wsp:PolicyReference URI="#WsTlu20DieuKienTuyenDungPortBindingPolicy"/>
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="initConv">
+<operation name="tlu20DktdInsert">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -93,6 +93,9 @@
 <output>
 <soap:body use="literal"/>
 </output>
+<fault name="ParseException">
+<soap:fault name="ParseException" use="literal"/>
+</fault>
 </operation>
 <operation name="tlu20DktdUpdatebyID">
 <soap:operation soapAction=""/>
@@ -133,7 +136,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="tlu20DktdInsert">
+<operation name="initConv">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -141,9 +144,6 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="ParseException">
-<soap:fault name="ParseException" use="literal"/>
-</fault>
 </operation>
 <operation name="init">
 <soap:operation soapAction=""/>

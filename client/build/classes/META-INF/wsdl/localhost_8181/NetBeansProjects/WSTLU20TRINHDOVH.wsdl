@@ -4,26 +4,14 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WSTLU20TRINHDOVH?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="initConv">
-<part name="parameters" element="tns:initConv"/>
-</message>
-<message name="initConvResponse">
-<part name="parameters" element="tns:initConvResponse"/>
-</message>
-<message name="Tlu20trinhDoVanHoaInsert">
-<part name="parameters" element="tns:Tlu20trinhDoVanHoaInsert"/>
-</message>
-<message name="Tlu20trinhDoVanHoaInsertResponse">
-<part name="parameters" element="tns:Tlu20trinhDoVanHoaInsertResponse"/>
-</message>
-<message name="ParseException">
-<part name="fault" element="tns:ParseException"/>
-</message>
 <message name="tlu20TrinhDoVanHoaUpdatebyID">
 <part name="parameters" element="tns:tlu20TrinhDoVanHoaUpdatebyID"/>
 </message>
 <message name="tlu20TrinhDoVanHoaUpdatebyIDResponse">
 <part name="parameters" element="tns:tlu20TrinhDoVanHoaUpdatebyIDResponse"/>
+</message>
+<message name="ParseException">
+<part name="fault" element="tns:ParseException"/>
 </message>
 <message name="tlu20TrinhDoVanHoaDelete">
 <part name="parameters" element="tns:tlu20TrinhDoVanHoaDelete"/>
@@ -43,6 +31,18 @@
 <message name="tlu20TrinhDoVanHoaFindCommonResponse">
 <part name="parameters" element="tns:tlu20TrinhDoVanHoaFindCommonResponse"/>
 </message>
+<message name="Tlu20trinhDoVanHoaInsert">
+<part name="parameters" element="tns:Tlu20trinhDoVanHoaInsert"/>
+</message>
+<message name="Tlu20trinhDoVanHoaInsertResponse">
+<part name="parameters" element="tns:Tlu20trinhDoVanHoaInsertResponse"/>
+</message>
+<message name="initConv">
+<part name="parameters" element="tns:initConv"/>
+</message>
+<message name="initConvResponse">
+<part name="parameters" element="tns:initConvResponse"/>
+</message>
 <message name="init">
 <part name="parameters" element="tns:init"/>
 </message>
@@ -50,15 +50,6 @@
 <part name="parameters" element="tns:initResponse"/>
 </message>
 <portType name="WSTLU20TRINHDOVH">
-<operation name="initConv">
-<input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/initConvRequest" message="tns:initConv"/>
-<output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/initConvResponse" message="tns:initConvResponse"/>
-</operation>
-<operation name="Tlu20trinhDoVanHoaInsert">
-<input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertRequest" message="tns:Tlu20trinhDoVanHoaInsert"/>
-<output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertResponse" message="tns:Tlu20trinhDoVanHoaInsertResponse"/>
-<fault message="tns:ParseException" name="ParseException" wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsert/Fault/ParseException"/>
-</operation>
 <operation name="tlu20TrinhDoVanHoaUpdatebyID">
 <input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/tlu20TrinhDoVanHoaUpdatebyIDRequest" message="tns:tlu20TrinhDoVanHoaUpdatebyID"/>
 <output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/tlu20TrinhDoVanHoaUpdatebyIDResponse" message="tns:tlu20TrinhDoVanHoaUpdatebyIDResponse"/>
@@ -76,6 +67,15 @@
 <input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/tlu20TrinhDoVanHoaFindCommonRequest" message="tns:tlu20TrinhDoVanHoaFindCommon"/>
 <output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/tlu20TrinhDoVanHoaFindCommonResponse" message="tns:tlu20TrinhDoVanHoaFindCommonResponse"/>
 </operation>
+<operation name="Tlu20trinhDoVanHoaInsert">
+<input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertRequest" message="tns:Tlu20trinhDoVanHoaInsert"/>
+<output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertResponse" message="tns:Tlu20trinhDoVanHoaInsertResponse"/>
+<fault message="tns:ParseException" name="ParseException" wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsert/Fault/ParseException"/>
+</operation>
+<operation name="initConv">
+<input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/initConvRequest" message="tns:initConv"/>
+<output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/initConvResponse" message="tns:initConvResponse"/>
+</operation>
 <operation name="init">
 <input wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/initRequest" message="tns:init"/>
 <output wsam:Action="http://webservice.service/WSTLU20TRINHDOVH/initResponse" message="tns:initResponse"/>
@@ -83,27 +83,6 @@
 </portType>
 <binding name="WSTLU20TRINHDOVHPortBinding" type="tns:WSTLU20TRINHDOVH">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="initConv">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Tlu20trinhDoVanHoaInsert">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-<fault name="ParseException">
-<soap:fault name="ParseException" use="literal"/>
-</fault>
-</operation>
 <operation name="tlu20TrinhDoVanHoaUpdatebyID">
 <soap:operation soapAction=""/>
 <input>
@@ -135,6 +114,27 @@
 </output>
 </operation>
 <operation name="tlu20TrinhDoVanHoaFindCommon">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Tlu20trinhDoVanHoaInsert">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="ParseException">
+<soap:fault name="ParseException" use="literal"/>
+</fault>
+</operation>
+<operation name="initConv">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

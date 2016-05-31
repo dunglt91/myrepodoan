@@ -4,6 +4,12 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WsTlu30LichPhongVan?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="Initobj">
+<part name="parameters" element="tns:Initobj"/>
+</message>
+<message name="InitobjResponse">
+<part name="parameters" element="tns:InitobjResponse"/>
+</message>
 <message name="Tlu30LpvDisplayAll">
 <part name="parameters" element="tns:Tlu30LpvDisplayAll"/>
 </message>
@@ -55,13 +61,11 @@
 <message name="tlu30LpvFindCommonResponse">
 <part name="parameters" element="tns:tlu30LpvFindCommonResponse"/>
 </message>
-<message name="Initobj">
-<part name="parameters" element="tns:Initobj"/>
-</message>
-<message name="InitobjResponse">
-<part name="parameters" element="tns:InitobjResponse"/>
-</message>
 <portType name="WsTlu30LichPhongVan">
+<operation name="Initobj">
+<input wsam:Action="http://webservice.service/WsTlu30LichPhongVan/InitobjRequest" message="tns:Initobj"/>
+<output wsam:Action="http://webservice.service/WsTlu30LichPhongVan/InitobjResponse" message="tns:InitobjResponse"/>
+</operation>
 <operation name="Tlu30LpvDisplayAll">
 <input wsam:Action="http://webservice.service/WsTlu30LichPhongVan/Tlu30LpvDisplayAllRequest" message="tns:Tlu30LpvDisplayAll"/>
 <output wsam:Action="http://webservice.service/WsTlu30LichPhongVan/Tlu30LpvDisplayAllResponse" message="tns:Tlu30LpvDisplayAllResponse"/>
@@ -96,13 +100,18 @@
 <input wsam:Action="http://webservice.service/WsTlu30LichPhongVan/tlu30LpvFindCommonRequest" message="tns:tlu30LpvFindCommon"/>
 <output wsam:Action="http://webservice.service/WsTlu30LichPhongVan/tlu30LpvFindCommonResponse" message="tns:tlu30LpvFindCommonResponse"/>
 </operation>
-<operation name="Initobj">
-<input wsam:Action="http://webservice.service/WsTlu30LichPhongVan/InitobjRequest" message="tns:Initobj"/>
-<output wsam:Action="http://webservice.service/WsTlu30LichPhongVan/InitobjResponse" message="tns:InitobjResponse"/>
-</operation>
 </portType>
 <binding name="WsTlu30LichPhongVanPortBinding" type="tns:WsTlu30LichPhongVan">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="Initobj">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="Tlu30LpvDisplayAll">
 <soap:operation soapAction=""/>
 <input>
@@ -173,15 +182,6 @@
 </output>
 </operation>
 <operation name="tlu30LpvFindCommon">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Initobj">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

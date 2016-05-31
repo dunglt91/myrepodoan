@@ -75,7 +75,7 @@ public class WSTLU30CHITIETKQVPV {
        return init().Tlu30chitietketquavpvFindbyId(idTlu30chitietketquavpv);
    }
    
-   @WebMethod(operationName = "tlu20ChucVuUpdatebyID")
+   @WebMethod(operationName = "Tlu30chitietketquavpvUpdatebyID")
    public String Tlu30chitietketquavpvUpdatebyID(
            @WebParam(name = "idTlu30chitietketquavpv") int idTlu30chitietketquavpv,
            @WebParam(name = "Machitietdmkqpv") String Machitietdmkqpv,

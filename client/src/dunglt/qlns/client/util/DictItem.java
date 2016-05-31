@@ -7,7 +7,6 @@ package dunglt.qlns.client.util;
 
 import java.util.List;
 import javax.swing.JComboBox;
-import service.webservice.ParseException_Exception;
 import service.webservice.Tlu20Bophan;
 import service.webservice.Tlu20ChucVu;
 import service.webservice.Tlu20TrinhDoVanHoa;

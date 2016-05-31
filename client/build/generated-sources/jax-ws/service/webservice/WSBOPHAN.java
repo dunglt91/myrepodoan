@@ -28,33 +28,6 @@ public interface WSBOPHAN {
 
     /**
      * 
-     * @return
-     *     returns service.webservice.Convert
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
-    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
-    @Action(input = "http://webservice.service/WSBOPHAN/initConvRequest", output = "http://webservice.service/WSBOPHAN/initConvResponse")
-    public Convert initConv();
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "Tlu20bophanDeletebyId")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Tlu20bophanDeletebyId", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20BophanDeletebyId")
-    @ResponseWrapper(localName = "Tlu20bophanDeletebyIdResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20BophanDeletebyIdResponse")
-    @Action(input = "http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdRequest", output = "http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdResponse")
-    public String tlu20BophanDeletebyId(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
      * @param isActive
      * @param id
      * @param createdBy
@@ -152,14 +125,41 @@ public interface WSBOPHAN {
 
     /**
      * 
+     * @param id
      * @return
-     *     returns service.webservice.Daobophan
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "Tlu20bophanDeletebyId")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Tlu20bophanDeletebyId", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20BophanDeletebyId")
+    @ResponseWrapper(localName = "Tlu20bophanDeletebyIdResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20BophanDeletebyIdResponse")
+    @Action(input = "http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdRequest", output = "http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdResponse")
+    public String tlu20BophanDeletebyId(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @return
+     *     returns service.webservice.Convert
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
+    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
+    @Action(input = "http://webservice.service/WSBOPHAN/initConvRequest", output = "http://webservice.service/WSBOPHAN/initConvResponse")
+    public Convert initConv();
+
+    /**
+     * 
+     * @return
+     *     returns service.webservice.Daotlu30CHITIETKQVPV
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "init", targetNamespace = "http://webservice.service/", className = "service.webservice.Init")
     @ResponseWrapper(localName = "initResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitResponse")
     @Action(input = "http://webservice.service/WSBOPHAN/initRequest", output = "http://webservice.service/WSBOPHAN/initResponse")
-    public Daobophan init();
+    public Daotlu30CHITIETKQVPV init();
 
 }

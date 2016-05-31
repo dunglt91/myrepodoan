@@ -93,7 +93,7 @@ public class WSTLU20CHUCVU {
     public List<Tlu20chucVu> tlu20ChucVuFindCommon(
             @WebParam(name = "tenchucvu") String tenchucvu,
             @WebParam(name = "machucvu") String machucvu) {
-        return init().Tlu20chucVuFindCommon(tenchucvu, tenchucvu);
+        return init().Tlu20chucVuFindCommon(tenchucvu, machucvu);
     }
     
     @WebMethod(operationName = "Tlu20chucVuDeletebyId")

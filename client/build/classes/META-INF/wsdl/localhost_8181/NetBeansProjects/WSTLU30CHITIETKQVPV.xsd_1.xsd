@@ -20,6 +20,10 @@
 
 <xs:element name="Tlu30chitietketquavpvInsertResponse" type="tns:Tlu30chitietketquavpvInsertResponse"/>
 
+<xs:element name="Tlu30chitietketquavpvUpdatebyID" type="tns:Tlu30chitietketquavpvUpdatebyID"/>
+
+<xs:element name="Tlu30chitietketquavpvUpdatebyIDResponse" type="tns:Tlu30chitietketquavpvUpdatebyIDResponse"/>
+
 <xs:element name="init" type="tns:init"/>
 
 <xs:element name="initConv" type="tns:initConv"/>
@@ -27,10 +31,6 @@
 <xs:element name="initConvResponse" type="tns:initConvResponse"/>
 
 <xs:element name="initResponse" type="tns:initResponse"/>
-
-<xs:element name="tlu20ChucVuUpdatebyID" type="tns:tlu20ChucVuUpdatebyID"/>
-
-<xs:element name="tlu20ChucVuUpdatebyIDResponse" type="tns:tlu20ChucVuUpdatebyIDResponse"/>
 
 <xs:complexType name="Tlu30chitietketquavpvDisplayAll">
 <xs:sequence/>
@@ -81,7 +81,7 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="tlu20ChucVuUpdatebyID">
+<xs:complexType name="Tlu30chitietketquavpvUpdatebyID">
 <xs:sequence>
 <xs:element name="idTlu30chitietketquavpv" type="xs:int"/>
 <xs:element name="Machitietdmkqpv" type="xs:string" minOccurs="0"/>
@@ -92,21 +92,9 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="tlu20ChucVuUpdatebyIDResponse">
+<xs:complexType name="Tlu30chitietketquavpvUpdatebyIDResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="Tlu30chitietketquavpvFindbyId">
-<xs:sequence>
-<xs:element name="idTlu30chitietketquavpv" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="Tlu30chitietketquavpvFindbyIdResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:tlu30Chitietketquavpv" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -122,6 +110,18 @@
 
 <xs:complexType name="convert">
 <xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Tlu30chitietketquavpvFindbyId">
+<xs:sequence>
+<xs:element name="idTlu30chitietketquavpv" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Tlu30chitietketquavpvFindbyIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tlu30Chitietketquavpv" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="Tlu30chitietketquavpvFindCommon">
@@ -146,11 +146,11 @@
 
 <xs:complexType name="initResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:daobophan" minOccurs="0"/>
+<xs:element name="return" type="tns:daoTLU20DieuKienTuyenDung" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="daobophan">
+<xs:complexType name="daoTLU20DieuKienTuyenDung">
 <xs:sequence/>
 </xs:complexType>
 </xs:schema>

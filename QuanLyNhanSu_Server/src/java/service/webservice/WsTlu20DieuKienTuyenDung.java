@@ -83,7 +83,7 @@ public class WsTlu20DieuKienTuyenDung {
     public List<Tlu20dieuKienTuyenDung> tlu20DktdFindCommon(
             @WebParam(name = "tendmdktd") String tendmdktd,
             @WebParam(name = "madmdktd") String madmdktd) {
-        return init().Tlu20dieuKienTuyenDungFindCommon(tendmdktd, tendmdktd);
+        return init().Tlu20dieuKienTuyenDungFindCommon(tendmdktd, madmdktd);
     }
     
     @WebMethod(operationName = "Tlu20dieuKienTuyenDungDeletebyId")

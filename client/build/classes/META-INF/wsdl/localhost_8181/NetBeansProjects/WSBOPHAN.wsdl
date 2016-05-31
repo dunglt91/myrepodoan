@@ -4,18 +4,6 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WSBOPHAN?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="initConv">
-<part name="parameters" element="tns:initConv"/>
-</message>
-<message name="initConvResponse">
-<part name="parameters" element="tns:initConvResponse"/>
-</message>
-<message name="Tlu20bophanDeletebyId">
-<part name="parameters" element="tns:Tlu20bophanDeletebyId"/>
-</message>
-<message name="Tlu20bophanDeletebyIdResponse">
-<part name="parameters" element="tns:Tlu20bophanDeletebyIdResponse"/>
-</message>
 <message name="Tlu20bophanUpdatebyID">
 <part name="parameters" element="tns:Tlu20bophanUpdatebyID"/>
 </message>
@@ -43,6 +31,18 @@
 <message name="Tlu20BoPhanInsertResponse">
 <part name="parameters" element="tns:Tlu20BoPhanInsertResponse"/>
 </message>
+<message name="Tlu20bophanDeletebyId">
+<part name="parameters" element="tns:Tlu20bophanDeletebyId"/>
+</message>
+<message name="Tlu20bophanDeletebyIdResponse">
+<part name="parameters" element="tns:Tlu20bophanDeletebyIdResponse"/>
+</message>
+<message name="initConv">
+<part name="parameters" element="tns:initConv"/>
+</message>
+<message name="initConvResponse">
+<part name="parameters" element="tns:initConvResponse"/>
+</message>
 <message name="init">
 <part name="parameters" element="tns:init"/>
 </message>
@@ -50,14 +50,6 @@
 <part name="parameters" element="tns:initResponse"/>
 </message>
 <portType name="WSBOPHAN">
-<operation name="initConv">
-<input wsam:Action="http://webservice.service/WSBOPHAN/initConvRequest" message="tns:initConv"/>
-<output wsam:Action="http://webservice.service/WSBOPHAN/initConvResponse" message="tns:initConvResponse"/>
-</operation>
-<operation name="Tlu20bophanDeletebyId">
-<input wsam:Action="http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdRequest" message="tns:Tlu20bophanDeletebyId"/>
-<output wsam:Action="http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdResponse" message="tns:Tlu20bophanDeletebyIdResponse"/>
-</operation>
 <operation name="Tlu20bophanUpdatebyID">
 <input wsam:Action="http://webservice.service/WSBOPHAN/Tlu20bophanUpdatebyIDRequest" message="tns:Tlu20bophanUpdatebyID"/>
 <output wsam:Action="http://webservice.service/WSBOPHAN/Tlu20bophanUpdatebyIDResponse" message="tns:Tlu20bophanUpdatebyIDResponse"/>
@@ -76,6 +68,14 @@
 <output wsam:Action="http://webservice.service/WSBOPHAN/Tlu20BoPhanInsertResponse" message="tns:Tlu20BoPhanInsertResponse"/>
 <fault message="tns:ParseException" name="ParseException" wsam:Action="http://webservice.service/WSBOPHAN/Tlu20BoPhanInsert/Fault/ParseException"/>
 </operation>
+<operation name="Tlu20bophanDeletebyId">
+<input wsam:Action="http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdRequest" message="tns:Tlu20bophanDeletebyId"/>
+<output wsam:Action="http://webservice.service/WSBOPHAN/Tlu20bophanDeletebyIdResponse" message="tns:Tlu20bophanDeletebyIdResponse"/>
+</operation>
+<operation name="initConv">
+<input wsam:Action="http://webservice.service/WSBOPHAN/initConvRequest" message="tns:initConv"/>
+<output wsam:Action="http://webservice.service/WSBOPHAN/initConvResponse" message="tns:initConvResponse"/>
+</operation>
 <operation name="init">
 <input wsam:Action="http://webservice.service/WSBOPHAN/initRequest" message="tns:init"/>
 <output wsam:Action="http://webservice.service/WSBOPHAN/initResponse" message="tns:initResponse"/>
@@ -83,24 +83,6 @@
 </portType>
 <binding name="WSBOPHANPortBinding" type="tns:WSBOPHAN">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="initConv">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Tlu20bophanDeletebyId">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="Tlu20bophanUpdatebyID">
 <soap:operation soapAction=""/>
 <input>
@@ -142,6 +124,24 @@
 <fault name="ParseException">
 <soap:fault name="ParseException" use="literal"/>
 </fault>
+</operation>
+<operation name="Tlu20bophanDeletebyId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="initConv">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 <operation name="init">
 <soap:operation soapAction=""/>

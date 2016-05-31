@@ -24,21 +24,21 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Tlu20ChucVuUpdatebyID_QNAME = new QName("http://webservice.service/", "tlu20ChucVuUpdatebyID");
-    private final static QName _InitConv_QNAME = new QName("http://webservice.service/", "initConv");
     private final static QName _Tlu30ChitietketquavpvFindbyId_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvFindbyId");
+    private final static QName _InitConv_QNAME = new QName("http://webservice.service/", "initConv");
+    private final static QName _Tlu30ChitietketquavpvUpdatebyID_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvUpdatebyID");
     private final static QName _Tlu30ChitietketquavpvDeletebyIdResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvDeletebyIdResponse");
     private final static QName _Tlu30ChitietketquavpvInsert_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvInsert");
     private final static QName _Tlu30ChitietketquavpvDisplayAll_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvDisplayAll");
     private final static QName _Tlu30ChitietketquavpvFindCommon_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvFindCommon");
     private final static QName _InitResponse_QNAME = new QName("http://webservice.service/", "initResponse");
     private final static QName _InitConvResponse_QNAME = new QName("http://webservice.service/", "initConvResponse");
-    private final static QName _Tlu30ChitietketquavpvFindbyIdResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvFindbyIdResponse");
     private final static QName _Init_QNAME = new QName("http://webservice.service/", "init");
+    private final static QName _Tlu30ChitietketquavpvFindbyIdResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvFindbyIdResponse");
     private final static QName _Tlu30ChitietketquavpvDisplayAllResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvDisplayAllResponse");
     private final static QName _Tlu30ChitietketquavpvInsertResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvInsertResponse");
+    private final static QName _Tlu30ChitietketquavpvUpdatebyIDResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvUpdatebyIDResponse");
     private final static QName _Tlu30ChitietketquavpvDeletebyId_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvDeletebyId");
-    private final static QName _Tlu20ChucVuUpdatebyIDResponse_QNAME = new QName("http://webservice.service/", "tlu20ChucVuUpdatebyIDResponse");
     private final static QName _Tlu30ChitietketquavpvFindCommonResponse_QNAME = new QName("http://webservice.service/", "Tlu30chitietketquavpvFindCommonResponse");
 
     /**
@@ -46,14 +46,6 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link Tlu20ChucVuUpdatebyIDResponse }
-     * 
-     */
-    public Tlu20ChucVuUpdatebyIDResponse createTlu20ChucVuUpdatebyIDResponse() {
-        return new Tlu20ChucVuUpdatebyIDResponse();
     }
 
     /**
@@ -89,6 +81,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Tlu30ChitietketquavpvUpdatebyIDResponse }
+     * 
+     */
+    public Tlu30ChitietketquavpvUpdatebyIDResponse createTlu30ChitietketquavpvUpdatebyIDResponse() {
+        return new Tlu30ChitietketquavpvUpdatebyIDResponse();
+    }
+
+    /**
      * Create an instance of {@link InitConvResponse }
      * 
      */
@@ -97,19 +97,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Tlu30ChitietketquavpvFindbyIdResponse }
-     * 
-     */
-    public Tlu30ChitietketquavpvFindbyIdResponse createTlu30ChitietketquavpvFindbyIdResponse() {
-        return new Tlu30ChitietketquavpvFindbyIdResponse();
-    }
-
-    /**
      * Create an instance of {@link Init }
      * 
      */
     public Init createInit() {
         return new Init();
+    }
+
+    /**
+     * Create an instance of {@link Tlu30ChitietketquavpvFindbyIdResponse }
+     * 
+     */
+    public Tlu30ChitietketquavpvFindbyIdResponse createTlu30ChitietketquavpvFindbyIdResponse() {
+        return new Tlu30ChitietketquavpvFindbyIdResponse();
     }
 
     /**
@@ -153,14 +153,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Tlu30ChitietketquavpvFindbyId }
-     * 
-     */
-    public Tlu30ChitietketquavpvFindbyId createTlu30ChitietketquavpvFindbyId() {
-        return new Tlu30ChitietketquavpvFindbyId();
-    }
-
-    /**
      * Create an instance of {@link InitConv }
      * 
      */
@@ -169,19 +161,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Tlu20ChucVuUpdatebyID }
+     * Create an instance of {@link Tlu30ChitietketquavpvFindbyId }
      * 
      */
-    public Tlu20ChucVuUpdatebyID createTlu20ChucVuUpdatebyID() {
-        return new Tlu20ChucVuUpdatebyID();
+    public Tlu30ChitietketquavpvFindbyId createTlu30ChitietketquavpvFindbyId() {
+        return new Tlu30ChitietketquavpvFindbyId();
     }
 
     /**
-     * Create an instance of {@link Daobophan }
+     * Create an instance of {@link Tlu30ChitietketquavpvUpdatebyID }
      * 
      */
-    public Daobophan createDaobophan() {
-        return new Daobophan();
+    public Tlu30ChitietketquavpvUpdatebyID createTlu30ChitietketquavpvUpdatebyID() {
+        return new Tlu30ChitietketquavpvUpdatebyID();
     }
 
     /**
@@ -193,6 +185,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DaoTLU20DieuKienTuyenDung }
+     * 
+     */
+    public DaoTLU20DieuKienTuyenDung createDaoTLU20DieuKienTuyenDung() {
+        return new DaoTLU20DieuKienTuyenDung();
+    }
+
+    /**
      * Create an instance of {@link Tlu30Chitietketquavpv }
      * 
      */
@@ -201,12 +201,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu20ChucVuUpdatebyID }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvFindbyId }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice.service/", name = "tlu20ChucVuUpdatebyID")
-    public JAXBElement<Tlu20ChucVuUpdatebyID> createTlu20ChucVuUpdatebyID(Tlu20ChucVuUpdatebyID value) {
-        return new JAXBElement<Tlu20ChucVuUpdatebyID>(_Tlu20ChucVuUpdatebyID_QNAME, Tlu20ChucVuUpdatebyID.class, null, value);
+    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvFindbyId")
+    public JAXBElement<Tlu30ChitietketquavpvFindbyId> createTlu30ChitietketquavpvFindbyId(Tlu30ChitietketquavpvFindbyId value) {
+        return new JAXBElement<Tlu30ChitietketquavpvFindbyId>(_Tlu30ChitietketquavpvFindbyId_QNAME, Tlu30ChitietketquavpvFindbyId.class, null, value);
     }
 
     /**
@@ -219,12 +219,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvFindbyId }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvUpdatebyID }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvFindbyId")
-    public JAXBElement<Tlu30ChitietketquavpvFindbyId> createTlu30ChitietketquavpvFindbyId(Tlu30ChitietketquavpvFindbyId value) {
-        return new JAXBElement<Tlu30ChitietketquavpvFindbyId>(_Tlu30ChitietketquavpvFindbyId_QNAME, Tlu30ChitietketquavpvFindbyId.class, null, value);
+    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvUpdatebyID")
+    public JAXBElement<Tlu30ChitietketquavpvUpdatebyID> createTlu30ChitietketquavpvUpdatebyID(Tlu30ChitietketquavpvUpdatebyID value) {
+        return new JAXBElement<Tlu30ChitietketquavpvUpdatebyID>(_Tlu30ChitietketquavpvUpdatebyID_QNAME, Tlu30ChitietketquavpvUpdatebyID.class, null, value);
     }
 
     /**
@@ -282,21 +282,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvFindbyIdResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvFindbyIdResponse")
-    public JAXBElement<Tlu30ChitietketquavpvFindbyIdResponse> createTlu30ChitietketquavpvFindbyIdResponse(Tlu30ChitietketquavpvFindbyIdResponse value) {
-        return new JAXBElement<Tlu30ChitietketquavpvFindbyIdResponse>(_Tlu30ChitietketquavpvFindbyIdResponse_QNAME, Tlu30ChitietketquavpvFindbyIdResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Init }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservice.service/", name = "init")
     public JAXBElement<Init> createInit(Init value) {
         return new JAXBElement<Init>(_Init_QNAME, Init.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvFindbyIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvFindbyIdResponse")
+    public JAXBElement<Tlu30ChitietketquavpvFindbyIdResponse> createTlu30ChitietketquavpvFindbyIdResponse(Tlu30ChitietketquavpvFindbyIdResponse value) {
+        return new JAXBElement<Tlu30ChitietketquavpvFindbyIdResponse>(_Tlu30ChitietketquavpvFindbyIdResponse_QNAME, Tlu30ChitietketquavpvFindbyIdResponse.class, null, value);
     }
 
     /**
@@ -318,21 +318,21 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvUpdatebyIDResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvUpdatebyIDResponse")
+    public JAXBElement<Tlu30ChitietketquavpvUpdatebyIDResponse> createTlu30ChitietketquavpvUpdatebyIDResponse(Tlu30ChitietketquavpvUpdatebyIDResponse value) {
+        return new JAXBElement<Tlu30ChitietketquavpvUpdatebyIDResponse>(_Tlu30ChitietketquavpvUpdatebyIDResponse_QNAME, Tlu30ChitietketquavpvUpdatebyIDResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Tlu30ChitietketquavpvDeletebyId }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu30chitietketquavpvDeletebyId")
     public JAXBElement<Tlu30ChitietketquavpvDeletebyId> createTlu30ChitietketquavpvDeletebyId(Tlu30ChitietketquavpvDeletebyId value) {
         return new JAXBElement<Tlu30ChitietketquavpvDeletebyId>(_Tlu30ChitietketquavpvDeletebyId_QNAME, Tlu30ChitietketquavpvDeletebyId.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu20ChucVuUpdatebyIDResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservice.service/", name = "tlu20ChucVuUpdatebyIDResponse")
-    public JAXBElement<Tlu20ChucVuUpdatebyIDResponse> createTlu20ChucVuUpdatebyIDResponse(Tlu20ChucVuUpdatebyIDResponse value) {
-        return new JAXBElement<Tlu20ChucVuUpdatebyIDResponse>(_Tlu20ChucVuUpdatebyIDResponse_QNAME, Tlu20ChucVuUpdatebyIDResponse.class, null, value);
     }
 
     /**

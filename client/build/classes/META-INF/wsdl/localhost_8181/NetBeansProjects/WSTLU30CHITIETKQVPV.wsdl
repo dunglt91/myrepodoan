@@ -4,12 +4,6 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="initConv">
-<part name="parameters" element="tns:initConv"/>
-</message>
-<message name="initConvResponse">
-<part name="parameters" element="tns:initConvResponse"/>
-</message>
 <message name="Tlu30chitietketquavpvInsert">
 <part name="parameters" element="tns:Tlu30chitietketquavpvInsert"/>
 </message>
@@ -34,17 +28,23 @@
 <message name="Tlu30chitietketquavpvFindbyIdResponse">
 <part name="parameters" element="tns:Tlu30chitietketquavpvFindbyIdResponse"/>
 </message>
-<message name="tlu20ChucVuUpdatebyID">
-<part name="parameters" element="tns:tlu20ChucVuUpdatebyID"/>
+<message name="Tlu30chitietketquavpvUpdatebyID">
+<part name="parameters" element="tns:Tlu30chitietketquavpvUpdatebyID"/>
 </message>
-<message name="tlu20ChucVuUpdatebyIDResponse">
-<part name="parameters" element="tns:tlu20ChucVuUpdatebyIDResponse"/>
+<message name="Tlu30chitietketquavpvUpdatebyIDResponse">
+<part name="parameters" element="tns:Tlu30chitietketquavpvUpdatebyIDResponse"/>
 </message>
 <message name="Tlu30chitietketquavpvDeletebyId">
 <part name="parameters" element="tns:Tlu30chitietketquavpvDeletebyId"/>
 </message>
 <message name="Tlu30chitietketquavpvDeletebyIdResponse">
 <part name="parameters" element="tns:Tlu30chitietketquavpvDeletebyIdResponse"/>
+</message>
+<message name="initConv">
+<part name="parameters" element="tns:initConv"/>
+</message>
+<message name="initConvResponse">
+<part name="parameters" element="tns:initConvResponse"/>
 </message>
 <message name="init">
 <part name="parameters" element="tns:init"/>
@@ -53,10 +53,6 @@
 <part name="parameters" element="tns:initResponse"/>
 </message>
 <portType name="WSTLU30CHITIETKQVPV">
-<operation name="initConv">
-<input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/initConvRequest" message="tns:initConv"/>
-<output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/initConvResponse" message="tns:initConvResponse"/>
-</operation>
 <operation name="Tlu30chitietketquavpvInsert">
 <input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvInsertRequest" message="tns:Tlu30chitietketquavpvInsert"/>
 <output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvInsertResponse" message="tns:Tlu30chitietketquavpvInsertResponse"/>
@@ -73,13 +69,17 @@
 <input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvFindbyIdRequest" message="tns:Tlu30chitietketquavpvFindbyId"/>
 <output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvFindbyIdResponse" message="tns:Tlu30chitietketquavpvFindbyIdResponse"/>
 </operation>
-<operation name="tlu20ChucVuUpdatebyID">
-<input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/tlu20ChucVuUpdatebyIDRequest" message="tns:tlu20ChucVuUpdatebyID"/>
-<output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/tlu20ChucVuUpdatebyIDResponse" message="tns:tlu20ChucVuUpdatebyIDResponse"/>
+<operation name="Tlu30chitietketquavpvUpdatebyID">
+<input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvUpdatebyIDRequest" message="tns:Tlu30chitietketquavpvUpdatebyID"/>
+<output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvUpdatebyIDResponse" message="tns:Tlu30chitietketquavpvUpdatebyIDResponse"/>
 </operation>
 <operation name="Tlu30chitietketquavpvDeletebyId">
 <input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvDeletebyIdRequest" message="tns:Tlu30chitietketquavpvDeletebyId"/>
 <output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvDeletebyIdResponse" message="tns:Tlu30chitietketquavpvDeletebyIdResponse"/>
+</operation>
+<operation name="initConv">
+<input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/initConvRequest" message="tns:initConv"/>
+<output wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/initConvResponse" message="tns:initConvResponse"/>
 </operation>
 <operation name="init">
 <input wsam:Action="http://webservice.service/WSTLU30CHITIETKQVPV/initRequest" message="tns:init"/>
@@ -88,15 +88,6 @@
 </portType>
 <binding name="WSTLU30CHITIETKQVPVPortBinding" type="tns:WSTLU30CHITIETKQVPV">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="initConv">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="Tlu30chitietketquavpvInsert">
 <soap:operation soapAction=""/>
 <input>
@@ -133,7 +124,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="tlu20ChucVuUpdatebyID">
+<operation name="Tlu30chitietketquavpvUpdatebyID">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -143,6 +134,15 @@
 </output>
 </operation>
 <operation name="Tlu30chitietketquavpvDeletebyId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="initConv">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

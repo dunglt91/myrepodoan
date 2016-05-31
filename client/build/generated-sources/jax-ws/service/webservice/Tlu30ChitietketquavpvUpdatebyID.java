@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for tlu20ChucVuUpdatebyID complex type.
+ * <p>Java class for Tlu30chitietketquavpvUpdatebyID complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="tlu20ChucVuUpdatebyID">
+ * &lt;complexType name="Tlu30chitietketquavpvUpdatebyID">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "tlu20ChucVuUpdatebyID", propOrder = {
+@XmlType(name = "Tlu30chitietketquavpvUpdatebyID", propOrder = {
     "idTlu30Chitietketquavpv",
     "machitietdmkqpv",
     "madkpv",
@@ -40,7 +40,7 @@ import javax.xml.bind.annotation.XmlType;
     "diemcandat",
     "diemdatduoc"
 })
-public class Tlu20ChucVuUpdatebyID {
+public class Tlu30ChitietketquavpvUpdatebyID {
 
     @XmlElement(name = "idTlu30chitietketquavpv")
     protected int idTlu30Chitietketquavpv;

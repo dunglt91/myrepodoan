@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://webservice.service/}daobophan" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://webservice.service/}daoTLU20DieuKienTuyenDung" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,17 +33,17 @@ import javax.xml.bind.annotation.XmlType;
 public class InitResponse {
 
     @XmlElement(name = "return")
-    protected Daobophan _return;
+    protected DaoTLU20DieuKienTuyenDung _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link Daobophan }
+     *     {@link DaoTLU20DieuKienTuyenDung }
      *     
      */
-    public Daobophan getReturn() {
+    public DaoTLU20DieuKienTuyenDung getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class InitResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Daobophan }
+     *     {@link DaoTLU20DieuKienTuyenDung }
      *     
      */
-    public void setReturn(Daobophan value) {
+    public void setReturn(DaoTLU20DieuKienTuyenDung value) {
         this._return = value;
     }
 

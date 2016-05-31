@@ -112,7 +112,7 @@ public class Common extends javax.swing.JFrame {
         ((DefaultTableModel) _tblViewDktd.getModel()).setNumRows(0);
         model = (DefaultTableModel) this._tblViewDktd.getModel();
         for (Tlu20DieuKienTuyenDung dktd
-                : tlu20DieuKienTuyenDungFindCommon(
+                : tlu20DktdFindCommon(
                         _tfMaDktd.getText(), _tfTenDktd.getText())) {
             model.addRow(new Object[]{dktd.getMadmdktd(), dktd.getTendmdktd()});
         }
@@ -1743,7 +1743,7 @@ public class Common extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Ứng viên", "Số lịch phỏng vấn", "Kế hoạch số"
+                "Id", "Số lịch phỏng vấn", "Kế hoạch số", "Ứng viên"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2288,7 +2288,7 @@ public class Common extends javax.swing.JFrame {
             if (ValidateUtil.isNotNull(_tfCreatedbyDktd.getText())
                     && ValidateUtil.isNotNull(_tfTenDktd.getText())
                     && ValidateUtil.isNotNull(_tfTenDktd.getText())) {
-                if (tlu20DieuKienTuyenDungFindCommon(_tfMaDktd.getText(), null).isEmpty()) {
+                if (tlu20DktdFindCommon(_tfMaDktd.getText(), null).isEmpty()) {
                     tlu20DktdInsert(_tfCreatedbyDktd.getText(),
                             DateTimeUtil.convertCalendarToString(_calDktd.getCalendar().getTime()),
                             ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbDktd)),
@@ -2506,8 +2506,8 @@ public class Common extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         if (ValidateUtil.isNotNull(_tfMaDktd.getText())) {
-            if (tlu20DieuKienTuyenDungFindCommon(_tfMaDktd.getText(), null).size() > 0) {
-                int id = tlu20DieuKienTuyenDungFindCommon(_tfMaDktd.getText(),
+            if (tlu20DktdFindCommon(_tfMaDktd.getText(), null).size() > 0) {
+                int id = tlu20DktdFindCommon(_tfMaDktd.getText(),
                         null).get(0).getIdDktd();
                 tlu20DktdDeletebyId(id);
                 JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
@@ -2528,8 +2528,7 @@ public class Common extends javax.swing.JFrame {
         int row = _tblViewDktd.getSelectedRow();
         String maDktd = (_tblViewDktd.getModel().getValueAt(row, 0).toString());
         String tenDktd = (_tblViewDktd.getModel().getValueAt(row, 1).toString());
-        System.out.println("maDktd " + maDktd + " tenDktd " +tenDktd );
-        java.util.List<Tlu20DieuKienTuyenDung> lstDktd = tlu20DieuKienTuyenDungFindCommon(maDktd, tenDktd);
+        java.util.List<Tlu20DieuKienTuyenDung> lstDktd = tlu20DktdFindCommon(tenDktd,maDktd);
          if(!lstDktd.isEmpty()) {
               _tfCreatedbyDktd.setText(lstDktd.get(0).getCreatedBy());
         _tfTenDktd.setText(lstDktd.get(0).getTendmdktd());
@@ -2634,8 +2633,8 @@ public class Common extends javax.swing.JFrame {
         int row = _tblxemKHTD.getSelectedRow();
         int id = (int) _tblxemKHTD.getModel().getValueAt(row, 0);
         String khs = (_tblxemKHTD.getModel().getValueAt(row, 1).toString());
-        String bophan = (_tblxemKHTD.getModel().getValueAt(row, 2).toString());
-        String chucvu = (_tblxemKHTD.getModel().getValueAt(row, 3).toString());
+        String bophan = (_tblxemKHTD.getModel().getValueAt(row, 3).toString());
+        String chucvu = (_tblxemKHTD.getModel().getValueAt(row, 2).toString());
 
         _tfxemDKTD_KHS.setText(khs);
         _tfxemBoPhan.setText(bophan);
@@ -2721,9 +2720,9 @@ public class Common extends javax.swing.JFrame {
     private void _tblLpvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tblLpvMouseClicked
         int row = _tblLpv.getSelectedRow();
         int id = (int) _tblLpv.getModel().getValueAt(row, 0);
-        String ungVien = (_tblLpv.getModel().getValueAt(row, 1).toString());
-        String lpvSo = (_tblLpv.getModel().getValueAt(row, 2).toString());
-        String khs = (_tblLpv.getModel().getValueAt(row, 3).toString());
+        String ungVien = (_tblLpv.getModel().getValueAt(row, 3).toString());
+        String lpvSo = (_tblLpv.getModel().getValueAt(row, 1).toString());
+        String khs = (_tblLpv.getModel().getValueAt(row, 2).toString());
         lpvTenUv.setText(ungVien);
         lpvSolpv.setText(lpvSo);
         lpvKhs.setText(khs);
@@ -2931,14 +2930,6 @@ public class Common extends javax.swing.JFrame {
         return port.tlu20TrinhDoVanHoaDelete(id);
     }
 
-  
-
-    private static java.util.List<service.webservice.Tlu20DieuKienTuyenDung> tlu20DieuKienTuyenDungFindCommon(java.lang.String madmdktd, java.lang.String tendmdktd) {
-        service.webservice.WsTlu20DieuKienTuyenDung_Service service = new service.webservice.WsTlu20DieuKienTuyenDung_Service();
-        service.webservice.WsTlu20DieuKienTuyenDung port = service.getWsTlu20DieuKienTuyenDungPort();
-        return port.tlu20DktdFindCommon(madmdktd, tendmdktd);
-    }
-
     private static String tlu20DktdInsert(java.lang.String createdby, java.lang.String createdat, boolean isactive, java.lang.String madmdktd, java.lang.String tendmdktd) throws ParseException_Exception {
         service.webservice.WsTlu20DieuKienTuyenDung_Service service = new service.webservice.WsTlu20DieuKienTuyenDung_Service();
         service.webservice.WsTlu20DieuKienTuyenDung port = service.getWsTlu20DieuKienTuyenDungPort();
@@ -2950,7 +2941,8 @@ public class Common extends javax.swing.JFrame {
         service.webservice.WsTlu20DieuKienTuyenDung port = service.getWsTlu20DieuKienTuyenDungPort();
         return port.tlu20DktdUpdatebyID(iddktd, createdby, createdat, isactive, madmdktd, tendmdktd);
     }
-
+    
+    
 
 
     private static java.util.List<service.webservice.Tlu20Bophan> tlu20BophanDisplayAll() {
@@ -3060,6 +3052,12 @@ public class Common extends javax.swing.JFrame {
         service.webservice.WsDangNhap_Service service = new service.webservice.WsDangNhap_Service();
         service.webservice.WsDangNhap port = service.getWsDangNhapPort();
         return port.tlu20DangNhapFindCommon(uname);
+    }
+
+    private static java.util.List<service.webservice.Tlu20DieuKienTuyenDung> tlu20DktdFindCommon(java.lang.String tendmdktd, java.lang.String madmdktd) {
+        service.webservice.WsTlu20DieuKienTuyenDung_Service service = new service.webservice.WsTlu20DieuKienTuyenDung_Service();
+        service.webservice.WsTlu20DieuKienTuyenDung port = service.getWsTlu20DieuKienTuyenDungPort();
+        return port.tlu20DktdFindCommon(tendmdktd, madmdktd);
     }
     
     

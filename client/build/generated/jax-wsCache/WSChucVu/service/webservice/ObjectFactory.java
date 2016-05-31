@@ -170,14 +170,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Daobophan }
-     * 
-     */
-    public Daobophan createDaobophan() {
-        return new Daobophan();
-    }
-
-    /**
      * Create an instance of {@link Convert }
      * 
      */
@@ -191,6 +183,14 @@ public class ObjectFactory {
      */
     public Tlu20ChucVu createTlu20ChucVu() {
         return new Tlu20ChucVu();
+    }
+
+    /**
+     * Create an instance of {@link Daotlu30CHITIETKQVPV }
+     * 
+     */
+    public Daotlu30CHITIETKQVPV createDaotlu30CHITIETKQVPV() {
+        return new Daotlu30CHITIETKQVPV();
     }
 
     /**

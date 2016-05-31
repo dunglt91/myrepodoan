@@ -29,6 +29,18 @@ public interface WsTlu30LichPhongVan {
     /**
      * 
      * @return
+     *     returns service.webservice.DaoTLU30LichPhongVan
+     */
+    @WebMethod(operationName = "Initobj")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Initobj", targetNamespace = "http://webservice.service/", className = "service.webservice.Initobj")
+    @ResponseWrapper(localName = "InitobjResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitobjResponse")
+    @Action(input = "http://webservice.service/WsTlu30LichPhongVan/InitobjRequest", output = "http://webservice.service/WsTlu30LichPhongVan/InitobjResponse")
+    public DaoTLU30LichPhongVan initobj();
+
+    /**
+     * 
+     * @return
      *     returns java.util.List<service.webservice.Tlu30LichPhongVan>
      */
     @WebMethod(operationName = "Tlu30LpvDisplayAll")
@@ -224,17 +236,5 @@ public interface WsTlu30LichPhongVan {
         String tenUngVien,
         @WebParam(name = "DatYeuCau", targetNamespace = "")
         String datYeuCau);
-
-    /**
-     * 
-     * @return
-     *     returns service.webservice.DaoTLU30LichPhongVan
-     */
-    @WebMethod(operationName = "Initobj")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Initobj", targetNamespace = "http://webservice.service/", className = "service.webservice.Initobj")
-    @ResponseWrapper(localName = "InitobjResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitobjResponse")
-    @Action(input = "http://webservice.service/WsTlu30LichPhongVan/InitobjRequest", output = "http://webservice.service/WsTlu30LichPhongVan/InitobjResponse")
-    public DaoTLU30LichPhongVan initobj();
 
 }

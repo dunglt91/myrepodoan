@@ -93,7 +93,7 @@ public class WSBOPHAN {
     public List<Tlu20bophan> Tlu20bophanFindCommon(
             @WebParam(name = "Tenbophan") String Tenbophan,
             @WebParam(name = "Mabophan") String Mabophan) {
-        return init().Tlu20bophanFindCommon(Tenbophan, Tenbophan);
+        return init().Tlu20bophanFindCommon(Tenbophan, Mabophan);
     }
     
     @WebMethod(operationName = "Tlu20bophanDeletebyId")

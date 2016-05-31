@@ -27,18 +27,6 @@ public interface WSTLU30CHITIETKQVPV {
 
     /**
      * 
-     * @return
-     *     returns service.webservice.Convert
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
-    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
-    @Action(input = "http://webservice.service/WSTLU30CHITIETKQVPV/initConvRequest", output = "http://webservice.service/WSTLU30CHITIETKQVPV/initConvResponse")
-    public Convert initConv();
-
-    /**
-     * 
      * @param diemdatduoc
      * @param diemcandat
      * @param tendkpv
@@ -129,12 +117,12 @@ public interface WSTLU30CHITIETKQVPV {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod
+    @WebMethod(operationName = "Tlu30chitietketquavpvUpdatebyID")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "tlu20ChucVuUpdatebyID", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20ChucVuUpdatebyID")
-    @ResponseWrapper(localName = "tlu20ChucVuUpdatebyIDResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20ChucVuUpdatebyIDResponse")
-    @Action(input = "http://webservice.service/WSTLU30CHITIETKQVPV/tlu20ChucVuUpdatebyIDRequest", output = "http://webservice.service/WSTLU30CHITIETKQVPV/tlu20ChucVuUpdatebyIDResponse")
-    public String tlu20ChucVuUpdatebyID(
+    @RequestWrapper(localName = "Tlu30chitietketquavpvUpdatebyID", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu30ChitietketquavpvUpdatebyID")
+    @ResponseWrapper(localName = "Tlu30chitietketquavpvUpdatebyIDResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu30ChitietketquavpvUpdatebyIDResponse")
+    @Action(input = "http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvUpdatebyIDRequest", output = "http://webservice.service/WSTLU30CHITIETKQVPV/Tlu30chitietketquavpvUpdatebyIDResponse")
+    public String tlu30ChitietketquavpvUpdatebyID(
         @WebParam(name = "idTlu30chitietketquavpv", targetNamespace = "")
         int idTlu30Chitietketquavpv,
         @WebParam(name = "Machitietdmkqpv", targetNamespace = "")
@@ -166,13 +154,25 @@ public interface WSTLU30CHITIETKQVPV {
     /**
      * 
      * @return
-     *     returns service.webservice.Daobophan
+     *     returns service.webservice.Convert
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
+    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
+    @Action(input = "http://webservice.service/WSTLU30CHITIETKQVPV/initConvRequest", output = "http://webservice.service/WSTLU30CHITIETKQVPV/initConvResponse")
+    public Convert initConv();
+
+    /**
+     * 
+     * @return
+     *     returns service.webservice.DaoTLU20DieuKienTuyenDung
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "init", targetNamespace = "http://webservice.service/", className = "service.webservice.Init")
     @ResponseWrapper(localName = "initResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitResponse")
     @Action(input = "http://webservice.service/WSTLU30CHITIETKQVPV/initRequest", output = "http://webservice.service/WSTLU30CHITIETKQVPV/initResponse")
-    public Daobophan init();
+    public DaoTLU20DieuKienTuyenDung init();
 
 }
