@@ -11,6 +11,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import model.dao.DaoTLU20DangNhap;
 import model.pojos.Tlu20dangNhap;
+import server.util.ValidateUtil;
 
 /**
  *
@@ -20,7 +21,8 @@ import model.pojos.Tlu20dangNhap;
 public class WsDangNhap {
 
     @WebMethod(operationName = "Tlu20DangNhapInsert")
-    public String Tlu20DangNhapInsert(@WebParam(name = "username") String username,
+    public String Tlu20DangNhapInsert(
+            @WebParam(name = "username") String username,
             @WebParam(name = "pass") String pass,
             @WebParam(name = "repass") String repass,
             @WebParam(name = "role") String role) {
@@ -37,6 +39,22 @@ public class WsDangNhap {
             return "da ton tai username";
         }
 
+    }
+    
+    @WebMethod(operationName = "Tlu20DangNhapUpdate") 
+    public String Tlu20DangNhapUpdate(
+            @WebParam(name = "username") String username,
+            @WebParam(name = "pass") String pass,
+            @WebParam(name = "repass") String repass,
+            @WebParam(name = "role") String role) {
+        DaoTLU20DangNhap daoTLU20DangNhap = new DaoTLU20DangNhap();
+        Tlu20dangNhap tlu20dangNhap = daoTLU20DangNhap.TLu20DangNhapFindUser(username);
+        if(ValidateUtil.isNotNull(tlu20dangNhap)) {
+            daoTLU20DangNhap.Tlu20DangNhapUpdate(username, pass, repass, role);
+            return "succ";
+        } else {
+            return "fail";
+        }
     }
 
     @WebMethod(operationName = "TestLogin")

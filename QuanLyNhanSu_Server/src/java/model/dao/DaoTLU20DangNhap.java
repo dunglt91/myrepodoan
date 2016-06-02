@@ -8,7 +8,6 @@ package model.dao;
 import java.util.ArrayList;
 import java.util.List;
 import model.pojos.Tlu20dangNhap;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -76,7 +75,7 @@ public class DaoTLU20DangNhap {
         }
     }
 
-    public boolean Tlu20DangNhapEditPass(String user, String pass, String repass) {
+    public boolean Tlu20DangNhapUpdate(String user, String pass, String repass, String role) {
         SessionFactory sf = null;
         Session ss = null;
         Transaction tx = null;
@@ -87,6 +86,9 @@ public class DaoTLU20DangNhap {
             Tlu20dangNhap tlu20dn = this.TLu20DangNhapFindUser(user);
             tlu20dn.setPasswords(pass);
             tlu20dn.setPasswords(repass);
+            tlu20dn.setRole(role);
+            ss.update(tlu20dn);
+            tx.commit();
             return true;
         } catch (Exception e) {
             if (tx != null) {

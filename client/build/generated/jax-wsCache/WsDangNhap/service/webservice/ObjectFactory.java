@@ -25,6 +25,7 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _Tlu20DangNhapInsertResponse_QNAME = new QName("http://webservice.service/", "Tlu20DangNhapInsertResponse");
+    private final static QName _Tlu20DangNhapUpdate_QNAME = new QName("http://webservice.service/", "Tlu20DangNhapUpdate");
     private final static QName _TLu20DangNhapFindUserResponse_QNAME = new QName("http://webservice.service/", "TLu20DangNhapFindUserResponse");
     private final static QName _TLu20DangNhapFindUser_QNAME = new QName("http://webservice.service/", "TLu20DangNhapFindUser");
     private final static QName _TestLoginResponse_QNAME = new QName("http://webservice.service/", "TestLoginResponse");
@@ -33,6 +34,7 @@ public class ObjectFactory {
     private final static QName _Tlu20DangNhapInsert_QNAME = new QName("http://webservice.service/", "Tlu20DangNhapInsert");
     private final static QName _TLu20Delete_QNAME = new QName("http://webservice.service/", "TLu20Delete");
     private final static QName _TLu20DeleteResponse_QNAME = new QName("http://webservice.service/", "TLu20DeleteResponse");
+    private final static QName _Tlu20DangNhapUpdateResponse_QNAME = new QName("http://webservice.service/", "Tlu20DangNhapUpdateResponse");
     private final static QName _Tlu20DangNhapFindCommon_QNAME = new QName("http://webservice.service/", "Tlu20dangNhapFindCommon");
 
     /**
@@ -56,6 +58,14 @@ public class ObjectFactory {
      */
     public Tlu20DangNhapInsert createTlu20DangNhapInsert() {
         return new Tlu20DangNhapInsert();
+    }
+
+    /**
+     * Create an instance of {@link Tlu20DangNhapUpdateResponse }
+     * 
+     */
+    public Tlu20DangNhapUpdateResponse createTlu20DangNhapUpdateResponse() {
+        return new Tlu20DangNhapUpdateResponse();
     }
 
     /**
@@ -115,6 +125,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Tlu20DangNhapUpdate }
+     * 
+     */
+    public Tlu20DangNhapUpdate createTlu20DangNhapUpdate() {
+        return new Tlu20DangNhapUpdate();
+    }
+
+    /**
      * Create an instance of {@link Tlu20DangNhapInsertResponse }
      * 
      */
@@ -137,6 +155,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu20DangNhapInsertResponse")
     public JAXBElement<Tlu20DangNhapInsertResponse> createTlu20DangNhapInsertResponse(Tlu20DangNhapInsertResponse value) {
         return new JAXBElement<Tlu20DangNhapInsertResponse>(_Tlu20DangNhapInsertResponse_QNAME, Tlu20DangNhapInsertResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu20DangNhapUpdate }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu20DangNhapUpdate")
+    public JAXBElement<Tlu20DangNhapUpdate> createTlu20DangNhapUpdate(Tlu20DangNhapUpdate value) {
+        return new JAXBElement<Tlu20DangNhapUpdate>(_Tlu20DangNhapUpdate_QNAME, Tlu20DangNhapUpdate.class, null, value);
     }
 
     /**
@@ -209,6 +236,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://webservice.service/", name = "TLu20DeleteResponse")
     public JAXBElement<TLu20DeleteResponse> createTLu20DeleteResponse(TLu20DeleteResponse value) {
         return new JAXBElement<TLu20DeleteResponse>(_TLu20DeleteResponse_QNAME, TLu20DeleteResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Tlu20DangNhapUpdateResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://webservice.service/", name = "Tlu20DangNhapUpdateResponse")
+    public JAXBElement<Tlu20DangNhapUpdateResponse> createTlu20DangNhapUpdateResponse(Tlu20DangNhapUpdateResponse value) {
+        return new JAXBElement<Tlu20DangNhapUpdateResponse>(_Tlu20DangNhapUpdateResponse_QNAME, Tlu20DangNhapUpdateResponse.class, null, value);
     }
 
     /**

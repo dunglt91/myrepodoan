@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?WSDL" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.wsdl"/>
-    <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?xsd=1" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu30HoSoUngVien?WSDL" uri="xml-resources/web-service-references/WsTlu30HoSoUngVien/wsdl/localhost_8181/NetBeansProjects/WsTlu30HoSoUngVien.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu30HoSoUngVien?xsd=1" uri="xml-resources/web-service-references/WsTlu30HoSoUngVien/wsdl/localhost_8181/NetBeansProjects/WsTlu30HoSoUngVien.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETDKTD?WSDL" uri="xml-resources/web-service-references/WSTLU30CHITIETDKTD/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETDKTD.wsdl"/>
@@ -20,4 +18,6 @@
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu30LichPhongVan?xsd=1" uri="xml-resources/web-service-references/WsTlu30LichPhongVan/wsdl/localhost_8181/NetBeansProjects/WsTlu30LichPhongVan.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?WSDL" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?xsd=1" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.xsd_1.xsd"/>
+    <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?WSDL" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.wsdl"/>
+    <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?xsd=1" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.xsd_1.xsd"/>
 </catalog>

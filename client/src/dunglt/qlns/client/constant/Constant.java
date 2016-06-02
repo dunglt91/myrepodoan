@@ -22,4 +22,6 @@ public class Constant {
     public static final String CMND = "CMND";
     public static final String HO_KHAU = "Hộ Khẩu";
     public static final String DAT = "Đạt";
+    public static final String SUCCESS = "succ";
+    public static final String FAIL = "fail";
 }

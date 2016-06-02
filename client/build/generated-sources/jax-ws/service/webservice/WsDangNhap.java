@@ -34,6 +34,30 @@ public interface WsDangNhap {
      * @return
      *     returns java.lang.String
      */
+    @WebMethod(operationName = "Tlu20DangNhapUpdate")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Tlu20DangNhapUpdate", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapUpdate")
+    @ResponseWrapper(localName = "Tlu20DangNhapUpdateResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapUpdateResponse")
+    @Action(input = "http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateRequest", output = "http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateResponse")
+    public String tlu20DangNhapUpdate(
+        @WebParam(name = "username", targetNamespace = "")
+        String username,
+        @WebParam(name = "pass", targetNamespace = "")
+        String pass,
+        @WebParam(name = "repass", targetNamespace = "")
+        String repass,
+        @WebParam(name = "role", targetNamespace = "")
+        String role);
+
+    /**
+     * 
+     * @param username
+     * @param role
+     * @param repass
+     * @param pass
+     * @return
+     *     returns java.lang.String
+     */
     @WebMethod(operationName = "Tlu20DangNhapInsert")
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "Tlu20DangNhapInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapInsert")

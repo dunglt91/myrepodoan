@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package client;
+import dunglt.qlns.client.constant.Constant;
 import dunglt.qlns.client.util.ValidateUtil;
 import java.awt.*;
 import javax.swing.*;
@@ -292,9 +293,11 @@ public class TieuChiKHTD extends javax.swing.JFrame {
             ValidateUtil.isNotNull(_tfDiemCanDatChiTietDktd.getText()) &&
             ValidateUtil.isNotNull(_tfMaChiTietDktd.getText()) &&
             ValidateUtil.isNotNull(_tfTenChiTietDktd.getText())) {
-
-            tlu30ChitietdktdUpdatebyID(idChiTietDktd, _tfKeHoachSoChiTietDktd.getText(), _tfMaChiTietDktd.getText(), _tfTenChiTietDktd.getText(), Float.parseFloat(_tfDiemCanDatChiTietDktd.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
+            String mess = Constant.BLANK;
+            mess = tlu30ChitietdktdUpdatebyID(idChiTietDktd, _tfKeHoachSoChiTietDktd.getText(), _tfMaChiTietDktd.getText(), _tfTenChiTietDktd.getText(), Float.parseFloat(_tfDiemCanDatChiTietDktd.getText()));
+            if(mess.equals(Constant.SUCCESS)) {
+                JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
+            }
             viewChiTietDKTD();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Thiếu thông tin", "Error", JOptionPane.ERROR_MESSAGE);
@@ -358,8 +361,9 @@ public class TieuChiKHTD extends javax.swing.JFrame {
         _tfTenChiTietDktd.setText(lstchitiet.get(0).getTenchitietdktd());
         _tfMaChiTietDktd.setText(lstchitiet.get(0).getMachitietdktd());
         _tfKeHoachSoChiTietDktd.setText(lstchitiet.get(0).getKehoachtuyendung());
-        idChiTietDktd = lstchitiet.get(0).getId();
         _tfDiemCanDatChiTietDktd.setText(lstchitiet.get(0).getDiemcandat() + "");
+        idChiTietDktd = lstchitiet.get(0).getId();
+        System.out.println("idChiTietDktd   " + idChiTietDktd);
     }//GEN-LAST:event__tblChiTietMouseClicked
 
     /**
@@ -429,12 +433,6 @@ public class TieuChiKHTD extends javax.swing.JFrame {
         return port.tlu30ChitietdktdFindCommon(kehoachtuyendung, machitietdktd, tenchitietdktd);
     }
 
-    private static String tlu30ChitietdktdDeletebyId(int id) {
-        service.webservice.WSTLU30CHITIETDKTD_Service service = new service.webservice.WSTLU30CHITIETDKTD_Service();
-        service.webservice.WSTLU30CHITIETDKTD port = service.getWSTLU30CHITIETDKTDPort();
-        return port.tlu30ChitietdktdDeletebyId(id);
-    }
-
     private static java.util.List<service.webservice.Tlu20DieuKienTuyenDung> tlu20DktdDisplayAll() {
         service.webservice.WsTlu20DieuKienTuyenDung_Service service = new service.webservice.WsTlu20DieuKienTuyenDung_Service();
         service.webservice.WsTlu20DieuKienTuyenDung port = service.getWsTlu20DieuKienTuyenDungPort();
@@ -457,6 +455,12 @@ public class TieuChiKHTD extends javax.swing.JFrame {
         service.webservice.WSTLU30CHITIETDKTD_Service service = new service.webservice.WSTLU30CHITIETDKTD_Service();
         service.webservice.WSTLU30CHITIETDKTD port = service.getWSTLU30CHITIETDKTDPort();
         return port.tlu30ChitietdktdUpdatebyID(iddktd, kehoachtuyendung, machitietdktd, tenchitietdktd, diemcandatDiemcandat);
+    }
+
+    private static String tlu30ChitietdktdDeletebyId(int iddktd) {
+        service.webservice.WSTLU30CHITIETDKTD_Service service = new service.webservice.WSTLU30CHITIETDKTD_Service();
+        service.webservice.WSTLU30CHITIETDKTD port = service.getWSTLU30CHITIETDKTDPort();
+        return port.tlu30ChitietdktdDeletebyId(iddktd);
     }
 
     
