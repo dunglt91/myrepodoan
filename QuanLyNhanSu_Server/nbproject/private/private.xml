@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/dunglt/NetBeansProjects/QuanLyNhanSu_Server/src/java/service/webservice/WsTlu30LichPhongVan.java</file>
-            <file>file:/home/dunglt/NetBeansProjects/QuanLyNhanSu_Server/src/java/service/webservice/WsTlu20DieuKienTuyenDung.java</file>
+            <file>file:/home/dunglt/NetBeansProjects/myrepodoan/QuanLyNhanSu_Server/src/java/service/webservice/WSTLU30CHITIETKQVPV.java</file>
+            <file>file:/home/dunglt/NetBeansProjects/myrepodoan/QuanLyNhanSu_Server/src/java/service/webservice/WsTlu30KeHoachTuyenDung.java</file>
+            <file>file:/home/dunglt/NetBeansProjects/myrepodoan/QuanLyNhanSu_Server/src/java/model/dao/DaoTLU30LichPhongVan.java</file>
+            <file>file:/home/dunglt/NetBeansProjects/myrepodoan/QuanLyNhanSu_Server/src/java/model/dao/FinderUtil.java</file>
         </group>
     </open-files>
 </project-private>
