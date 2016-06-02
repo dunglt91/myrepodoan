@@ -89,6 +89,8 @@ public class Common extends javax.swing.JFrame {
         if(!checkIsAdmin(stUserName)) {
             jTabbedPane3.removeTabAt(6);
         }
+        
+        _lbWelcome.setText("XIN CHÀO, BẠN ĐANG ĐĂNG NHẬP VỚI TÊN : " + userName);
     }
     
     private boolean checkIsAdmin(String uname) {
@@ -236,7 +238,7 @@ public class Common extends javax.swing.JFrame {
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel() {
-            ImageIcon icon = new ImageIcon("/home/dunglt/NetBeansProjects/client/hrmbg.jpg");
+            ImageIcon icon = new ImageIcon("/home/dunglt/NetBeansProjects/welcome.jpg");
             public void paintComponent(Graphics g){
                 Dimension d = getSize();
                 g.drawImage(icon.getImage(), 0, 0, d.width, d.height, null);
@@ -244,6 +246,7 @@ public class Common extends javax.swing.JFrame {
                 super.paintComponent(g);
             }
         };
+        _lbWelcome = new javax.swing.JLabel();
         danhMucLon = new javax.swing.JPanel();
         danhMucChon = new javax.swing.JPanel() {
             ImageIcon icon = new ImageIcon("/home/dunglt/NetBeansProjects/client/bann.jpg");
@@ -544,15 +547,25 @@ public class Common extends javax.swing.JFrame {
 
         jPanel4.setBackground(java.awt.Color.white);
 
+        _lbWelcome.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        _lbWelcome.setForeground(java.awt.Color.white);
+        _lbWelcome.setText(" ");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1283, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(_lbWelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+                .addGap(270, 270, 270))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 705, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(_lbWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(487, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -899,7 +912,7 @@ public class Common extends javax.swing.JFrame {
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_tfTenDktd, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                            .addComponent(_tfTenDktd, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                             .addComponent(_tfCreatedbyDktd))
                         .addGap(121, 121, 121))))
         );
@@ -1097,7 +1110,7 @@ public class Common extends javax.swing.JFrame {
                             .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_tfTenBoPhan, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                            .addComponent(_tfTenBoPhan, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                             .addComponent(_tfCreatedbyBoPhan))
                         .addGap(121, 121, 121))))
         );
@@ -2883,15 +2896,24 @@ public class Common extends javax.swing.JFrame {
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
         isUpdateUser = true;
-        new AccountMgt(isUpdateUser, stUserName).setVisible(true);
+        new AccountMgt(isUpdateUser, _tfTenDn.getText()).setVisible(true);
     }//GEN-LAST:event_jButton41ActionPerformed
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
-        // TODO add your handling code here:
+         Tlu20DangNhap dangNhap = tLu20DangNhapFindUser(_tfTenDn.getText());
+         if(ValidateUtil.isNotNull(dangNhap)) {
+             if(!_tfTenDn.getText().equals(dangNhap.getUsername())) {
+               tLu20Delete(_tfTenDn.getText());  
+             } else {
+                 JOptionPane.showMessageDialog(rootPane, "Không thể tự xóa chính mình", "Lỗi", JOptionPane.ERROR_MESSAGE);
+             }
+         } else {
+             JOptionPane.showMessageDialog(rootPane, "Tên đăng nhập không tồn tại", "Lỗi", JOptionPane.ERROR_MESSAGE);
+         }
     }//GEN-LAST:event_jButton42ActionPerformed
 
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
-        // TODO add your handling code here:
+        viewDangNhap();
     }//GEN-LAST:event_jButton43ActionPerformed
 
     private void _tblDnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tblDnMouseClicked
@@ -2910,6 +2932,8 @@ public class Common extends javax.swing.JFrame {
                         mess = tlu20DangNhapUpdate(stUserName, _pfNewPass.getText(), _pfReNewPass.getText(), dangNhap.getRole());
                         if(mess.equals(Constant.SUCCESS)) {
                             JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thành công");
+                            dispose();
+                            new DangNhap().setVisible(true);
                         }
                     } else {
                         JOptionPane.showMessageDialog(rootPane, "Mật khẩu mới và gõ lại mật khẩu mới phải giống nhau", "cảnh báo", JOptionPane.ERROR_MESSAGE);
@@ -2935,6 +2959,7 @@ public class Common extends javax.swing.JFrame {
     private javax.swing.JComboBox _cbbBpIsActive;
     private javax.swing.JComboBox _cbbDktd;
     private javax.swing.JComboBox _cbbIsActiveCv;
+    private javax.swing.JLabel _lbWelcome;
     private javax.swing.JPasswordField _pfNewPass;
     private javax.swing.JPasswordField _pfPass;
     private javax.swing.JPasswordField _pfReNewPass;
@@ -3250,6 +3275,12 @@ public class Common extends javax.swing.JFrame {
         service.webservice.WsDangNhap_Service service = new service.webservice.WsDangNhap_Service();
         service.webservice.WsDangNhap port = service.getWsDangNhapPort();
         return port.tlu20DangNhapUpdate(username, pass, repass, role);
+    }
+
+    private static String tLu20Delete(java.lang.String user) {
+        service.webservice.WsDangNhap_Service service = new service.webservice.WsDangNhap_Service();
+        service.webservice.WsDangNhap port = service.getWsDangNhapPort();
+        return port.tLu20Delete(user);
     }
     
     
