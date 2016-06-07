@@ -7,6 +7,7 @@ package client;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import service.webservice.Tlu20DangNhap;
 
 /**
@@ -74,6 +75,11 @@ public class DangNhap extends javax.swing.JFrame {
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
+            }
+        });
+        jButton6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButton6KeyPressed(evt);
             }
         });
 
@@ -150,6 +156,22 @@ public class DangNhap extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "sai username");
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButton6KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (testLogin(_tfusername.getText(), _pfpass.getText()).equals("dang nhap thanh cong")) {
+                    JOptionPane.showMessageDialog(rootPane, "đăng nhập thành công");
+                        new Common(_tfusername.getText()).setVisible(true);
+                        dispose();       
+                }
+                if (testLogin(_tfusername.getText(), _pfpass.getText()).equals("sai pass")) {
+                    JOptionPane.showMessageDialog(rootPane, "sai pass");
+                }
+                if (testLogin(_tfusername.getText(), _pfpass.getText()).equals("sai username")) {
+                    JOptionPane.showMessageDialog(rootPane, "sai username");
+                }
+        }
+    }//GEN-LAST:event_jButton6KeyPressed
 
     /**
      * @param args the command line arguments

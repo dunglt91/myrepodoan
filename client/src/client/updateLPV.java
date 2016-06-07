@@ -179,6 +179,11 @@ public class updateLPV extends javax.swing.JFrame {
         jButton31.setBackground(new java.awt.Color(52, 79, 223));
         jButton31.setForeground(new java.awt.Color(254, 254, 254));
         jButton31.setText("Hủy bỏ");
+        jButton31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton31ActionPerformed(evt);
+            }
+        });
 
         jLabel51.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLabel51.setText("Lịch hẹn");
@@ -391,6 +396,10 @@ public class updateLPV extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "chưa điền đủ thông tin");
         }
     }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton31ActionPerformed
 
     /**
      * @param args the command line arguments
