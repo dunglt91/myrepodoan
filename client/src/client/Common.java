@@ -1989,6 +1989,7 @@ public class Common extends javax.swing.JFrame {
         jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         _tfSearch.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        _tfSearch.setToolTipText("Ô tìm kiếm kế hoạch tuyển dụng");
 
         jPanel1.setBackground(new java.awt.Color(224, 230, 237));
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createTitledBorder(""), null));
