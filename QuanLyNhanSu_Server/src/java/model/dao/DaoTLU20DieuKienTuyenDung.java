@@ -18,6 +18,7 @@ public class DaoTLU20DieuKienTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(tlu20dktd);
             tx.commit();
@@ -35,6 +36,7 @@ public class DaoTLU20DieuKienTuyenDung {
     public List<Tlu20dieuKienTuyenDung> Tlu20dieuKienTuyenDungDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu20dieuKienTuyenDung> tlu20dktd = ss.createCriteria(Tlu20dieuKienTuyenDung.class).list();
         ss.close();
         return tlu20dktd;
@@ -49,6 +51,7 @@ public class DaoTLU20DieuKienTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             tlu20dktd = (Tlu20dieuKienTuyenDung) ss.get(Tlu20dieuKienTuyenDung.class, idTlu20dieuKienTuyenDung);
         } catch (Exception e) {
@@ -69,6 +72,7 @@ public class DaoTLU20DieuKienTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20dieuKienTuyenDung tlu20dktd = this.Tlu20dieuKienTuyenDungFindbyId(idTlu20dieuKienTuyenDung);
             ss.delete(tlu20dktd);
@@ -88,6 +92,7 @@ public class DaoTLU20DieuKienTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20dieuKienTuyenDung tlu20dktd = this.Tlu20dieuKienTuyenDungFindbyId(idtlu20dktd);
             tlu20dktd.setCreatedBy(CreatedBy);

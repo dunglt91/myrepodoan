@@ -18,6 +18,7 @@ public class DAOBOPHAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(tlu20bophan);
             tx.commit();
@@ -35,6 +36,7 @@ public class DAOBOPHAN {
     public List<Tlu20bophan> Tlu20bophanDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu20bophan> tlu20bophan = ss.createCriteria(Tlu20bophan.class).list();
         ss.close();
         return tlu20bophan;
@@ -49,6 +51,7 @@ public class DAOBOPHAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             tlu20bophan = (Tlu20bophan) ss.get(Tlu20bophan.class, idTlu20bophan);
         } catch (Exception e) {
@@ -69,6 +72,7 @@ public class DAOBOPHAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20bophan tlu20bophan = this.Tlu20bophanFindbyId(idTlu20bophan);
             ss.delete(tlu20bophan);
@@ -88,7 +92,9 @@ public class DAOBOPHAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
+            ss.setCacheMode(CacheMode.IGNORE);
             Tlu20bophan tlu20bophan = this.Tlu20bophanFindbyId(idTlu20bophan);
             tlu20bophan.setCreatedBy(CreatedBy);
             tlu20bophan.setCreatedAt(CreatedAt);

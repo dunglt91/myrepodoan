@@ -16,6 +16,7 @@ public class DaoTLU30KeHoachTuyenDung {
     public List<Tlu30keHoachTuyenDung> Tlu30khtdDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30keHoachTuyenDung> listtlu30khtd = ss.createCriteria(Tlu30keHoachTuyenDung.class).list();
         ss.close();
         return listtlu30khtd;
@@ -24,6 +25,7 @@ public class DaoTLU30KeHoachTuyenDung {
     public Tlu30keHoachTuyenDung Tlu30khtdFindById(int idkhtd) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         Transaction tx = ss.beginTransaction();
         Tlu30keHoachTuyenDung tlu30khtd = (Tlu30keHoachTuyenDung) ss.get(Tlu30keHoachTuyenDung.class, idkhtd);
         ss.close();
@@ -41,6 +43,7 @@ public class DaoTLU30KeHoachTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             Criteria crit = ss.createCriteria(Tlu30keHoachTuyenDung.class);
             listcrit = crit.add(Restrictions.like("keHoachSo", khs, MatchMode.ANYWHERE)).list();
         } catch (Exception e) {
@@ -60,6 +63,7 @@ public class DaoTLU30KeHoachTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(tlu30khtd);
             tx.commit();
@@ -87,6 +91,7 @@ public class DaoTLU30KeHoachTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu30keHoachTuyenDung tlu30khtd = this.Tlu30khtdFindById(idkhtd);
             if (this.Tlu30khtdFindById(idkhtd) != null) {
@@ -137,6 +142,7 @@ public class DaoTLU30KeHoachTuyenDung {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             if (this.Tlu30khtdFindById(idkhtd) != null) {
                 ss.delete(this.Tlu30khtdFindById(idkhtd));

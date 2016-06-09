@@ -73,6 +73,7 @@ public class FinderUtil {
                 }
             }
             Query quer = ss.createQuery(query.toString());
+            quer.setCacheable(false);
             listcrit = quer.list();
 
         } catch (Exception e) {

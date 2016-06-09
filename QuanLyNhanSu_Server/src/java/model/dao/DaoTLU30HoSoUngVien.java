@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import model.pojos.Tlu30hoSoUngVien;
+import org.hibernate.CacheMode;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,7 @@ public class DaoTLU30HoSoUngVien {
     public List<Tlu30hoSoUngVien> Tlu30hsuvDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30hoSoUngVien> hsuvdisplayall = ss.createCriteria(Tlu30hoSoUngVien.class).list();
         if (ss != null) {
             ss.close();
@@ -38,6 +40,7 @@ public class DaoTLU30HoSoUngVien {
     public Tlu30hoSoUngVien Tlu30hsuvFindById(int idhsuv) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         Tlu30hoSoUngVien tlu30hsuv = null;
         try {
             tlu30hsuv = (Tlu30hoSoUngVien) ss.get(Tlu30hoSoUngVien.class, idhsuv);
@@ -62,6 +65,7 @@ public class DaoTLU30HoSoUngVien {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             Criteria crit = ss.createCriteria(Tlu30hoSoUngVien.class);
             hsuvkhs = crit.add(Restrictions.like("maHoSo", mhs, MatchMode.ANYWHERE)).list();
             return hsuvkhs;
@@ -113,6 +117,7 @@ public class DaoTLU30HoSoUngVien {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu30hoSoUngVien tlu30hsuv = this.Tlu30hsuvFindById(idHsuv);
             if (tlu30hsuv != null) {
@@ -172,6 +177,7 @@ public class DaoTLU30HoSoUngVien {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu30hoSoUngVien tlu30hsuv = this.Tlu30hsuvFindById(idHsuv);
             if (tlu30hsuv != null) {

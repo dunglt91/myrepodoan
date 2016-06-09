@@ -18,6 +18,7 @@ public class DAOTLU30CHITIETVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(tlu30chitietvpv);
             tx.commit();
@@ -35,6 +36,7 @@ public class DAOTLU30CHITIETVPV {
     public List<Tlu30chitietvpv> Tlu30chitietvpvDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30chitietvpv> tlu30chitietvpv = ss.createCriteria(Tlu30chitietvpv.class).list();
         ss.close();
         return tlu30chitietvpv;
@@ -52,6 +54,7 @@ public class DAOTLU30CHITIETVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             tlu30chitietvpv = (Tlu30chitietvpv) ss.get(Tlu30chitietvpv.class, idTlu30chitietvpv);
         } catch (Exception e) {
@@ -75,6 +78,7 @@ public class DAOTLU30CHITIETVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu30chitietvpv tlu30ctdktd = this.Tlu30chitietvpvFindbyId(idTlu30chitietvpv);
             ss.delete(tlu30ctdktd);
@@ -95,6 +99,7 @@ public class DAOTLU30CHITIETVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu30chitietvpv tlu30chitietvpv = this.Tlu30chitietvpvFindbyId(idTlu30chitietvpv);
             tlu30chitietvpv.setMachitietvpv(Machitietvpv);

@@ -8,6 +8,7 @@ package model.dao;
 import java.util.ArrayList;
 import java.util.List;
 import model.pojos.Tlu20dangNhap;
+import org.hibernate.CacheMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -25,6 +26,7 @@ public class DaoTLU20DangNhap {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(instlu20dangnhap);
             tx.commit();
@@ -45,6 +47,7 @@ public class DaoTLU20DangNhap {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tlu20dn = (Tlu20dangNhap) ss.get(Tlu20dangNhap.class, user);
         } catch (Exception e) {
         } finally {
@@ -60,6 +63,7 @@ public class DaoTLU20DangNhap {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20dangNhap tlu20dn = this.TLu20DangNhapFindUser(user);
             ss.delete(tlu20dn);
@@ -82,6 +86,7 @@ public class DaoTLU20DangNhap {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20dangNhap tlu20dn = this.TLu20DangNhapFindUser(user);
             tlu20dn.setPasswords(pass);
@@ -107,6 +112,7 @@ public class DaoTLU20DangNhap {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tlu20dn = this.TLu20DangNhapFindUser(user);
 
         } catch (Exception e) {

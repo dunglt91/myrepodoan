@@ -19,7 +19,7 @@ public class DAOTLU20DANHMUCVPV {
         Transaction tx = null;
         try {
             sf = HibernateUtil.getSessionFactory();
-            ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(tlu20danhmucvongpv);
             tx.commit();
@@ -37,6 +37,7 @@ public class DAOTLU20DANHMUCVPV {
     public List<Tlu20danhmucvongpv> Tlu20danhmucvongpvDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu20danhmucvongpv> Tlu20danhmucvongpv = ss.createCriteria(Tlu20danhmucvongpv.class).list();
         ss.close();
         return Tlu20danhmucvongpv;
@@ -54,6 +55,7 @@ public class DAOTLU20DANHMUCVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             tlu20danhmucvongpv = (Tlu20danhmucvongpv) ss.get(Tlu20danhmucvongpv.class, idTlu20danhmucvongpv);
         } catch (Exception e) {
@@ -77,6 +79,7 @@ public class DAOTLU20DANHMUCVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20danhmucvongpv tlu30ctdktd = this.Tlu20danhmucvongpvFindbyId(idTlu20danhmucvongpv);
             ss.delete(tlu30ctdktd);
@@ -96,6 +99,7 @@ public class DAOTLU20DANHMUCVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu20danhmucvongpv tlu20danhmucvongpv = this.Tlu20danhmucvongpvFindbyId(idTlu20danhmucvongpv);
             tlu20danhmucvongpv.setMadmvpv(Madmvpv);
@@ -119,6 +123,7 @@ public class DAOTLU20DANHMUCVPV {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             Criteria crit = ss.createCriteria(Tlu20danhmucvongpv.class);
             listcrit = crit.add(Restrictions.like("madmvpv", ((Madmvpv.trim().length() == 0 && Madmvpv.equals("")) ? " " : Madmvpv), MatchMode.ANYWHERE))
                     .add(Restrictions.like("tendmvpv", ((Tendmvpv.trim().length() == 0 && Tendmvpv.equals("")) ? " " : Tendmvpv), MatchMode.ANYWHERE)).list();

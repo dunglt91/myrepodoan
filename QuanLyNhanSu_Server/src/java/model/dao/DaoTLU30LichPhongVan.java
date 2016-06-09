@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import model.pojos.Tlu30lichPhongVan;
+import org.hibernate.CacheMode;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,6 +26,7 @@ public class DaoTLU30LichPhongVan {
     public List<Tlu30lichPhongVan> Tlu30LpvDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30lichPhongVan> displayall = ss.createCriteria(Tlu30lichPhongVan.class).list();
         ss.close();
         return displayall;
@@ -33,6 +35,7 @@ public class DaoTLU30LichPhongVan {
     public Tlu30lichPhongVan Tlu30LpvFindById(int idLpv) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         Tlu30lichPhongVan display = (Tlu30lichPhongVan) ss.get(Tlu30lichPhongVan.class, idLpv);
         if (ss != null) {
             ss.close();
@@ -45,6 +48,7 @@ public class DaoTLU30LichPhongVan {
     public List<Tlu30lichPhongVan> Tlu30LpvFindbySoLPV(int solpv) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30lichPhongVan> findsolpv = null;
         try {
             Criteria crit = ss.createCriteria(Tlu30lichPhongVan.class);
@@ -61,6 +65,7 @@ public class DaoTLU30LichPhongVan {
     public List<Tlu30lichPhongVan> Tlu30LpvFindByUngVien(String tenuv) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30lichPhongVan> findtenuv = null;
         try {
             Criteria crit = ss.createCriteria(Tlu30lichPhongVan.class);

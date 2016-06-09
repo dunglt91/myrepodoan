@@ -20,6 +20,7 @@ public class DAOTLU30KETQUAPHONGVAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             ss.save(tlu30ketQuaPhongVan);
             tx.commit();
@@ -37,6 +38,7 @@ public class DAOTLU30KETQUAPHONGVAN {
     public List<Tlu30ketQuaPhongVan> Tlu30ketQuaPhongVanDisplayAll() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session ss = sf.openSession();
+        ss.setCacheMode(CacheMode.IGNORE);
         List<Tlu30ketQuaPhongVan> tlu30chitietvpv = ss.createCriteria(Tlu30ketQuaPhongVan.class).list();
         ss.close();
         return tlu30chitietvpv;
@@ -54,6 +56,7 @@ public class DAOTLU30KETQUAPHONGVAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             tlu30ketQuaPhongVan = (Tlu30ketQuaPhongVan) ss.get(Tlu30ketQuaPhongVan.class, idTlu30ketQuaPhongVan);
         } catch (Exception e) {
@@ -77,6 +80,7 @@ public class DAOTLU30KETQUAPHONGVAN {
         try {
             sf = HibernateUtil.getSessionFactory();
             ss = sf.openSession();
+            ss.setCacheMode(CacheMode.IGNORE);
             tx = ss.beginTransaction();
             Tlu30ketQuaPhongVan tlu30ketQuaPhongVan = this.Tlu30ketQuaPhongVanFindbyId(idTlu30ketQuaPhongVan);
             ss.delete(tlu30ketQuaPhongVan);
