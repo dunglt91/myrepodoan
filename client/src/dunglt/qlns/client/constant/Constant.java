@@ -24,4 +24,8 @@ public class Constant {
     public static final String DAT = "Đạt";
     public static final String SUCCESS = "succ";
     public static final String FAIL = "fail";
+    
+    public static final String KQ_FAIL = "Không đạt";
+    public static final String KQ_PASS = "Đạt";
+    public static final String KQ_All = "Tất cả";
 }
