@@ -31,7 +31,7 @@ public class WsDangNhap {
             if (pass.equals(repass)) {
                 Tlu20dangNhap tlu20dn = new Tlu20dangNhap(username, pass, repass, role);
                 daotlu20dn.Tlu20DangNhapInsert(tlu20dn);
-                return "thêm thành công";
+                return "succ";
             } else {
                 return "pass va repass phai trung nhau";
             }

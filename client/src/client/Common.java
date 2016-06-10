@@ -2078,7 +2078,9 @@ public class Common extends javax.swing.JFrame {
         jLabel12.setForeground(java.awt.Color.black);
         jLabel12.setText("Gõ lại mật khẩu mới");
 
+        jButton31.setBackground(new java.awt.Color(73, 101, 195));
         jButton31.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jButton31.setForeground(java.awt.Color.white);
         jButton31.setText("Đổi mật khẩu");
         jButton31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2457,7 +2459,7 @@ public class Common extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 741, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 741, Short.MAX_VALUE)
         );
 
         ImageIcon imageIconHome = new ImageIcon("/home/dunglt/NetBeansProjects/client/src/dunglt/qlns/client/icon/homeicon_48.png");
@@ -2649,11 +2651,13 @@ public class Common extends javax.swing.JFrame {
         System.out.println("");
         java.util.List<Tlu20Bophan> lstBoPhan = tlu20BophanFindCommon(tenBoPhan, maBoPhan);
 
-        _tfCreatedbyBoPhan.setText(lstBoPhan.get(0).getCreatedBy());
+        if(!lstBoPhan.isEmpty()) {
+            _tfCreatedbyBoPhan.setText(lstBoPhan.get(0).getCreatedBy());
         _tfTenBoPhan.setText(lstBoPhan.get(0).getTenbophan());
         _tfMaBoPhan.setText(lstBoPhan.get(0).getMabophan());
         Calendar calendar = lstBoPhan.get(0).getCreatedAt().toGregorianCalendar();
         _calBoPhan.setCalendar(calendar);
+        }
 
         ClientUtil.getValueIsActiveFromWS(_cbbBpIsActive,
             ClientUtil.getStringFromIsActive(lstBoPhan.get(0).isIsActive()));
@@ -2712,11 +2716,14 @@ public class Common extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         try {
             if (ValidateUtil.isNotNull(tdvhMa.getText())) {
-                tlu20TrinhDoVanHoaUpdatebyID(idTdvh, tdvhNguoiThem.getText(),
+                String result = Constant.BLANK;
+                result = tlu20TrinhDoVanHoaUpdatebyID(idTdvh, tdvhNguoiThem.getText(),
                     DateTimeUtil.convertCalendarToString(dateTdvh.getCalendar().getTime()),
                     ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(tdvhLaNv)),
                     tdvhTen.getText(), tdvhMa.getText());
-                JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+                if(result.equalsIgnoreCase(Constant.SUCCESS)) {
+                    JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+                }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Chưa chọn danh mục cần nhập", "Warning", JOptionPane.WARNING_MESSAGE);
             }
@@ -2883,16 +2890,15 @@ public class Common extends javax.swing.JFrame {
     private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
         try {
             if (ValidateUtil.isNotNull(_tfMaDktd.getText())) {
-
-                tlu20DktdUpdatebyID(idDktd, _tfCreatedbyDktd.getText(),
+                String result = Constant.BLANK;
+                result = tlu20DktdUpdatebyID(idDktd, _tfCreatedbyDktd.getText(),
                     DateTimeUtil.convertCalendarToString(_calDktd.getCalendar().getTime()),
                     ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbDktd)),
-                    _tfMaDktd.getText(), _tfTenDktd.getText());
-                System.out.println(_tfMaDktd.getText());
-                System.out.println(idDktd);
-                JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
-                //
-                //refresh();
+                    _tfTenDktd.getText(),_tfMaDktd.getText() );
+                if(result.equalsIgnoreCase(Constant.SUCCESS)) {
+                    JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+                }
+               
 
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Chưa chọn danh mục cần nhập", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -2955,17 +2961,14 @@ public class Common extends javax.swing.JFrame {
     private void jButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton37ActionPerformed
        try {
             if (ValidateUtil.isNotNull(_tfMaBoPhan.getText())) {
-
-                tlu20BophanUpdatebyID(idBoPhan, _tfCreatedbyBoPhan.getText(),
+                String result = Constant.BLANK;
+                result = tlu20BophanUpdatebyID(idBoPhan, _tfCreatedbyBoPhan.getText(),
                     DateTimeUtil.convertCalendarToString(_calBoPhan.getCalendar().getTime()),
                     ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbBpIsActive)),
                     _tfTenBoPhan.getText(), _tfMaBoPhan.getText());
-                System.out.println(_tfMaBoPhan.getText());
-                System.out.println(idBoPhan);
-                JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
-                //
-                //refresh();
-
+                if(result.equalsIgnoreCase(Constant.SUCCESS)) {
+                    JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+                }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Chưa chọn danh mục cần nhập", "Warning", JOptionPane.WARNING_MESSAGE);
             }
@@ -3026,13 +3029,15 @@ public class Common extends javax.swing.JFrame {
     private void jButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton45ActionPerformed
         try {
             if (ValidateUtil.isNotNull(_tfMaChucVu.getText())) {
-                tlu20ChucVuUpdatebyID(idChucVu, _tfCreatedbyChucVu.getText(),
+                String resutl = Constant.BLANK;
+               resutl = tlu20ChucVuUpdatebyID(idChucVu, _tfCreatedbyChucVu.getText(),
                     DateTimeUtil.convertCalendarToString(_calChucVu.getCalendar().getTime()),
                     ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbIsActiveCv)),
                     _tfTenChucVu.getText(), _tfMaChucVu.getText());
-                System.out.println(_tfMaChucVu.getText());
-                System.out.println(idChucVu);
-                JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+               if(resutl.equalsIgnoreCase(Constant.SUCCESS)) {
+                   JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+               } 
+               
 
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Chưa chọn danh mục cần nhập", "Warning", JOptionPane.WARNING_MESSAGE);

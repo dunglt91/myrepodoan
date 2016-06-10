@@ -69,7 +69,7 @@ public class WSTLU20CHUCVU {
             @WebParam(name = "isActive") boolean isActive,
             @WebParam(name = "tenchucvu") String tenchucvu,
             @WebParam(name = "machucvu") String machucvu) throws ParseException {
-         Date convcreatedAt = (Date) initConv().ConvertStringToDateSql(createdAt);
+        Date convcreatedAt = (Date) initConv().ConvertStringToDateSql(createdAt);
         Tlu20chucVu tlu20chucVu = init().Tlu20chucVuFindbyId(idcv);
         List<Tlu20chucVu> tlu20chucVus = init().Tlu20chucVuFindCommon(null, machucvu);
         if(ValidateUtil.isNotNull(tlu20chucVu)) {

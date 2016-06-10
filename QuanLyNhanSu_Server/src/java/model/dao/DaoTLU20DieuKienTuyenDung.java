@@ -113,7 +113,7 @@ public class DaoTLU20DieuKienTuyenDung {
     
      public List<Tlu20dieuKienTuyenDung> Tlu20dieuKienTuyenDungFindCommon(String tenDmdktd, String maDmdktd) {
 
-        String [] param = {tenDmdktd.trim(), maDmdktd.trim()};
+        String [] param = {tenDmdktd, maDmdktd};
         String [] namecolum = {"tendmdktd", "madmdktd"};
         List<Object> listReult =  FinderUtil.find(param, "Tlu20dieuKienTuyenDung", namecolum);
         List<Tlu20dieuKienTuyenDung> listCurOb = new ArrayList<>();

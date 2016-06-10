@@ -73,8 +73,10 @@ public class WSBOPHAN {
          Date convcreatedAt = (Date) initConv().ConvertStringToDateSql(createdAt);
         Tlu20bophan tlu20BoPhan = init().Tlu20bophanFindbyId(id);
         List<Tlu20bophan> tlu20boPhans = init().Tlu20bophanFindCommon(null, Mabophan);
-        if(ValidateUtil.isNotNull(tlu20boPhans)) {
-            if(tlu20boPhans.size() == 1) {
+   
+        if(ValidateUtil.isNotNull(tlu20BoPhan)) {
+            if((tlu20boPhans.size() == 1 && tlu20boPhans.get(0).getId() == id)
+                    || tlu20boPhans.isEmpty()) {
                 init().Tlu20bophanUpdatebyID(id, 
                         createdBy, convcreatedAt, 
                         isActive, Tenbophan, Mabophan);
