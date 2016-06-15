@@ -248,9 +248,9 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="_cbbTrinhDoVanHoaHSUV" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="_tfHoTenHSUV" alignment="1" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="_cbbTrinhDoVanHoaHSUV" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -515,10 +515,12 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="_cbSoYeuLyLichHSUV" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                              <Component id="_cbGiayKhamSucKhoeHSUV" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="_cbHoKhauHSUV" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="_cbSoYeuLyLichHSUV" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="_cbGiayKhamSucKhoeHSUV" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
