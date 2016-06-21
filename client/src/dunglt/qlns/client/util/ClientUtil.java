@@ -93,4 +93,12 @@ public class ClientUtil {
         }
 
     }
+    
+    public static String disPlayIsPass(boolean ispass) {
+        String isP = Constant.KQ_FAIL;
+        if(ispass) {
+           isP = Constant.KQ_PASS;
+        } 
+         return isP; 
+    }
 }

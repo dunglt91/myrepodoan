@@ -185,11 +185,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DaoTLU20DieuKienTuyenDung }
+     * Create an instance of {@link Daotlu30CHITIETDKTD }
      * 
      */
-    public DaoTLU20DieuKienTuyenDung createDaoTLU20DieuKienTuyenDung() {
-        return new DaoTLU20DieuKienTuyenDung();
+    public Daotlu30CHITIETDKTD createDaotlu30CHITIETDKTD() {
+        return new Daotlu30CHITIETDKTD();
     }
 
     /**

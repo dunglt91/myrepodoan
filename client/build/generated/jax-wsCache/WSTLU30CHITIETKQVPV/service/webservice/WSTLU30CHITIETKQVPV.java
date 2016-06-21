@@ -166,13 +166,13 @@ public interface WSTLU30CHITIETKQVPV {
     /**
      * 
      * @return
-     *     returns service.webservice.DaoTLU20DieuKienTuyenDung
+     *     returns service.webservice.Daotlu30CHITIETDKTD
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "init", targetNamespace = "http://webservice.service/", className = "service.webservice.Init")
     @ResponseWrapper(localName = "initResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitResponse")
     @Action(input = "http://webservice.service/WSTLU30CHITIETKQVPV/initRequest", output = "http://webservice.service/WSTLU30CHITIETKQVPV/initResponse")
-    public DaoTLU20DieuKienTuyenDung init();
+    public Daotlu30CHITIETDKTD init();
 
 }

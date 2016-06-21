@@ -75,6 +75,12 @@ public class DictItem {
              }    
         }
     }
+     
+     public static void maHsWhenUpdateLpv(JComboBox _cbbKHS, int id) {
+        Tlu30LichPhongVan lichPhongVan = tlu30LpvFindById(id);
+        _cbbKHS.addItem(lichPhongVan.getUngVien());
+       
+    }
 
     private static java.util.List<service.webservice.Tlu30KeHoachTuyenDung> tlu30KhtdDisplayAll() {
         service.webservice.WsTLU30KeHoachTuyenDung service = new service.webservice.WsTLU30KeHoachTuyenDung();
@@ -124,6 +130,13 @@ public class DictItem {
         service.webservice.WsTlu30LichPhongVan port = service.getWsTlu30LichPhongVanPort();
         return port.tlu30LpvDisplayAll();
     }
+
+    private static Tlu30LichPhongVan tlu30LpvFindById(int arg0) {
+        service.webservice.WsTlu30LichPhongVan_Service service = new service.webservice.WsTlu30LichPhongVan_Service();
+        service.webservice.WsTlu30LichPhongVan port = service.getWsTlu30LichPhongVanPort();
+        return port.tlu30LpvFindById(arg0);
+    }
+    
     
     
    

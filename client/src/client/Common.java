@@ -102,7 +102,7 @@ public class Common extends javax.swing.JFrame {
             java.util.List<Tlu30HoSoUngVien> soUngVien = new ArrayList<>();
             soUngVien = findbyMaHoSo(lpv.getUngVien());
             model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(), 
-                soUngVien.get(0).getHoTen()});
+                soUngVien.get(0).getHoTen(), ClientUtil.disPlayIsPass(lpv.isDatYeuCau())});
         }
         model.fireTableDataChanged();
     }
@@ -115,7 +115,7 @@ public class Common extends javax.swing.JFrame {
             java.util.List<Tlu30HoSoUngVien> soUngVien = new ArrayList<>();
             soUngVien = findbyMaHoSo(lpv.getUngVien());
             model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(),
-                 soUngVien.get(0).getHoTen()});
+                 soUngVien.get(0).getHoTen(), ClientUtil.disPlayIsPass(lpv.isDatYeuCau())});
         }
         model.fireTableDataChanged();
     }
@@ -127,7 +127,7 @@ public class Common extends javax.swing.JFrame {
         for (Tlu30LichPhongVan lpv : tlu30LpvFindCommon(null, null, null, null)) {
             java.util.List<Tlu30HoSoUngVien> soUngVien = new ArrayList<>();
             soUngVien = findbyMaHoSo(lpv.getUngVien());
-            model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(),soUngVien.get(0).getHoTen()});
+            model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(),soUngVien.get(0).getHoTen(),ClientUtil.disPlayIsPass(lpv.isDatYeuCau())});
         }
         model.fireTableDataChanged();
     }
@@ -2358,11 +2358,11 @@ public class Common extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mã hồ sơ", "Kế hoạch số", "Tên ứng viên"
+                "Mã hồ sơ", "Kế hoạch số", "Tên ứng viên", "Kết quả"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3109,7 +3109,9 @@ public class Common extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel39MouseClicked
 
     private void _tblKqpvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tblKqpvMouseClicked
-        // TODO add your handling code here:
+        int row = _tblKqpv.getSelectedRow();
+        String maHS = _tblKqpv.getModel().getValueAt(row, 0).toString();
+        new ChiTietKqpv(maHS).setVisible(true);
     }//GEN-LAST:event__tblKqpvMouseClicked
 
     /**

@@ -44,7 +44,7 @@ public class updateLPV extends javax.swing.JFrame {
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xsize = (int) tk.getScreenSize().getWidth();
         int ysize = (int) tk.getScreenSize().getHeight();
-        DictItem.setTenAndMaHs(_cbbUngVienhsuv);
+        DictItem.maHsWhenUpdateLpv(_cbbUngVienhsuv, idLpv);
         DictItem.setKhs(_cbbKeHoachTuyenDungLPV);
         
         if(idLpv > 0) {

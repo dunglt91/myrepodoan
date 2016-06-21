@@ -16,8 +16,8 @@
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu20DieuKienTuyenDung?xsd=1" uri="xml-resources/web-service-references/WsTlu20DieuKienTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTlu20DieuKienTuyenDung.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu30LichPhongVan?WSDL" uri="xml-resources/web-service-references/WsTlu30LichPhongVan/wsdl/localhost_8181/NetBeansProjects/WsTlu30LichPhongVan.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu30LichPhongVan?xsd=1" uri="xml-resources/web-service-references/WsTlu30LichPhongVan/wsdl/localhost_8181/NetBeansProjects/WsTlu30LichPhongVan.xsd_1.xsd"/>
-    <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?WSDL" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.wsdl"/>
-    <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?xsd=1" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?WSDL" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?xsd=1" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.xsd_1.xsd"/>
+    <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?WSDL" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.wsdl"/>
+    <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?xsd=1" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.xsd_1.xsd"/>
 </catalog>

@@ -163,7 +163,7 @@ public class updateKHTD extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLabel2.setText("Ngày thêm");
 
-        jButton1.setBackground(java.awt.Color.red);
+        jButton1.setBackground(java.awt.Color.gray);
         jButton1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jButton1.setForeground(java.awt.Color.white);
         jButton1.setText("Cấu hình");

@@ -18,7 +18,7 @@ import service.webservice.Tlu30Chitietketquavpv;
  * @author dunglt
  */
 public class ChiTietLpv extends javax.swing.JFrame {
-
+    public static int idKqVpv;
     /**
      * Creates new form ChiTietLpv
      */
@@ -46,7 +46,7 @@ public class ChiTietLpv extends javax.swing.JFrame {
                          _tfTen.getText(),
                         _tfDiemCanDat.getText(), 
                         _tfDiemDatDuoc.getText())) {
-            model.addRow(new Object[]{chitietdktd.getMadkpv(), chitietdktd.getTendkpv(), chitietdktd.getMachitietdmkqpv(), chitietdktd.getDiemcandat(), chitietdktd.getDiemdatduoc()});
+            model.addRow(new Object[]{chitietdktd.getId(),chitietdktd.getMadkpv(), chitietdktd.getTendkpv(), chitietdktd.getMachitietdmkqpv(), chitietdktd.getDiemcandat(), chitietdktd.getDiemdatduoc()});
         }
         model.fireTableDataChanged();
     }
@@ -301,11 +301,11 @@ public class ChiTietLpv extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Mã điều kiện tuyển dụng", "Tên điều kiện tuyển dung", "Mã hồ sơ", "Điểm cần đạt", "Điểm đạt được"
+                "Id", "Mã điều kiện tuyển dụng", "Tên điều kiện tuyển dung", "Mã hồ sơ", "Điểm cần đạt", "Điểm đạt được"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -331,7 +331,7 @@ public class ChiTietLpv extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -373,7 +373,7 @@ public class ChiTietLpv extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 964, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -388,36 +388,62 @@ public class ChiTietLpv extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        if (!_tfDiemCanDat.getText().equals(Constant.BLANK)) {
-            tlu30ChitietketquavpvInsert(
+        if (!_tfDiemDatDuoc.getText().equals(Constant.BLANK)) {
+            String result = Constant.BLANK;
+            result = tlu30ChitietketquavpvInsert(
                     _tfTen.getText(), 
                     _tfMa.getText(), 
                     ClientUtil.setValueofCombobox(_cbbHSUV), 
                     Float.parseFloat(_tfDiemCanDat.getText()), 
                     Float.parseFloat(_tfDiemDatDuoc.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
+            if(result.equalsIgnoreCase(Constant.SUCCESS)) {
+                JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Đã nhập đủ tiêu chí", "error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         } else {
             JOptionPane.showMessageDialog(rootPane, "Chưa nhập điểm đạt được", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        
+        if(idKqVpv > 0) {
+             if (!_tfDiemDatDuoc.getText().equals(Constant.BLANK)) {
+                String result = Constant.BLANK;
+                result = tlu30ChitietketquavpvUpdatebyID(
+                        idKqVpv, ClientUtil.setValueofCombobox(_cbbHSUV), 
+                        _tfTen.getText(), 
+                        _tfMa.getText(), 
+                        Float.parseFloat(_tfDiemCanDat.getText()), 
+                        Float.parseFloat(_tfDiemDatDuoc.getText()));
+                if(result.equalsIgnoreCase(Constant.SUCCESS)) {
+                    JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công");
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Lỗi", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Chưa nhập điểm đạt được", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Cần chọn chi tiết lịch phỏng vấn \n trong danh sách", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+         
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void _tblketquaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tblketquaMouseClicked
-         int row = _tblketqua.getSelectedRow();
-        String machitietvpv = (_tblketqua.getModel().getValueAt(row, 0).toString());
-        String mahoso = (_tblketqua.getModel().getValueAt(row, 2).toString());
-        java.util.List<Tlu30Chitietketquavpv> lstchitiet = tlu30ChitietketquavpvFindCommon(mahoso, machitietvpv, null, null, null);
+        int row = _tblketqua.getSelectedRow();
+        int id = (int) (_tblketqua.getModel().getValueAt(row, 0));
+        Tlu30Chitietketquavpv lstchitiet = tlu30ChitietketquavpvFindbyId(id);
 
-        _tfTen.setText(lstchitiet.get(0).getTendkpv());
-        _tfMa.setText(lstchitiet.get(0).getMadkpv());
+        _tfTen.setText(lstchitiet.getTendkpv());
+        _tfMa.setText(lstchitiet.getMadkpv());
 
-        _tfDiemCanDat.setText(lstchitiet.get(0).getDiemcandat() + Constant.BLANK);
-        _tfDiemDatDuoc.setText(lstchitiet.get(0).getDiemdatduoc() + Constant.BLANK);
-        _cbbHSUV.setSelectedItem(lstchitiet.get(0).getMachitietdmkqpv());
-       
+        _tfDiemCanDat.setText(lstchitiet.getDiemcandat() + Constant.BLANK);
+        _tfDiemDatDuoc.setText(lstchitiet.getDiemdatduoc() + Constant.BLANK);
+        _cbbHSUV.setSelectedItem(lstchitiet.getMachitietdmkqpv());
+       idKqVpv = id;
     }//GEN-LAST:event__tblketquaMouseClicked
 
     private void _tblChiTietdktdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tblChiTietdktdMouseClicked
@@ -435,7 +461,12 @@ public class ChiTietLpv extends javax.swing.JFrame {
     }//GEN-LAST:event__tblChiTietdktdMouseClicked
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
+        if(idKqVpv > 0) {
+            tlu30ChitietketquavpvDeletebyId(idKqVpv);
+            JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Cần chọn chi tiết lịch phỏng vấn \n trong danh sách", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -530,4 +561,24 @@ public class ChiTietLpv extends javax.swing.JFrame {
         service.webservice.WSTLU30CHITIETDKTD port = service.getWSTLU30CHITIETDKTDPort();
         return port.tlu30ChitietdktdFindCommon(kehoachtuyendung, machitietdktd, tenchitietdktd);
     }
+
+    private static Tlu30Chitietketquavpv tlu30ChitietketquavpvFindbyId(int idTlu30Chitietketquavpv) {
+        service.webservice.WSTLU30CHITIETKQVPV_Service service = new service.webservice.WSTLU30CHITIETKQVPV_Service();
+        service.webservice.WSTLU30CHITIETKQVPV port = service.getWSTLU30CHITIETKQVPVPort();
+        return port.tlu30ChitietketquavpvFindbyId(idTlu30Chitietketquavpv);
+    }
+
+    private static String tlu30ChitietketquavpvUpdatebyID(int idTlu30Chitietketquavpv, java.lang.String machitietdmkqpv, java.lang.String madkpv, java.lang.String tendkpv, float diemcandat, float diemdatduoc) {
+        service.webservice.WSTLU30CHITIETKQVPV_Service service = new service.webservice.WSTLU30CHITIETKQVPV_Service();
+        service.webservice.WSTLU30CHITIETKQVPV port = service.getWSTLU30CHITIETKQVPVPort();
+        return port.tlu30ChitietketquavpvUpdatebyID(idTlu30Chitietketquavpv, machitietdmkqpv, madkpv, tendkpv, diemcandat, diemdatduoc);
+    }
+
+    private static String tlu30ChitietketquavpvDeletebyId(int idTlu30Chitietketquavpv) {
+        service.webservice.WSTLU30CHITIETKQVPV_Service service = new service.webservice.WSTLU30CHITIETKQVPV_Service();
+        service.webservice.WSTLU30CHITIETKQVPV port = service.getWSTLU30CHITIETKQVPVPort();
+        return port.tlu30ChitietketquavpvDeletebyId(idTlu30Chitietketquavpv);
+    }
+    
+    
 }

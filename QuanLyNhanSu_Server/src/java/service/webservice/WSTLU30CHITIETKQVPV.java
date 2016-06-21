@@ -43,7 +43,7 @@ public class WSTLU30CHITIETKQVPV {
        Tlu30chitietketquavpv tlu30chitietketquavpv = new Tlu30chitietketquavpv(Tendkpv,
                Madkpv, Machitietdmkqpv, Diemcandat, Diemdatduoc);
        List<Tlu30chitietketquavpv> tlu30chitietketquavpvs = init()
-                .Tlu30chitietketquavpvFindCommon(Machitietdmkqpv, null, null, null, null);
+                .Tlu30chitietketquavpvFindCommon(Machitietdmkqpv, Madkpv, null, null, null);
        if(tlu30chitietketquavpvs.isEmpty()) {
            init().Tlu30chitietketquavpvInsert(tlu30chitietketquavpv);
            return "succ";
@@ -84,17 +84,10 @@ public class WSTLU30CHITIETKQVPV {
            @WebParam(name = "Diemcandat") float Diemcandat,
            @WebParam(name = "Diemdatduoc") float Diemdatduoc) {
        Tlu30chitietketquavpv tlu30chitietketquavpv= this.Tlu30chitietketquavpvFindbyId(idTlu30chitietketquavpv);
-       List<Tlu30chitietketquavpv> tlu30chitietketquavpvs = this.Tlu30chitietketquavpvFindCommon(
-               Machitietdmkqpv, null, null, null, null);
        if(ValidateUtil.isNotNull(tlu30chitietketquavpv)) {
-           if((tlu30chitietketquavpvs.size() == 1 && tlu30chitietketquavpvs.get(0).getId()==idTlu30chitietketquavpv)
-                   || tlu30chitietketquavpvs.isEmpty()) {
-               if(tlu30chitietketquavpv.getId() == tlu30chitietketquavpvs.get(0).getId()) {
-                   init().Tlu30chitietketquavpvUpdatebyID(idTlu30chitietketquavpv,
-                    Machitietdmkqpv, Madkpv, Tendkpv, Diemcandat, Diemdatduoc);
-                   return "succ";
-               }
-           }
+            init().Tlu30chitietketquavpvUpdatebyID(idTlu30chitietketquavpv,
+             Machitietdmkqpv, Madkpv, Tendkpv, Diemcandat, Diemdatduoc);
+            return "succ";          
        }
        return "fail";
    }
