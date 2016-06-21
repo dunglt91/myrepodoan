@@ -5,6 +5,7 @@
  */
 package client;
 
+import dunglt.qlns.client.constant.Constant;
 import dunglt.qlns.client.util.ClientUtil;
 import dunglt.qlns.client.util.DateTimeUtil;
 import dunglt.qlns.client.util.DictItem;
@@ -14,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import service.webservice.ParseException_Exception;
+import service.webservice.Tlu30HoSoUngVien;
 import service.webservice.Tlu30LichPhongVan;
 
 /**
@@ -151,7 +153,7 @@ public class updateLPV extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         jLabel49.setText("Tình trạng phỏng vấn");
 
-        lpvChiTiet.setBackground(new java.awt.Color(239, 25, 9));
+        lpvChiTiet.setBackground(new java.awt.Color(88, 111, 129));
         lpvChiTiet.setForeground(java.awt.Color.white);
         lpvChiTiet.setText("Chi tiết");
         lpvChiTiet.addActionListener(new java.awt.event.ActionListener() {
@@ -348,6 +350,22 @@ public class updateLPV extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event__tfNguoiPhuTrachPhongVanLPVActionPerformed
 
+    public boolean isNullMaHoSo(String mahs) {
+        boolean isNullMhs = false;
+        int count = 0;
+        if(displayAll().size() > 0) {
+            for(Tlu30HoSoUngVien hsuv : displayAll()) {
+                if(mahs.equalsIgnoreCase(hsuv.getHoTen())) {
+                    count ++;
+                }
+            }
+            
+            if(count == 0) {
+                isNullMhs = true;
+            }
+        }
+        return isNullMhs;
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          if (ValidateUtil.isNotNull(_tfNguoiNhapLPV.getText())
                 && ValidateUtil.isNotNull(_tfPhongVanSoLPV.getText())
@@ -356,30 +374,39 @@ public class updateLPV extends javax.swing.JFrame {
                 int solichphongvan = Integer.parseInt(_tfPhongVanSoLPV.getText());
                 if(stIdLpv == 0) {
                     if (tlu30LpvFindbySoLPV(solichphongvan).isEmpty()) {
-                    try {
-                        tlu30LpvInsert(_tfNguoiNhapLPV.getText(), 
-                                DateTimeUtil.convertCalendarToString(_clNgayThem.getCalendar().getTime()),
-                                ClientUtil.getBooleanFromIsActiveCbb(
+                        if(isNullMaHoSo(ClientUtil.setValueofCombobox(_cbbUngVienhsuv))) {
+                            try {
+                                String res = Constant.BLANK;
+                                res = tlu30LpvInsert(_tfNguoiNhapLPV.getText(), 
+                                        DateTimeUtil.convertCalendarToString(_clNgayThem.getCalendar().getTime()),
+                                        ClientUtil.getBooleanFromIsActiveCbb(
                                         ClientUtil.setValueofCombobox(_cbDangLaNhanVienCongTyLPV)), 
-                                ClientUtil.setValueofCombobox(_cbbUngVienhsuv),
-                                ClientUtil.setValueofCombobox(_cbbKeHoachTuyenDungLPV), 
-                                solichphongvan, 
-                                DateTimeUtil.convertCalendarToString(_clLichhen.getCalendar().getTime()),
-                                _tfNguoiPhuTrachPhongVanLPV.getText(), 
-                                _tfTinhTrangPhongVan.getText(), 
-                                ClientUtil.isactiveCheckBox(_cbDatYeuCauLPV), 
-                                _textariaNhanXetLPV.getText());
-                        JOptionPane.showMessageDialog(rootPane, "Thêm mới thành công");
-                    } catch (Exception e) {}
+                                        ClientUtil.setValueofCombobox(_cbbUngVienhsuv),
+                                        ClientUtil.setValueofCombobox(_cbbKeHoachTuyenDungLPV), 
+                                        solichphongvan, 
+                                        DateTimeUtil.convertCalendarToString(_clLichhen.getCalendar().getTime()),
+                                        _tfNguoiPhuTrachPhongVanLPV.getText(), 
+                                        _tfTinhTrangPhongVan.getText(), 
+                                        ClientUtil.isactiveCheckBox(_cbDatYeuCauLPV), 
+                                        _textariaNhanXetLPV.getText());
+                               if(res.equalsIgnoreCase("inserted")) {
+                                   JOptionPane.showMessageDialog(rootPane, "Thêm mới thành công");
+                               }
+                        
+                            } catch (Exception e) {}
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Đã tồn mã hồ sơ ứng viên");
+                        }
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Đã tồn tại số lịch phỏng vấn");
                 }
              } else {
-                    try { 
-                        tlu30LpvUpdate(stIdLpv, _tfNguoiNhapLPV.getText(),
+                    try {
+                        String res = Constant.BLANK;
+                        res = tlu30LpvUpdate(stIdLpv, _tfNguoiNhapLPV.getText(),
                                 DateTimeUtil.convertCalendarToString(_clNgayThem.getCalendar().getTime()),
                                 ClientUtil.getBooleanFromIsActiveCbb(
-                                        ClientUtil.setValueofCombobox(_cbDangLaNhanVienCongTyLPV)), 
+                                ClientUtil.setValueofCombobox(_cbDangLaNhanVienCongTyLPV)), 
                                 ClientUtil.setValueofCombobox(_cbbUngVienhsuv),
                                 ClientUtil.setValueofCombobox(_cbbKeHoachTuyenDungLPV),
                                 solichphongvan, 
@@ -388,6 +415,10 @@ public class updateLPV extends javax.swing.JFrame {
                                 _tfTinhTrangPhongVan.getText(),
                                 ClientUtil.isactiveCheckBox(_cbDatYeuCauLPV), 
                                 _textariaNhanXetLPV.getText());
+                        if(res.equalsIgnoreCase("updated")) {
+                            JOptionPane.showMessageDialog(rootPane, "Cập nhật thành công" );
+                        }
+                                
                     } catch (ParseException_Exception ex) {
                         Logger.getLogger(updateLPV.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -492,5 +523,11 @@ public class updateLPV extends javax.swing.JFrame {
         service.webservice.WsTlu30LichPhongVan_Service service = new service.webservice.WsTlu30LichPhongVan_Service();
         service.webservice.WsTlu30LichPhongVan port = service.getWsTlu30LichPhongVanPort();
         return port.tlu30LpvUpdate(idLpv, createdBy, createdAt, isActive, ungVien, keHoachSo, soLichPhongVan, lichHen, phuTrachPhongVan, tinhTrangPhongVan, datYeuCau, nhanXet);
+    }
+
+    private static java.util.List<service.webservice.Tlu30HoSoUngVien> displayAll() {
+        service.webservice.WsTlu30HoSoUngVien_Service service = new service.webservice.WsTlu30HoSoUngVien_Service();
+        service.webservice.WsTlu30HoSoUngVien port = service.getWsTlu30HoSoUngVienPort();
+        return port.displayAll();
     }
 }

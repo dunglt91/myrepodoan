@@ -83,6 +83,9 @@ public class WsTlu30LichPhongVan {
             if (Initobj().Tlu30LpvFindbySoLPV(soLichPhongVan).isEmpty() ||
                     (Initobj().Tlu30LpvFindbySoLPV(soLichPhongVan).size() == 1
                     && Initobj().Tlu30LpvFindbySoLPV(soLichPhongVan).get(0).getIdLpv() == idLpv)) {
+                Initobj().Tlu30LpvUpdate(idLpv, createdBy, datecreatedAt, isActive,
+                        ungVien, keHoachSo, soLichPhongVan, datelichHen,
+                        phuTrachPhongVan, tinhTrangPhongVan, datYeuCau, nhanXet);
                 return "updated";
             } else {
                 return "so lich phong van " + soLichPhongVan + " is existed";

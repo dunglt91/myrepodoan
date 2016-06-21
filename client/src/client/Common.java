@@ -18,7 +18,6 @@ import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import service.webservice.ParseException_Exception;
 import service.webservice.Tlu20Bophan;
-import service.webservice.Tlu20BophanDeletebyId;
 import service.webservice.Tlu20ChucVu;
 import service.webservice.Tlu20DangNhap;
 import service.webservice.Tlu20DieuKienTuyenDung;
@@ -100,7 +99,10 @@ public class Common extends javax.swing.JFrame {
         ((DefaultTableModel) _tblKqpv.getModel()).setNumRows(0);
         model = (DefaultTableModel) this._tblKqpv.getModel();
         for (Tlu30LichPhongVan lpv : tlu30LpvFindCommon(null, null, null, "0")) {
-            model.addRow(new Object[]{lpv.getSoLichPhongVan(), lpv.getKeHoachSo(), lpv.getUngVien()});
+            java.util.List<Tlu30HoSoUngVien> soUngVien = new ArrayList<>();
+            soUngVien = findbyMaHoSo(lpv.getUngVien());
+            model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(), 
+                soUngVien.get(0).getHoTen()});
         }
         model.fireTableDataChanged();
     }
@@ -110,7 +112,10 @@ public class Common extends javax.swing.JFrame {
         ((DefaultTableModel) _tblKqpv.getModel()).setNumRows(0);
         model = (DefaultTableModel) this._tblKqpv.getModel();
         for (Tlu30LichPhongVan lpv : tlu30LpvFindCommon(null, null, null, "1")) {
-            model.addRow(new Object[]{lpv.getSoLichPhongVan(), lpv.getKeHoachSo(), lpv.getUngVien()});
+            java.util.List<Tlu30HoSoUngVien> soUngVien = new ArrayList<>();
+            soUngVien = findbyMaHoSo(lpv.getUngVien());
+            model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(),
+                 soUngVien.get(0).getHoTen()});
         }
         model.fireTableDataChanged();
     }
@@ -120,7 +125,9 @@ public class Common extends javax.swing.JFrame {
         ((DefaultTableModel) _tblKqpv.getModel()).setNumRows(0);
         model = (DefaultTableModel) this._tblKqpv.getModel();
         for (Tlu30LichPhongVan lpv : tlu30LpvFindCommon(null, null, null, null)) {
-            model.addRow(new Object[]{lpv.getSoLichPhongVan(), lpv.getKeHoachSo(), lpv.getUngVien()});
+            java.util.List<Tlu30HoSoUngVien> soUngVien = new ArrayList<>();
+            soUngVien = findbyMaHoSo(lpv.getUngVien());
+            model.addRow(new Object[]{lpv.getUngVien(), lpv.getKeHoachSo(),soUngVien.get(0).getHoTen()});
         }
         model.fireTableDataChanged();
     }
@@ -2362,6 +2369,11 @@ public class Common extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        _tblKqpv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                _tblKqpvMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(_tblKqpv);
         jScrollPane8.getViewport().setBackground(Color.WHITE);
 
@@ -3096,6 +3108,10 @@ public class Common extends javax.swing.JFrame {
         viewDangNhap();
     }//GEN-LAST:event_jPanel39MouseClicked
 
+    private void _tblKqpvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event__tblKqpvMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event__tblKqpvMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -3427,6 +3443,12 @@ public class Common extends javax.swing.JFrame {
         service.webservice.WsTlu20DieuKienTuyenDung_Service service = new service.webservice.WsTlu20DieuKienTuyenDung_Service();
         service.webservice.WsTlu20DieuKienTuyenDung port = service.getWsTlu20DieuKienTuyenDungPort();
         return port.tlu20DktdFindCommon(tendmdktd, madmdktd);
+    }
+
+    private static java.util.List<service.webservice.Tlu30HoSoUngVien> findbyMaHoSo(java.lang.String mhs) {
+        service.webservice.WsTlu30HoSoUngVien_Service service = new service.webservice.WsTlu30HoSoUngVien_Service();
+        service.webservice.WsTlu30HoSoUngVien port = service.getWsTlu30HoSoUngVienPort();
+        return port.findbyMaHoSo(mhs);
     }
     
     

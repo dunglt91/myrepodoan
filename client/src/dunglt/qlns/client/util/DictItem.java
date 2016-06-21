@@ -5,6 +5,7 @@
  */
 package dunglt.qlns.client.util;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JComboBox;
 import service.webservice.Tlu20Bophan;
@@ -14,6 +15,7 @@ import service.webservice.Tlu30Chitietdktd;
 import service.webservice.Tlu30Chitietketquavpv;
 import service.webservice.Tlu30HoSoUngVien;
 import service.webservice.Tlu30KeHoachTuyenDung;
+import service.webservice.Tlu30LichPhongVan;
 
 /**
  *
@@ -61,11 +63,16 @@ public class DictItem {
     }
     
      public static void setTenAndMaHs(JComboBox _cbbKHS) {
+        List<String> lstStr = new ArrayList<>();
+        for(Tlu30LichPhongVan lpv : tlu30LpvDisplayAll()) {
+            lstStr.add(lpv.getUngVien());
+        }
+        
         for (Tlu30Chitietketquavpv hs : tlu30ChitietketquavpvDisplayAll()) {
-            List<Tlu30HoSoUngVien> lshs = findbyMaHoSo(hs.getMachitietdmkqpv());      
-            _cbbKHS.addItem(hs.getMachitietdmkqpv() + " - " + lshs.get(0).getHoTen());
-
-
+             if(!lstStr.contains(hs.getMachitietdmkqpv())) {
+                 lstStr.add(hs.getMachitietdmkqpv());
+                 _cbbKHS.addItem(hs.getMachitietdmkqpv());
+             }    
         }
     }
 
@@ -100,13 +107,6 @@ public class DictItem {
         return port.tlu30ChitietketquavpvDisplayAll();
     }
 
-    private static java.util.List<service.webservice.Tlu30HoSoUngVien> findbyMaHoSo(java.lang.String mhs) {
-        service.webservice.WsTlu30HoSoUngVien_Service service = new service.webservice.WsTlu30HoSoUngVien_Service();
-        service.webservice.WsTlu30HoSoUngVien port = service.getWsTlu30HoSoUngVienPort();
-        return port.findbyMaHoSo(mhs);
-    }
-
-
     private static java.util.List<service.webservice.Tlu30HoSoUngVien> displayAll() {
         service.webservice.WsTlu30HoSoUngVien_Service service = new service.webservice.WsTlu30HoSoUngVien_Service();
         service.webservice.WsTlu30HoSoUngVien port = service.getWsTlu30HoSoUngVienPort();
@@ -119,5 +119,12 @@ public class DictItem {
         return port.tlu20ChucVuDisplayAll();
     }
 
+    private static java.util.List<service.webservice.Tlu30LichPhongVan> tlu30LpvDisplayAll() {
+        service.webservice.WsTlu30LichPhongVan_Service service = new service.webservice.WsTlu30LichPhongVan_Service();
+        service.webservice.WsTlu30LichPhongVan port = service.getWsTlu30LichPhongVanPort();
+        return port.tlu30LpvDisplayAll();
+    }
+    
+    
    
 }

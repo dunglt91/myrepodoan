@@ -1,6 +1,7 @@
 package hrm.pack.dunglt.client_hrm;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,7 +57,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    tv.setText("debug: " + result);
+
+
+                    if(result.equals("dang nhap thanh cong")) {
+                        Intent intent = new Intent(getApplicationContext(), kqpv.class);
+                        intent.putExtra("userName", "dung");
+
+                        startActivity(intent);
+                    } else {
+                        tv.setText(result);
+                    }
+
                 }
             });
 
