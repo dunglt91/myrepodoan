@@ -11,10 +11,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
 
-import hrm.client.util.ClientUtil;
 import ws.model.Tlu30lichPhongVan;
 
 /**

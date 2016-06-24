@@ -391,15 +391,15 @@ public class ChiTietLpv extends javax.swing.JFrame {
         if (!_tfDiemDatDuoc.getText().equals(Constant.BLANK)) {
             String result = Constant.BLANK;
             result = tlu30ChitietketquavpvInsert(
-                    _tfTen.getText(), 
-                    _tfMa.getText(), 
                     ClientUtil.setValueofCombobox(_cbbHSUV), 
+                    _tfMa.getText(),
+                    _tfTen.getText(),  
                     Float.parseFloat(_tfDiemCanDat.getText()), 
                     Float.parseFloat(_tfDiemDatDuoc.getText()));
             if(result.equalsIgnoreCase(Constant.SUCCESS)) {
-                JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
+                JOptionPane.showMessageDialog(rootPane, result +" Thêm thành công");
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Đã nhập đủ tiêu chí", "error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Đã nhập đủ tiêu chí", result, JOptionPane.ERROR_MESSAGE);
             }
             
         } else {
@@ -413,8 +413,8 @@ public class ChiTietLpv extends javax.swing.JFrame {
                 String result = Constant.BLANK;
                 result = tlu30ChitietketquavpvUpdatebyID(
                         idKqVpv, ClientUtil.setValueofCombobox(_cbbHSUV), 
-                        _tfTen.getText(), 
                         _tfMa.getText(), 
+                        _tfTen.getText(), 
                         Float.parseFloat(_tfDiemCanDat.getText()), 
                         Float.parseFloat(_tfDiemDatDuoc.getText()));
                 if(result.equalsIgnoreCase(Constant.SUCCESS)) {

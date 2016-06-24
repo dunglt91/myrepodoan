@@ -47,8 +47,7 @@ public class WSTLU30CHITIETKQVPV {
        if(tlu30chitietketquavpvs.isEmpty()) {
            init().Tlu30chitietketquavpvInsert(tlu30chitietketquavpv);
            return "succ";
-       }
-       
+       }    
        return "fail";
    }
    
