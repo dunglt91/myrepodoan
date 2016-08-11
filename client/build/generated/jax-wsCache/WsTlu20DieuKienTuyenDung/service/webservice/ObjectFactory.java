@@ -168,6 +168,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Daotlu20CHUCVU }
+     * 
+     */
+    public Daotlu20CHUCVU createDaotlu20CHUCVU() {
+        return new Daotlu20CHUCVU();
+    }
+
+    /**
      * Create an instance of {@link Convert }
      * 
      */
@@ -181,14 +189,6 @@ public class ObjectFactory {
      */
     public Tlu20DieuKienTuyenDung createTlu20DieuKienTuyenDung() {
         return new Tlu20DieuKienTuyenDung();
-    }
-
-    /**
-     * Create an instance of {@link Daotlu30CHITIETKQVPV }
-     * 
-     */
-    public Daotlu30CHITIETKQVPV createDaotlu30CHITIETKQVPV() {
-        return new Daotlu30CHITIETKQVPV();
     }
 
     /**

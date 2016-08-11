@@ -34,12 +34,12 @@ public interface WsDangNhap {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "Tlu20DangNhapUpdate")
+    @WebMethod(operationName = "Tlu20DangNhapInsert")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Tlu20DangNhapUpdate", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapUpdate")
-    @ResponseWrapper(localName = "Tlu20DangNhapUpdateResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapUpdateResponse")
-    @Action(input = "http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateRequest", output = "http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateResponse")
-    public String tlu20DangNhapUpdate(
+    @RequestWrapper(localName = "Tlu20DangNhapInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapInsert")
+    @ResponseWrapper(localName = "Tlu20DangNhapInsertResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapInsertResponse")
+    @Action(input = "http://webservice.service/WsDangNhap/Tlu20DangNhapInsertRequest", output = "http://webservice.service/WsDangNhap/Tlu20DangNhapInsertResponse")
+    public String tlu20DangNhapInsert(
         @WebParam(name = "username", targetNamespace = "")
         String username,
         @WebParam(name = "pass", targetNamespace = "")
@@ -58,12 +58,12 @@ public interface WsDangNhap {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "Tlu20DangNhapInsert")
+    @WebMethod(operationName = "Tlu20DangNhapUpdate")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Tlu20DangNhapInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapInsert")
-    @ResponseWrapper(localName = "Tlu20DangNhapInsertResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapInsertResponse")
-    @Action(input = "http://webservice.service/WsDangNhap/Tlu20DangNhapInsertRequest", output = "http://webservice.service/WsDangNhap/Tlu20DangNhapInsertResponse")
-    public String tlu20DangNhapInsert(
+    @RequestWrapper(localName = "Tlu20DangNhapUpdate", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapUpdate")
+    @ResponseWrapper(localName = "Tlu20DangNhapUpdateResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20DangNhapUpdateResponse")
+    @Action(input = "http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateRequest", output = "http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateResponse")
+    public String tlu20DangNhapUpdate(
         @WebParam(name = "username", targetNamespace = "")
         String username,
         @WebParam(name = "pass", targetNamespace = "")

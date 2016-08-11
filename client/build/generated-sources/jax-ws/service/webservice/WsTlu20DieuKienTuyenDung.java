@@ -28,6 +28,18 @@ public interface WsTlu20DieuKienTuyenDung {
 
     /**
      * 
+     * @return
+     *     returns service.webservice.Convert
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
+    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
+    @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvResponse")
+    public Convert initConv();
+
+    /**
+     * 
      * @param madmdktd
      * @param isactive
      * @param tendmdktd
@@ -141,25 +153,13 @@ public interface WsTlu20DieuKienTuyenDung {
     /**
      * 
      * @return
-     *     returns service.webservice.Convert
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "initConv", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConv")
-    @ResponseWrapper(localName = "initConvResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitConvResponse")
-    @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/initConvResponse")
-    public Convert initConv();
-
-    /**
-     * 
-     * @return
-     *     returns service.webservice.Daotlu30CHITIETKQVPV
+     *     returns service.webservice.Daotlu20CHUCVU
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "init", targetNamespace = "http://webservice.service/", className = "service.webservice.Init")
     @ResponseWrapper(localName = "initResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitResponse")
     @Action(input = "http://webservice.service/WsTlu20DieuKienTuyenDung/initRequest", output = "http://webservice.service/WsTlu20DieuKienTuyenDung/initResponse")
-    public Daotlu30CHITIETKQVPV init();
+    public Daotlu20CHUCVU init();
 
 }

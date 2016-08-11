@@ -43,7 +43,7 @@ public class WsTlu20DieuKienTuyenDung {
             @WebParam(name = "tendmdktd") String tendmdktd) throws ParseException {
          Date convcreatedAt = (Date) initConv().ConvertStringToDateSql(createdat);
         Tlu20dieuKienTuyenDung tlu20dieuKienTuyenDung = new Tlu20dieuKienTuyenDung(createdby, 
-                null, isactive, tendmdktd, madmdktd);
+                convcreatedAt, isactive, tendmdktd, madmdktd);
         if(init().Tlu20dieuKienTuyenDungFindCommon(null, madmdktd).isEmpty()) {
             init().Tlu20dieuKienTuyenDungInsert(tlu20dieuKienTuyenDung);
             return "succ";

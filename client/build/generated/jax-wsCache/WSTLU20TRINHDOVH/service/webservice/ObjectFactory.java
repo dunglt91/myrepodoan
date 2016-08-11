@@ -184,11 +184,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Daotlu30CHITIETKQVPV }
+     * Create an instance of {@link Daotlu30CHITIETDKTD }
      * 
      */
-    public Daotlu30CHITIETKQVPV createDaotlu30CHITIETKQVPV() {
-        return new Daotlu30CHITIETKQVPV();
+    public Daotlu30CHITIETDKTD createDaotlu30CHITIETDKTD() {
+        return new Daotlu30CHITIETDKTD();
     }
 
     /**

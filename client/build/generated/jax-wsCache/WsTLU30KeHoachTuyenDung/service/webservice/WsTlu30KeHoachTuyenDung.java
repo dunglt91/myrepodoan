@@ -28,33 +28,6 @@ public interface WsTlu30KeHoachTuyenDung {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<service.webservice.Tlu30KeHoachTuyenDung>
-     */
-    @WebMethod(operationName = "Tlu30khtdDisplayAll")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Tlu30khtdDisplayAll", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu30KhtdDisplayAll")
-    @ResponseWrapper(localName = "Tlu30khtdDisplayAllResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu30KhtdDisplayAllResponse")
-    @Action(input = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDisplayAllRequest", output = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDisplayAllResponse")
-    public List<Tlu30KeHoachTuyenDung> tlu30KhtdDisplayAll();
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns service.webservice.Tlu30KeHoachTuyenDung
-     */
-    @WebMethod(operationName = "Tlu20khtdFindById")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Tlu20khtdFindById", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20KhtdFindById")
-    @ResponseWrapper(localName = "Tlu20khtdFindByIdResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20KhtdFindByIdResponse")
-    @Action(input = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdRequest", output = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdResponse")
-    public Tlu30KeHoachTuyenDung tlu20KhtdFindById(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
      * @param kehoachso
      * @return
      *     returns java.util.List<service.webservice.Tlu30KeHoachTuyenDung>
@@ -129,6 +102,33 @@ public interface WsTlu30KeHoachTuyenDung {
         String ghichu)
         throws ParseException_Exception
     ;
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<service.webservice.Tlu30KeHoachTuyenDung>
+     */
+    @WebMethod(operationName = "Tlu30khtdDisplayAll")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Tlu30khtdDisplayAll", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu30KhtdDisplayAll")
+    @ResponseWrapper(localName = "Tlu30khtdDisplayAllResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu30KhtdDisplayAllResponse")
+    @Action(input = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDisplayAllRequest", output = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDisplayAllResponse")
+    public List<Tlu30KeHoachTuyenDung> tlu30KhtdDisplayAll();
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns service.webservice.Tlu30KeHoachTuyenDung
+     */
+    @WebMethod(operationName = "Tlu20khtdFindById")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Tlu20khtdFindById", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20KhtdFindById")
+    @ResponseWrapper(localName = "Tlu20khtdFindByIdResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20KhtdFindByIdResponse")
+    @Action(input = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdRequest", output = "http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdResponse")
+    public Tlu30KeHoachTuyenDung tlu20KhtdFindById(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
 
     /**
      * 

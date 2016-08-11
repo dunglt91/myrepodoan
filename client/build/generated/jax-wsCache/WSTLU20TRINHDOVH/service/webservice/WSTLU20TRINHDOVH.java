@@ -29,6 +29,38 @@ public interface WSTLU20TRINHDOVH {
     /**
      * 
      * @param isActive
+     * @param tenchucvu
+     * @param createdBy
+     * @param createdAt
+     * @param machucvu
+     * @return
+     *     returns java.lang.String
+     * @throws ParseException_Exception
+     */
+    @WebMethod(operationName = "Tlu20trinhDoVanHoaInsert")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "Tlu20trinhDoVanHoaInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20TrinhDoVanHoaInsert")
+    @ResponseWrapper(localName = "Tlu20trinhDoVanHoaInsertResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20TrinhDoVanHoaInsertResponse")
+    @Action(input = "http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertRequest", output = "http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertResponse", fault = {
+        @FaultAction(className = ParseException_Exception.class, value = "http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsert/Fault/ParseException")
+    })
+    public String tlu20TrinhDoVanHoaInsert(
+        @WebParam(name = "createdBy", targetNamespace = "")
+        String createdBy,
+        @WebParam(name = "createdAt", targetNamespace = "")
+        String createdAt,
+        @WebParam(name = "isActive", targetNamespace = "")
+        boolean isActive,
+        @WebParam(name = "tenchucvu", targetNamespace = "")
+        String tenchucvu,
+        @WebParam(name = "machucvu", targetNamespace = "")
+        String machucvu)
+        throws ParseException_Exception
+    ;
+
+    /**
+     * 
+     * @param isActive
      * @param id
      * @param tenchucvu
      * @param createdBy
@@ -108,38 +140,6 @@ public interface WSTLU20TRINHDOVH {
 
     /**
      * 
-     * @param isActive
-     * @param tenchucvu
-     * @param createdBy
-     * @param createdAt
-     * @param machucvu
-     * @return
-     *     returns java.lang.String
-     * @throws ParseException_Exception
-     */
-    @WebMethod(operationName = "Tlu20trinhDoVanHoaInsert")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "Tlu20trinhDoVanHoaInsert", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20TrinhDoVanHoaInsert")
-    @ResponseWrapper(localName = "Tlu20trinhDoVanHoaInsertResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.Tlu20TrinhDoVanHoaInsertResponse")
-    @Action(input = "http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertRequest", output = "http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsertResponse", fault = {
-        @FaultAction(className = ParseException_Exception.class, value = "http://webservice.service/WSTLU20TRINHDOVH/Tlu20trinhDoVanHoaInsert/Fault/ParseException")
-    })
-    public String tlu20TrinhDoVanHoaInsert(
-        @WebParam(name = "createdBy", targetNamespace = "")
-        String createdBy,
-        @WebParam(name = "createdAt", targetNamespace = "")
-        String createdAt,
-        @WebParam(name = "isActive", targetNamespace = "")
-        boolean isActive,
-        @WebParam(name = "tenchucvu", targetNamespace = "")
-        String tenchucvu,
-        @WebParam(name = "machucvu", targetNamespace = "")
-        String machucvu)
-        throws ParseException_Exception
-    ;
-
-    /**
-     * 
      * @return
      *     returns service.webservice.Convert
      */
@@ -153,13 +153,13 @@ public interface WSTLU20TRINHDOVH {
     /**
      * 
      * @return
-     *     returns service.webservice.Daotlu30CHITIETKQVPV
+     *     returns service.webservice.Daotlu30CHITIETDKTD
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "init", targetNamespace = "http://webservice.service/", className = "service.webservice.Init")
     @ResponseWrapper(localName = "initResponse", targetNamespace = "http://webservice.service/", className = "service.webservice.InitResponse")
     @Action(input = "http://webservice.service/WSTLU20TRINHDOVH/initRequest", output = "http://webservice.service/WSTLU20TRINHDOVH/initResponse")
-    public Daotlu30CHITIETKQVPV init();
+    public Daotlu30CHITIETDKTD init();
 
 }

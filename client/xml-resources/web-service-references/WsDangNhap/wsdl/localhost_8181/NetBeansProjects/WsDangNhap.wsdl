@@ -4,17 +4,17 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WsDangNhap?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="Tlu20DangNhapUpdate">
-<part name="parameters" element="tns:Tlu20DangNhapUpdate"/>
-</message>
-<message name="Tlu20DangNhapUpdateResponse">
-<part name="parameters" element="tns:Tlu20DangNhapUpdateResponse"/>
-</message>
 <message name="Tlu20DangNhapInsert">
 <part name="parameters" element="tns:Tlu20DangNhapInsert"/>
 </message>
 <message name="Tlu20DangNhapInsertResponse">
 <part name="parameters" element="tns:Tlu20DangNhapInsertResponse"/>
+</message>
+<message name="Tlu20DangNhapUpdate">
+<part name="parameters" element="tns:Tlu20DangNhapUpdate"/>
+</message>
+<message name="Tlu20DangNhapUpdateResponse">
+<part name="parameters" element="tns:Tlu20DangNhapUpdateResponse"/>
 </message>
 <message name="TestLogin">
 <part name="parameters" element="tns:TestLogin"/>
@@ -41,13 +41,13 @@
 <part name="parameters" element="tns:Tlu20dangNhapFindCommonResponse"/>
 </message>
 <portType name="WsDangNhap">
-<operation name="Tlu20DangNhapUpdate">
-<input wsam:Action="http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateRequest" message="tns:Tlu20DangNhapUpdate"/>
-<output wsam:Action="http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateResponse" message="tns:Tlu20DangNhapUpdateResponse"/>
-</operation>
 <operation name="Tlu20DangNhapInsert">
 <input wsam:Action="http://webservice.service/WsDangNhap/Tlu20DangNhapInsertRequest" message="tns:Tlu20DangNhapInsert"/>
 <output wsam:Action="http://webservice.service/WsDangNhap/Tlu20DangNhapInsertResponse" message="tns:Tlu20DangNhapInsertResponse"/>
+</operation>
+<operation name="Tlu20DangNhapUpdate">
+<input wsam:Action="http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateRequest" message="tns:Tlu20DangNhapUpdate"/>
+<output wsam:Action="http://webservice.service/WsDangNhap/Tlu20DangNhapUpdateResponse" message="tns:Tlu20DangNhapUpdateResponse"/>
 </operation>
 <operation name="TestLogin">
 <input wsam:Action="http://webservice.service/WsDangNhap/TestLoginRequest" message="tns:TestLogin"/>
@@ -68,7 +68,7 @@
 </portType>
 <binding name="WsDangNhapPortBinding" type="tns:WsDangNhap">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="Tlu20DangNhapUpdate">
+<operation name="Tlu20DangNhapInsert">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -77,7 +77,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="Tlu20DangNhapInsert">
+<operation name="Tlu20DangNhapUpdate">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

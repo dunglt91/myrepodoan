@@ -43,7 +43,7 @@ public class WSTLU20TRINHDOVH {
             @WebParam(name = "machucvu") String maTDVH) throws ParseException {
          Date convcreatedAt = (Date) initConv().ConvertStringToDateSql(createdAt);
         Tlu20trinhDoVanHoa tlu20trinhDoVanHoa = new Tlu20trinhDoVanHoa(createdBy, 
-                null, isActive, tenTDVH, maTDVH);
+                convcreatedAt, isActive, tenTDVH, maTDVH);
         if(init().Tlu20trinhDoVanHoaFindCommon(null, maTDVH).isEmpty()) {
             init().Tlu20trinhDoVanHoaInsert(tlu20trinhDoVanHoa);
             return "succ";
