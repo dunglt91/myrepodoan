@@ -14,10 +14,10 @@
     <system systemId="http://localhost:8181/NetBeansProjects/WSTLU30CHITIETKQVPV?xsd=1" uri="xml-resources/web-service-references/WSTLU30CHITIETKQVPV/wsdl/localhost_8181/NetBeansProjects/WSTLU30CHITIETKQVPV.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?WSDL" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsDangNhap?xsd=1" uri="xml-resources/web-service-references/WsDangNhap/wsdl/localhost_8181/NetBeansProjects/WsDangNhap.xsd_1.xsd"/>
-    <system systemId="http://localhost:8181/NetBeansProjects/WsTLU30KeHoachTuyenDung?WSDL" uri="xml-resources/web-service-references/WsTLU30KeHoachTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTLU30KeHoachTuyenDung.wsdl"/>
-    <system systemId="http://localhost:8181/NetBeansProjects/WsTLU30KeHoachTuyenDung?xsd=1" uri="xml-resources/web-service-references/WsTLU30KeHoachTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTLU30KeHoachTuyenDung.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WSTLU20TRINHDOVH?WSDL" uri="xml-resources/web-service-references/WSTLU20TRINHDOVH/wsdl/localhost_8181/NetBeansProjects/WSTLU20TRINHDOVH.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WSTLU20TRINHDOVH?xsd=1" uri="xml-resources/web-service-references/WSTLU20TRINHDOVH/wsdl/localhost_8181/NetBeansProjects/WSTLU20TRINHDOVH.xsd_1.xsd"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu20DieuKienTuyenDung?WSDL" uri="xml-resources/web-service-references/WsTlu20DieuKienTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTlu20DieuKienTuyenDung.wsdl"/>
     <system systemId="http://localhost:8181/NetBeansProjects/WsTlu20DieuKienTuyenDung?xsd=1" uri="xml-resources/web-service-references/WsTlu20DieuKienTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTlu20DieuKienTuyenDung.xsd_1.xsd"/>
+    <system systemId="http://localhost:8181/NetBeansProjects/WsTLU30KeHoachTuyenDung?WSDL" uri="xml-resources/web-service-references/WsTLU30KeHoachTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTLU30KeHoachTuyenDung.wsdl"/>
+    <system systemId="http://localhost:8181/NetBeansProjects/WsTLU30KeHoachTuyenDung?xsd=1" uri="xml-resources/web-service-references/WsTLU30KeHoachTuyenDung/wsdl/localhost_8181/NetBeansProjects/WsTLU30KeHoachTuyenDung.xsd_1.xsd"/>
 </catalog>

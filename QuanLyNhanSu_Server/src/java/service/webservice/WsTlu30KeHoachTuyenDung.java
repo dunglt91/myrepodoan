@@ -99,7 +99,7 @@ public class WsTlu30KeHoachTuyenDung {
     }
     
 
-    @WebMethod(operationName = "Tlu30dktdDeletebyId")
+    @WebMethod(operationName = "Tlu30khtdDeletebyId")
     public String Tlu30khtdDeleteById(@WebParam(name = "iddktd") int iddktd) {
         DaoTLU30KeHoachTuyenDung daokhtd = new DaoTLU30KeHoachTuyenDung();
         daokhtd.Tlu30khtdDeleteById(iddktd);

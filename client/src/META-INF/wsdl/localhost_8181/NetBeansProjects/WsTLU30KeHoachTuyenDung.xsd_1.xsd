@@ -6,13 +6,13 @@
 
 <xs:element name="Tlu20khtdFindByIdResponse" type="tns:Tlu20khtdFindByIdResponse"/>
 
-<xs:element name="Tlu30dktdDeletebyId" type="tns:Tlu30dktdDeletebyId"/>
-
-<xs:element name="Tlu30dktdDeletebyIdResponse" type="tns:Tlu30dktdDeletebyIdResponse"/>
-
 <xs:element name="Tlu30keHoachTuyenDungFindCommon" type="tns:Tlu30keHoachTuyenDungFindCommon"/>
 
 <xs:element name="Tlu30keHoachTuyenDungFindCommonResponse" type="tns:Tlu30keHoachTuyenDungFindCommonResponse"/>
+
+<xs:element name="Tlu30khtdDeletebyId" type="tns:Tlu30khtdDeletebyId"/>
+
+<xs:element name="Tlu30khtdDeletebyIdResponse" type="tns:Tlu30khtdDeletebyIdResponse"/>
 
 <xs:element name="Tlu30khtdDisplayAll" type="tns:Tlu30khtdDisplayAll"/>
 
@@ -147,13 +147,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="Tlu30dktdDeletebyId">
+<xs:complexType name="Tlu30khtdDeletebyId">
 <xs:sequence>
 <xs:element name="iddktd" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="Tlu30dktdDeletebyIdResponse">
+<xs:complexType name="Tlu30khtdDeletebyIdResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

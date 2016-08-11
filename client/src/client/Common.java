@@ -207,7 +207,7 @@ public class Common extends javax.swing.JFrame {
         ((DefaultTableModel) _tblxemKHTD.getModel()).setNumRows(0);
         model = (DefaultTableModel) this._tblxemKHTD.getModel();
         for (Tlu30KeHoachTuyenDung khtd : tlu30KhtdDisplayAll()) {
-            model.addRow(new Object[]{khtd.getKeHoachSo(), khtd.getBoPhan(), khtd.getChucVu()});
+            model.addRow(new Object[]{khtd.getIdKhtd(), khtd.getKeHoachSo(),khtd.getBoPhan(), khtd.getChucVu() });
         }
         model.fireTableDataChanged();
     }
@@ -2535,7 +2535,10 @@ public class Common extends javax.swing.JFrame {
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         if (idKhtd > 0) {
-            tlu20DktdDeletebyId(idKhtd);
+            System.out.println("****idKhtd*** " + idKhtd );
+            tlu30KhtdDeletebyId(idKhtd);
+            JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
+            viewKHTD();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Chưa chọn Kế hoạch tuyển dụng trong danh sách", "Warning", JOptionPane.WARNING_MESSAGE);
         }
@@ -2756,6 +2759,10 @@ public class Common extends javax.swing.JFrame {
                         ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(tdvhLaNv)),
                         tdvhTen.getText(), tdvhMa.getText());
                     //viewDKTD();
+                    tdvhNguoiThem.setText(Constant.BLANK);
+                    tdvhMa.setText(Constant.BLANK);
+                    tdvhTen.setText(Constant.BLANK);
+                    dateTdvh.setCalendar(null);
                     JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
 
                 } else {
@@ -2885,6 +2892,10 @@ public class Common extends javax.swing.JFrame {
                         ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbDktd)),
                         _tfTenDktd.getText(), _tfMaDktd.getText());
                     //viewDKTD();
+                     _tfCreatedbyDktd.setText(Constant.BLANK);
+                    _tfMaDktd.setText(Constant.BLANK);
+                    _tfTenDktd.setText(Constant.BLANK);
+                    _calDktd.setCalendar(null);
                     JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
 
                 } else {
@@ -2955,6 +2966,10 @@ public class Common extends javax.swing.JFrame {
                         DateTimeUtil.convertCalendarToString(_calBoPhan.getCalendar().getTime()),
                         ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbBpIsActive)),
                         _tfTenBoPhan.getText(), _tfMaBoPhan.getText());
+                    _tfCreatedbyBoPhan.setText(Constant.BLANK);
+                    _tfMaBoPhan.setText(Constant.BLANK);
+                    _tfTenBoPhan.setText(Constant.BLANK);
+                    _calBoPhan.setCalendar(null);
                     //viewDKTD();
                     JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
 
@@ -3025,6 +3040,11 @@ public class Common extends javax.swing.JFrame {
                         DateTimeUtil.convertCalendarToString(_calChucVu.getCalendar().getTime()),
                         ClientUtil.getBooleanFromIsActiveCbb(ClientUtil.setValueofCombobox(_cbbIsActiveCv)),
                         _tfTenChucVu.getText(), _tfMaChucVu.getText());
+                    
+                    _tfCreatedbyChucVu.setText(Constant.BLANK);
+                    _tfMaChucVu.setText(Constant.BLANK);
+                    _tfTenChucVu.setText(Constant.BLANK);
+                    _calChucVu.setCalendar(null);
                     JOptionPane.showMessageDialog(rootPane, "Thêm thành công");
 
                 } else {
@@ -3451,6 +3471,12 @@ public class Common extends javax.swing.JFrame {
         service.webservice.WsTlu30HoSoUngVien_Service service = new service.webservice.WsTlu30HoSoUngVien_Service();
         service.webservice.WsTlu30HoSoUngVien port = service.getWsTlu30HoSoUngVienPort();
         return port.findbyMaHoSo(mhs);
+    }
+
+    private static String tlu30KhtdDeletebyId(int iddktd) {
+        service.webservice.WsTLU30KeHoachTuyenDung service = new service.webservice.WsTLU30KeHoachTuyenDung();
+        service.webservice.WsTlu30KeHoachTuyenDung port = service.getWsTlu30KeHoachTuyenDungPort();
+        return port.tlu30KhtdDeletebyId(iddktd);
     }
     
     

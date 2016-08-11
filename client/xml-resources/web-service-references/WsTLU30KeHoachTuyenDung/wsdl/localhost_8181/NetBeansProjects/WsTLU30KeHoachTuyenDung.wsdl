@@ -50,6 +50,14 @@
 </sp:EncryptedParts>
 <sp:SignedParts>
 <sp:Body/>
+</sp:SignedParts>
+</wsp:Policy>
+<wsp:Policy xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" wsu:Id="WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDeletebyId_Input_Policy">
+<sp:EncryptedParts>
+<sp:Body/>
+</sp:EncryptedParts>
+<sp:SignedParts>
+<sp:Body/>
 <sp:Header Namespace="http://www.w3.org/2005/08/addressing" Name="ReplyTo"/>
 <sp:Header Namespace="http://www.w3.org/2005/08/addressing" Name="To"/>
 <sp:Header Namespace="http://www.w3.org/2005/08/addressing" Name="From"/>
@@ -64,6 +72,14 @@
 </sp:SignedParts>
 </wsp:Policy>
 <wsp:Policy xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" wsu:Id="WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Output_Policy">
+<sp:EncryptedParts>
+<sp:Body/>
+</sp:EncryptedParts>
+<sp:SignedParts>
+<sp:Body/>
+</sp:SignedParts>
+</wsp:Policy>
+<wsp:Policy xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" wsu:Id="WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDeletebyId_Output_Policy">
 <sp:EncryptedParts>
 <sp:Body/>
 </sp:EncryptedParts>
@@ -87,6 +103,12 @@
 <xsd:import namespace="http://webservice.service/" schemaLocation="http://localhost:8181/NetBeansProjects/WsTLU30KeHoachTuyenDung?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="Tlu20khtdFindById">
+<part name="parameters" element="tns:Tlu20khtdFindById"/>
+</message>
+<message name="Tlu20khtdFindByIdResponse">
+<part name="parameters" element="tns:Tlu20khtdFindByIdResponse"/>
+</message>
 <message name="Tlu30khtdFindByKeHoachSo">
 <part name="parameters" element="tns:Tlu30khtdFindByKeHoachSo"/>
 </message>
@@ -108,23 +130,17 @@
 <message name="Tlu30khtdDisplayAllResponse">
 <part name="parameters" element="tns:Tlu30khtdDisplayAllResponse"/>
 </message>
-<message name="Tlu20khtdFindById">
-<part name="parameters" element="tns:Tlu20khtdFindById"/>
-</message>
-<message name="Tlu20khtdFindByIdResponse">
-<part name="parameters" element="tns:Tlu20khtdFindByIdResponse"/>
-</message>
 <message name="Tlu30khtdUpdateById">
 <part name="parameters" element="tns:Tlu30khtdUpdateById"/>
 </message>
 <message name="Tlu30khtdUpdateByIdResponse">
 <part name="parameters" element="tns:Tlu30khtdUpdateByIdResponse"/>
 </message>
-<message name="Tlu30dktdDeletebyId">
-<part name="parameters" element="tns:Tlu30dktdDeletebyId"/>
+<message name="Tlu30khtdDeletebyId">
+<part name="parameters" element="tns:Tlu30khtdDeletebyId"/>
 </message>
-<message name="Tlu30dktdDeletebyIdResponse">
-<part name="parameters" element="tns:Tlu30dktdDeletebyIdResponse"/>
+<message name="Tlu30khtdDeletebyIdResponse">
+<part name="parameters" element="tns:Tlu30khtdDeletebyIdResponse"/>
 </message>
 <message name="Tlu30keHoachTuyenDungFindCommon">
 <part name="parameters" element="tns:Tlu30keHoachTuyenDungFindCommon"/>
@@ -133,6 +149,10 @@
 <part name="parameters" element="tns:Tlu30keHoachTuyenDungFindCommonResponse"/>
 </message>
 <portType name="WsTlu30KeHoachTuyenDung">
+<operation name="Tlu20khtdFindById">
+<input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdRequest" message="tns:Tlu20khtdFindById"/>
+<output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdResponse" message="tns:Tlu20khtdFindByIdResponse"/>
+</operation>
 <operation name="Tlu30khtdFindByKeHoachSo">
 <input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdFindByKeHoachSoRequest" message="tns:Tlu30khtdFindByKeHoachSo"/>
 <output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdFindByKeHoachSoResponse" message="tns:Tlu30khtdFindByKeHoachSoResponse"/>
@@ -146,18 +166,14 @@
 <input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDisplayAllRequest" message="tns:Tlu30khtdDisplayAll"/>
 <output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDisplayAllResponse" message="tns:Tlu30khtdDisplayAllResponse"/>
 </operation>
-<operation name="Tlu20khtdFindById">
-<input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdRequest" message="tns:Tlu20khtdFindById"/>
-<output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu20khtdFindByIdResponse" message="tns:Tlu20khtdFindByIdResponse"/>
-</operation>
 <operation name="Tlu30khtdUpdateById">
 <input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdUpdateByIdRequest" message="tns:Tlu30khtdUpdateById"/>
 <output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdUpdateByIdResponse" message="tns:Tlu30khtdUpdateByIdResponse"/>
 <fault message="tns:ParseException" name="ParseException" wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdUpdateById/Fault/ParseException"/>
 </operation>
-<operation name="Tlu30dktdDeletebyId">
-<input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30dktdDeletebyIdRequest" message="tns:Tlu30dktdDeletebyId"/>
-<output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30dktdDeletebyIdResponse" message="tns:Tlu30dktdDeletebyIdResponse"/>
+<operation name="Tlu30khtdDeletebyId">
+<input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDeletebyIdRequest" message="tns:Tlu30khtdDeletebyId"/>
+<output wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30khtdDeletebyIdResponse" message="tns:Tlu30khtdDeletebyIdResponse"/>
 </operation>
 <operation name="Tlu30keHoachTuyenDungFindCommon">
 <input wsam:Action="http://webservice.service/WsTlu30KeHoachTuyenDung/Tlu30keHoachTuyenDungFindCommonRequest" message="tns:Tlu30keHoachTuyenDungFindCommon"/>
@@ -167,6 +183,17 @@
 <binding name="WsTlu30KeHoachTuyenDungPortBinding" type="tns:WsTlu30KeHoachTuyenDung">
 <wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBindingPolicy"/>
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="Tlu20khtdFindById">
+<soap:operation soapAction=""/>
+<input>
+<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Input_Policy"/>
+<soap:body use="literal"/>
+</input>
+<output>
+<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Output_Policy"/>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="Tlu30khtdFindByKeHoachSo">
 <soap:operation soapAction=""/>
 <input>
@@ -203,17 +230,6 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="Tlu20khtdFindById">
-<soap:operation soapAction=""/>
-<input>
-<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Input_Policy"/>
-<soap:body use="literal"/>
-</input>
-<output>
-<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Output_Policy"/>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="Tlu30khtdUpdateById">
 <soap:operation soapAction=""/>
 <input>
@@ -228,14 +244,14 @@
 <soap:fault name="ParseException" use="literal"/>
 </fault>
 </operation>
-<operation name="Tlu30dktdDeletebyId">
+<operation name="Tlu30khtdDeletebyId">
 <soap:operation soapAction=""/>
 <input>
-<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Input_Policy"/>
+<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDeletebyId_Input_Policy"/>
 <soap:body use="literal"/>
 </input>
 <output>
-<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDisplayAll_Output_Policy"/>
+<wsp:PolicyReference URI="#WsTlu30KeHoachTuyenDungPortBinding_Tlu30khtdDeletebyId_Output_Policy"/>
 <soap:body use="literal"/>
 </output>
 </operation>
